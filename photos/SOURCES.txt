@@ -1,0 +1,19 @@
+Stock photos used in the Glozia website design (Unsplash License: free to use, no attribution required).
+Placeholders only: replace with Glozia's own photos before launch.
+
+hero.jpg          https://unsplash.com/photos/1582095133179-bfd08e2fc6b3
+hero-detail.jpg   https://unsplash.com/photos/1621605815971-fbc98d665033
+card-hair.jpg     https://unsplash.com/photos/1622286342621-4bd786c2447c
+card-skin.jpg     https://unsplash.com/photos/1570172619644-dfd03ed5d881
+card-spa.jpg      https://unsplash.com/photos/1544161515-4ab6ce6db874
+card-hands.jpg    https://unsplash.com/photos/1607779097040-26e80aa78e66
+dusk.jpg          https://unsplash.com/photos/1585747860715-2ba37e788b70
+gal-interior.jpg  https://unsplash.com/photos/1633681926022-84c23e8cb2d6
+gal-men.jpg       https://unsplash.com/photos/1605497788044-5a32c7078486
+gal-wash.jpg      https://unsplash.com/photos/1634449571010-02389ed0f9b0
+gal-facial.jpg    https://unsplash.com/photos/1616394584738-fc6e612e71b9
+gal-nails.jpg     https://unsplash.com/photos/1604654894610-df63bc536371
+bridal.jpg        https://unsplash.com/photos/1487412947147-5cebf100ffc2
+menu-spa.jpg      https://unsplash.com/photos/1600334089648-b0d9d3028eb2
+menu-hero.jpg     https://unsplash.com/photos/1562322140-8baeececf3df   (current services-page photo)
+(Image CDN: https://images.unsplash.com/photo-<id>)

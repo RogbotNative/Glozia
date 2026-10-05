@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Glozia — Home (3D, lively)</title>
+<script src="./support.js"></script>
+<script src="/_blob/96d76171d5cad29f4b46dea9b9e79b05"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Jost:wght@300;400;500&amp;display=swap">
+<style>
+body{margin:0;background:#F6F1EA;color:#2A211C;font-family:'Jost','Futura','Avenir Next','Helvetica Neue',sans-serif;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Cormorant Garamond','Cormorant',Garamond,'Times New Roman',serif}
+a{color:#8A6128}a:hover{color:#2A211C}
+a:focus-visible,button:focus-visible{outline:2px solid #C4914D;outline-offset:3px}
+.eyebrow{font-size:12px;font-weight:500;letter-spacing:0.26em;text-transform:uppercase}
+.hnav{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink);text-decoration:none;transition:color .4s ease}
+.hnav:hover{color:var(--acc)}
+.hbtn{display:inline-flex;align-items:center;justify-content:center;gap:12px;height:52px;padding:0 28px;box-sizing:border-box;border:0;border-radius:2px;background:var(--btn-bg);color:var(--btn-fg);font:inherit;font-size:12px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background-color .6s ease,color .6s ease,transform .3s ease}
+.hbtn:hover{transform:translateY(-2px);color:var(--btn-fg)}
+.hlink{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding-bottom:6px;border-bottom:1px solid var(--line);transition:color .4s ease}
+.hlink:hover{color:var(--acc)}
+.seg{font:inherit;display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 18px;border:0;border-radius:999px;font-size:12px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;transition:background-color .5s ease,color .5s ease}
+.btn-dark{display:inline-flex;align-items:center;justify-content:center;gap:12px;height:52px;padding:0 28px;box-sizing:border-box;background:#2A211C;color:#F6F1EA;font-size:12px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background-color .25s ease}
+.btn-dark:hover{background:#000;color:#F6F1EA}
+.btn-light{display:inline-flex;align-items:center;justify-content:center;gap:12px;height:52px;padding:0 28px;box-sizing:border-box;background:#F6F1EA;color:#2A211C;font-size:12px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background-color .25s ease}
+.btn-light:hover{background:#fff;color:#2A211C}
+.btn-line{display:inline-flex;align-items:center;justify-content:center;gap:12px;height:52px;padding:0 28px;box-sizing:border-box;border:1px solid #2A211C;color:#2A211C;font-size:12px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background-color .25s ease,color .25s ease}
+.btn-line:hover{background:#2A211C;color:#F6F1EA}
+.text-link{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#2A211C;text-decoration:none;padding-bottom:6px;border-bottom:1px solid rgba(42,33,28,0.35)}
+.text-link:hover{color:#8A6128;border-bottom-color:#8A6128}
+.round{font:inherit;display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;padding:0;border-radius:50%;border:1px solid rgba(42,33,28,0.3);background:transparent;color:#2A211C;cursor:pointer;transition:background-color .25s ease,color .25s ease}
+.round:hover{background:#2A211C;color:#F6F1EA}
+.round-light{font:inherit;display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 24px;border-radius:999px;border:1px solid rgba(246,241,234,0.35);background:transparent;color:#F6F1EA;font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;transition:background-color .25s ease,color .25s ease}
+.round-light:hover{background:#F6F1EA;color:#231B17}
+.svc-card{font:inherit;color:inherit}
+.svc-card:focus-visible{outline:none}
+.svc-card:focus-visible img{outline:2px solid #C4914D;outline-offset:6px}
+.glz-cyl-stage:hover .glz-cyl{animation-play-state:paused}
+.shimmer{background-image:linear-gradient(100deg,#C4914D 20%,#F6DEAA 42%,#C4914D 64%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:glz-shimmer 5.5s ease-in-out infinite}
+@keyframes glz-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes glz-coin{from{transform:rotateY(0deg)}to{transform:rotateY(360deg)}}
+@keyframes glz-turn{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes glz-cyl{from{transform:translateZ(-500px) rotateY(0deg)}to{transform:translateZ(-500px) rotateY(-360deg)}}
+@keyframes glz-shimmer{0%{background-position:120% 50%}100%{background-position:-120% 50%}}
+@keyframes glz-drop{0%{transform:translateY(-6px);opacity:0}30%{opacity:1}100%{transform:translateY(30px);opacity:0}}
+@media (prefers-reduced-motion: reduce){.glz-anim,.shimmer{animation:none !important}}
+</style>
+</helmet>
+<div style="width: 1440px; height: 7820px; position: relative; display: flex; flex-direction: column; background: #F6F1EA; color: #2A211C; overflow: hidden">
+
+<section id="top" style="position: relative; height: 920px; flex-shrink: 0; overflow: hidden; background: radial-gradient(70% 80% at 70% 46%, #FBF7F0 0%, #F2E9DD 62%, #EADFD0 100%); --ink: {{ink}}; --muted: {{muted}}; --acc: {{acc}}; --line: {{line}}; --btn-bg: {{btnBg}}; --btn-fg: {{btnFg}}">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(58% 72% at 69% 47%, #45301F 0%, #241A15 52%, #140F0C 100%); opacity: {{duskOpacity}}; transition: opacity 1.1s ease"></div>
+<img src="/_blob/30d8817c940852821345f06122fd62d1" alt="" aria-hidden="true" style="position: absolute; left: 660px; top: 300px; width: 640px; height: 310px; opacity: {{fallbackOpacity}}; transition: opacity .8s ease; display: block">
+<canvas ref="{{setCanvas}}" width="1440" height="920" role="img" aria-label="An interactive 3D gold Glozia crown floating among pearls and gold rings" style="position: absolute; left: 0; top: 0; width: 1440px; height: 920px; display: block"></canvas>
+
+<header style="position: absolute; left: 0; top: 0; width: 1440px; height: 104px; box-sizing: border-box; padding: 0 96px; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; border-bottom: 1px solid var(--line); z-index: 3; transition: border-color .8s ease">
+<nav aria-label="Primary" style="display: flex; gap: 36px; align-items: center">
+<a class="hnav" href="Services.dc.html">Services</a>
+<a class="hnav" href="#studio">Studio</a>
+<a class="hnav" href="#team">Team</a>
+<a class="hnav" href="#visit">Visit</a>
+</nav>
+<a href="#top" aria-label="Glozia — home" style="display: flex; align-items: center; justify-content: center">
+<img src="{{lockupSrc}}" alt="Glozia" style="height: 60px; width: 86px; display: block">
+</a>
+<div style="display: flex; justify-content: flex-end; align-items: center; gap: 32px">
+<a class="hnav" href="#visit">+91 73378 76023</a>
+<a class="hbtn" href="Booking.dc.html">Book an appointment</a>
+</div>
+</header>
+
+<div style="position: absolute; left: 96px; top: 206px; width: 640px; display: flex; flex-direction: column; gap: 28px; z-index: 2; pointer-events: none">
+<div class="eyebrow" style="color: var(--acc); transition: color .8s ease">Unisex salon &amp; ladies spa · Nagarbhavi, Bengaluru</div>
+<h1 class="serif" style="margin: 0; font-size: 96px; line-height: 0.96; font-weight: 300; letter-spacing: -0.015em; color: var(--ink); text-wrap: balance; transition: color .8s ease">The quiet art of <em style="color: var(--acc); transition: color .8s ease">looking like</em> yourself.</h1>
+<p style="margin: 0; max-width: 470px; font-size: 18px; line-height: 1.65; font-weight: 300; color: var(--muted); transition: color .8s ease">Premium haircuts, colour, skin and spa care for men and women — with warm service and real attention to detail, on Mallathahalli Lake Road.</p>
+<div style="display: flex; align-items: center; gap: 36px; margin-top: 6px; pointer-events: auto">
+<a class="hbtn" href="Booking.dc.html">Book an appointment
+<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round"><path d="M4 12h16M14 6l6 6-6 6"></path></svg>
+</a>
+<a class="hlink" href="Services.dc.html">Services &amp; prices</a>
+</div>
+</div>
+
+<div style="position: absolute; left: 96px; right: 96px; bottom: 36px; display: flex; align-items: center; justify-content: space-between; gap: 32px; z-index: 2; pointer-events: none">
+<div role="group" aria-label="Lighting" style="display: flex; align-items: center; gap: 14px; pointer-events: auto">
+<span style="font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); transition: color .8s ease">Light</span>
+<div style="display: flex; gap: 4px; padding: 4px; border-radius: 999px; border: 1px solid var(--line); transition: border-color .8s ease">
+<button class="seg" type="button" aria-pressed="{{isDay}}" onClick="{{setDay}}" style="background: {{dayBg}}; color: {{dayFg}}">
+<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"></path></svg>
+Day</button>
+<button class="seg" type="button" aria-pressed="{{isDusk}}" onClick="{{setDusk}}" style="background: {{duskBg}}; color: {{duskFg}}">
+<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg>
+Dusk</button>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; font-size: 13px; letter-spacing: 0.04em; color: var(--muted); transition: color .8s ease">
+<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round"><path d="M8 13V6.5a1.5 1.5 0 0 1 3 0V12m0-1.5a1.5 1.5 0 0 1 3 0V12m0-.5a1.5 1.5 0 0 1 3 0v3.5a6 6 0 0 1-6 6h-.5a5.5 5.5 0 0 1-4.6-2.5L4.5 15a1.5 1.5 0 0 1 2.4-1.8L8 14.5"></path></svg>
+<span>Drag the crown to turn it · tap it to make it shine</span>
+</div>
+<div style="display: flex; align-items: center; gap: 16px; font-size: 13px; letter-spacing: 0.04em; color: var(--muted); transition: color .8s ease">
+<span>Open every day · 9:00 am – 8:30 pm</span>
+<span aria-hidden="true" style="position: relative; width: 1px; height: 44px; background: var(--line); overflow: hidden">
+<span class="glz-anim" style="position: absolute; left: -2px; top: 0; width: 5px; height: 5px; border-radius: 50%; background: var(--acc); animation: glz-drop 2.2s ease-in-out infinite"></span>
+</span>
+</div>
+</div>
+</section>
+
+<div aria-hidden="true" style="height: 72px; flex-shrink: 0; background: #231B17; overflow: hidden; display: flex; align-items: center">
+<div class="glz-anim" style="display: flex; align-items: center; gap: 44px; padding-left: 44px; white-space: nowrap; animation: glz-marquee 46s linear infinite">
+<span class="serif" style="font-size: 26px; font-style: italic; color: #F6F1EA">Haircuts</span><span style="width: 7px; height: 7px; background: #C4914D; transform: rotate(45deg); flex-shrink: 0"></span>
+<span class="serif" style="font-size: 26px; font-style: italic; color: #F6F1EA">Global colour</span><span style="width: 7px; height: 7px; background: #C4914D; transform: rotate(45deg); flex-shrink: 0"></span>
+<span class="serif" style="font-size: 26px; font-style: italic; color: #F6F1EA">Keratin</span><span style="width: 7px; height: 7px; background: #C4914D; transform: rotate(45deg); flex-shrink: 0"></span>
+<span class="serif" style="font-size: 26px; font-style: italic; color: #F6F1EA">Hair spa</span><span style="width: 7px; height: 7px; background: #C4914D; transform: rotate(45deg); flex-shrink: 0"></span>
+<span class="serif" style="font-size: 26px; font-style: italic; color: #F6F1EA">Facials</span><span style="width: 7px; height: 7px; background: #C4914D; transform: rotate(45deg); flex-shrink: 0"></span>
+<span class="serif" style="font-size: 26px; font-style: italic; color: #F6F1EA">Threading</span><span style="width: 7px; height: 7px; background: #C4914D; transform: rotate(45deg); flex-shrink: 0"></span>
+<span class="serif" style="font-size: 26px; font-style: italic; color: #F6F1EA">Ladies spa</span><span style="width: 7px; height: 7px; background: #C4914D; transform: rotate(45deg); flex-shrink: 0"></span>
+<span class="serif" style="font-size: 26px; font-style: italic; color: #F6F1EA">Manicure &amp; pedicure</span><span style="width: 7px; height: 7px; background: #C4914D; transform: rotate(45deg); flex-shrink: 0"></span>
+<span class="serif" style="font-size: 26px; font-style: italic; color: #F6F1EA">Nail extensions</span><span style="width: 7px; height: 7px; background: #C4914D; transform: rotate(45deg); flex-shrink: 0"></span>
+<span class="serif" style="font-size: 26px; font-style: italic; color: #F6F1EA">Bridal</span><span style="width: 7px; height: 7px; background: #C4914D; transform: rotate(45deg); flex-shrink: 0"></span>
+<span class="serif" style="font-size: 26px; font-style: italic; color: #F6F1EA">Haircuts</span><span style="width: 7px; height: 7px; background: #C4914D; transform: rotate(45deg); flex-shrink: 0"></span>
+<span class="serif" style="font-size: 26px; font-style: italic; color: #F6F1EA">Global colour</span><span style="width: 7px; height: 7px; background: #C4914D; transform: rotate(45deg); flex-shrink: 0"></span>
+<span class="serif" style="font-size: 26px; font-style: italic; color: #F6F1EA">Keratin</span><span style="width: 7px; height: 7px; background: #C4914D; transform: rotate(45deg); flex-shrink: 0"></span>
+<span class="serif" style="font-size: 26px; font-style: italic; color: #F6F1EA">Hair spa</span><span style="width: 7px; height: 7px; background: #C4914D; transform: rotate(45deg); flex-shrink: 0"></span>
+<span class="serif" style="font-size: 26px; font-style: italic; color: #F6F1EA">Facials</span><span style="width: 7px; height: 7px; background: #C4914D; transform: rotate(45deg); flex-shrink: 0"></span>
+<span class="serif" style="font-size: 26px; font-style: italic; color: #F6F1EA">Threading</span><span style="width: 7px; height: 7px; background: #C4914D; transform: rotate(45deg); flex-shrink: 0"></span>
+<span class="serif" style="font-size: 26px; font-style: italic; color: #F6F1EA">Ladies spa</span><span style="width: 7px; height: 7px; background: #C4914D; transform: rotate(45deg); flex-shrink: 0"></span>
+<span class="serif" style="font-size: 26px; font-style: italic; color: #F6F1EA">Manicure &amp; pedicure</span><span style="width: 7px; height: 7px; background: #C4914D; transform: rotate(45deg); flex-shrink: 0"></span>
+<span class="serif" style="font-size: 26px; font-style: italic; color: #F6F1EA">Nail extensions</span><span style="width: 7px; height: 7px; background: #C4914D; transform: rotate(45deg); flex-shrink: 0"></span>
+<span class="serif" style="font-size: 26px; font-style: italic; color: #F6F1EA">Bridal</span><span style="width: 7px; height: 7px; background: #C4914D; transform: rotate(45deg); flex-shrink: 0"></span>
+</div>
+</div>
+
+<section id="studio" style="height: 560px; flex-shrink: 0; box-sizing: border-box; padding: 0 96px; background: #EDE4D8; display: flex; align-items: center; justify-content: space-between; gap: 96px">
+<div style="display: flex; flex-direction: column; gap: 28px; max-width: 840px">
+<div style="display: flex; align-items: center; gap: 18px">
+<div class="eyebrow" style="color: #8A6128">Our approach</div>
+<div style="width: 56px; height: 1px; background: #8A6128"></div>
+</div>
+<p class="serif" style="margin: 0; font-size: 46px; line-height: 1.22; font-weight: 300; color: #2A211C; text-wrap: pretty">Good work starts with listening. Every visit begins with a conversation about your hair, your skin and your routine — so you leave with something that suits the way you <em>actually</em> live.</p>
+</div>
+<div aria-hidden="true" style="position: relative; width: 320px; height: 320px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; perspective: 900px">
+<div style="position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(138,97,40,0.35)"></div>
+<div class="glz-anim" style="position: absolute; inset: 22px; border-radius: 50%; border: 1px dashed rgba(138,97,40,0.45); animation: glz-turn 40s linear infinite"></div>
+<img class="glz-anim" src="/_blob/30d8817c940852821345f06122fd62d1" alt="" style="width: 230px; height: 112px; display: block; animation: glz-coin 9s linear infinite">
+</div>
+</section>
+
+<section style="height: 1160px; flex-shrink: 0; box-sizing: border-box; padding: 120px 96px 96px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 64px">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<div class="eyebrow" style="color: #8A6128">Services</div>
+<h2 class="serif" style="margin: 0; font-size: 60px; line-height: 1.05; font-weight: 300">Considered care, head to toe.</h2>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 22px; max-width: 360px">
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #6B5B4E">Drag the cards, use the arrows or pick one. Every price comes straight from the salon’s own menu.</p>
+<a class="text-link" href="Services.dc.html">Full menu &amp; prices</a>
+</div>
+</div>
+<div onPointerDown="{{svcDown}}" onPointerMove="{{svcMove}}" onPointerUp="{{svcUp}}" onPointerCancel="{{svcUp}}" style="position: relative; height: 620px; flex-shrink: 0; perspective: 1600px; perspective-origin: 50% 44%; touch-action: pan-y; cursor: grab; user-select: none">
+<sc-for list="{{svcCards}}" as="c" hint-placeholder-count="6">
+<button class="svc-card" data-i="{{c.i}}" type="button" onClick="{{c.pick}}" aria-label="{{c.aria}}" style="position: absolute; left: 50%; top: 18px; width: 320px; height: 590px; margin-left: -160px; padding: 0; border: 0; background: transparent; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 18px; transform: {{c.transform}}; opacity: {{c.opacity}}; z-index: {{c.z}}; transition: transform 1s cubic-bezier(.22,.7,.2,1), opacity .8s ease">
+<img src="{{c.img}}" alt="" draggable="false" style="width: 320px; height: 430px; object-fit: cover; border-radius: 160px 160px 2px 2px; display: block; box-shadow: 0 40px 60px -36px rgba(42,33,28,0.6)">
+<span style="display: flex; flex-direction: column; gap: 12px; opacity: {{c.labelOpacity}}; transition: opacity .5s ease">
+<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px">
+<span class="serif" style="font-size: 34px; line-height: 1.1">{{c.name}}</span>
+<span style="font-size: 12px; letter-spacing: 0.16em; color: #8A6128">{{c.num}}</span>
+</span>
+<span style="font-size: 14px; letter-spacing: 0.04em; color: #4F4238; padding-top: 12px; border-top: 1px solid rgba(42,33,28,0.16)">{{c.price}}</span>
+</span>
+</button>
+</sc-for>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 32px">
+<p aria-live="polite" style="margin: 0; font-size: 15px; line-height: 1.6; color: #6B5B4E; max-width: 420px"><strong style="font-weight: 500; color: #2A211C">{{svcName}}</strong> — {{svcDesc}}</p>
+<div style="display: flex; align-items: center; gap: 20px">
+<button class="round" type="button" aria-label="Previous service" onClick="{{svcPrev}}">
+<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round"><path d="M20 12H4M10 6l-6 6 6 6"></path></svg>
+</button>
+<span style="font-size: 13px; letter-spacing: 0.16em; min-width: 64px; text-align: center">{{svcNum}} / 06</span>
+<button class="round" type="button" aria-label="Next service" onClick="{{svcNext}}">
+<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round"><path d="M4 12h16M14 6l6 6-6 6"></path></svg>
+</button>
+</div>
+<div style="display: flex; justify-content: flex-end">
+<a class="btn-dark" href="Services.dc.html">See {{svcName}} prices</a>
+</div>
+</div>
+</section>
+
+<section style="height: 940px; flex-shrink: 0; box-sizing: border-box; padding: 120px 96px; background: #231B17; color: #F6F1EA; display: flex; align-items: center; gap: 96px">
+<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<div class="eyebrow" style="color: #C4914D">The experience</div>
+<h2 class="serif" style="margin: 0; font-size: 56px; line-height: 1.08; font-weight: 300; color: #F6F1EA; max-width: 600px">From booking to bill, <em>looked after.</em></h2>
+<p style="margin: 0; max-width: 520px; font-size: 16px; line-height: 1.7; color: #BDAE9F">The details that usually get in the way are handled quietly in the background, so the time in the chair is all yours.</p>
+</div>
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; gap: 28px; padding: 22px 0; border-top: 1px solid rgba(246,241,234,0.14)">
+<span class="serif" style="font-size: 22px; color: #C4914D; width: 32px; flex-shrink: 0">01</span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 class="serif" style="margin: 0; font-size: 28px; font-weight: 400; color: #F6F1EA">Book in a minute</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #BDAE9F">Choose your service, stylist and time online — day or night.</p>
+</div>
+</div>
+<div style="display: flex; gap: 28px; padding: 22px 0; border-top: 1px solid rgba(246,241,234,0.14)">
+<span class="serif" style="font-size: 22px; color: #C4914D; width: 32px; flex-shrink: 0">02</span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 class="serif" style="margin: 0; font-size: 28px; font-weight: 400; color: #F6F1EA">Updates on WhatsApp</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #BDAE9F">Your confirmation, and the occasional note from the studio, arrive where you already are.</p>
+</div>
+</div>
+<div style="display: flex; gap: 28px; padding: 22px 0; border-top: 1px solid rgba(246,241,234,0.14); border-bottom: 1px solid rgba(246,241,234,0.14)">
+<span class="serif" style="font-size: 22px; color: #C4914D; width: 32px; flex-shrink: 0">03</span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 class="serif" style="margin: 0; font-size: 28px; font-weight: 400; color: #F6F1EA">Receipts that arrive on their own</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #BDAE9F">Your bill lands on WhatsApp the moment you check out. No paper, no waiting.</p>
+</div>
+</div>
+</div>
+</div>
+<div style="width: 520px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 32px">
+<div onPointerMove="{{tilt}}" onPointerLeave="{{untilt}}" style="width: 420px; height: 560px; perspective: 1300px">
+<div style="width: 420px; height: 560px; transform-style: preserve-3d; transition: transform .35s ease-out">
+<div style="position: relative; width: 420px; height: 560px; transform-style: preserve-3d; transform: rotateY({{flipDeg}}deg); transition: transform 1.1s cubic-bezier(.3,.7,.2,1)">
+<div style="position: absolute; inset: 0; box-sizing: border-box; padding: 28px; border-radius: 22px; background: #F6F1EA; color: #2A211C; backface-visibility: hidden; display: flex; flex-direction: column; gap: 20px; box-shadow: 0 50px 80px -40px rgba(0,0,0,0.8)">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="width: 40px; height: 40px; border-radius: 50%; background: #231B17; display: flex; align-items: center; justify-content: center">
+<img src="/_blob/05f4e531774dbfe57f0cd5770ed26893" alt="" style="width: 26px; height: 18px; display: block">
+</span>
+<span style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 14px; font-weight: 500">Glozia Unisex Salon</span>
+<span style="font-size: 12px; color: #6B5B4E">on WhatsApp · just now</span>
+</span>
+</div>
+<span style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #8A6128; border: 1px solid rgba(138,97,40,0.4); border-radius: 999px; padding: 4px 10px">Sample</span>
+</div>
+<div style="flex: 1 1 0; display: flex; flex-direction: column; gap: 14px; padding: 22px; border-radius: 4px 18px 18px 18px; background: #FFFFFF; box-shadow: 0 1px 0 rgba(42,33,28,0.08)">
+<span class="serif" style="font-size: 30px; line-height: 1.1">Hi Ananya — you’re booked.</span>
+<div style="display: grid; grid-template-columns: 84px minmax(0, 1fr); row-gap: 10px; font-size: 14px; line-height: 1.45">
+<span style="color: #6B5B4E">When</span><span>Sat, 11 Oct · 4:30 pm</span>
+<span style="color: #6B5B4E">Services</span><span>Advance haircut, Hydrating hair spa</span>
+<span style="color: #6B5B4E">Stylist</span><span>Sajan</span>
+<span style="color: #6B5B4E">Where</span><span>Mallathahalli Lake Road, Nagarbhavi</span>
+</div>
+<span style="margin-top: auto; font-size: 14px; color: #4F4238">See you soon. — Team Glozia</span>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #6B5B4E">
+<span>Booking confirmation</span>
+<span style="letter-spacing: 0.16em">1 / 2</span>
+</div>
+</div>
+<div style="position: absolute; inset: 0; box-sizing: border-box; padding: 28px; border-radius: 22px; background: #FBF8F3; color: #2A211C; backface-visibility: hidden; transform: rotateY(180deg); display: flex; flex-direction: column; gap: 18px; box-shadow: 0 50px 80px -40px rgba(0,0,0,0.8)">
+<div style="display: flex; align-items: flex-start; justify-content: space-between">
+<img src="/_blob/e9666be69117daefd0452595aa1fd57b" alt="Glozia" style="width: 58px; height: 40px; display: block">
+<span style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #8A6128; border: 1px solid rgba(138,97,40,0.4); border-radius: 999px; padding: 4px 10px">Sample</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span class="serif" style="font-size: 34px; line-height: 1">Receipt</span>
+<span style="font-size: 12px; letter-spacing: 0.06em; color: #6B5B4E">Sat, 11 Oct · paid by UPI</span>
+</div>
+<div style="display: flex; flex-direction: column; border-top: 1px dashed rgba(42,33,28,0.3)">
+<div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(42,33,28,0.08); font-size: 15px"><span>Advance haircut</span><span>₹999</span></div>
+<div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(42,33,28,0.08); font-size: 15px"><span>Hydrating hair spa</span><span>₹1,200</span></div>
+<div style="display: flex; justify-content: space-between; padding: 14px 0; font-size: 15px; color: #6B5B4E"><span>GST</span><span>as billed</span></div>
+</div>
+<div style="margin-top: auto; display: flex; justify-content: space-between; align-items: baseline; padding-top: 16px; border-top: 1px dashed rgba(42,33,28,0.3)">
+<span style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase">Subtotal</span>
+<span class="serif" style="font-size: 34px">₹2,199</span>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #6B5B4E">
+<span>Sent to WhatsApp at checkout</span>
+<span style="letter-spacing: 0.16em">2 / 2</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button class="round-light" type="button" onClick="{{flip}}">
+<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.7 5.7L4 15.5M4 20v-4.5h4.5"></path></svg>
+{{flipLabel}}</button>
+</div>
+</section>
+
+<section id="team" style="height: 940px; flex-shrink: 0; box-sizing: border-box; padding: 120px 96px; display: flex; flex-direction: column; gap: 64px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 64px">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<div class="eyebrow" style="color: #8A6128">The team</div>
+<h2 class="serif" style="margin: 0; font-size: 60px; line-height: 1.05; font-weight: 300">The hands behind the chair.</h2>
+</div>
+<p style="margin: 0; max-width: 360px; font-size: 15px; line-height: 1.7; color: #6B5B4E">Meet the stylists and therapists who’ll look after you — and ask for anyone by name when you book.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px">
+<sc-for list="{{team}}" as="m" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<div onPointerMove="{{tilt}}" onPointerLeave="{{untilt}}" style="height: 380px; perspective: 900px">
+<div style="position: relative; height: 380px; border-radius: 144px 144px 2px 2px; background: #231B17; overflow: hidden; display: flex; align-items: center; justify-content: center; transition: transform .35s ease-out; box-shadow: 0 30px 50px -30px rgba(42,33,28,0.6)">
+<div style="position: absolute; inset: 12px; border-radius: 132px 132px 2px 2px; border: 1px solid rgba(196,145,77,0.4)"></div>
+<sc-if value="{{m.hasInitial}}" hint-placeholder-val="{{ true }}">
+<span class="serif" aria-hidden="true" style="font-size: 190px; line-height: 1; font-weight: 300; color: #C4914D">{{m.initial}}</span>
+</sc-if>
+<sc-if value="{{m.noInitial}}" hint-placeholder-val="{{ false }}">
+<img src="/_blob/30d8817c940852821345f06122fd62d1" alt="" style="width: 150px; height: 73px; display: block">
+</sc-if>
+<div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(circle at var(--gx, 50%) var(--gy, 0%), rgba(255,232,190,0.26), rgba(255,232,190,0) 46%); pointer-events: none"></div>
+<span style="position: absolute; left: 0; right: 0; bottom: 22px; text-align: center; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: #BDAE9F">Portrait coming soon</span>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 class="serif" style="margin: 0; font-size: 28px; font-weight: 400">{{m.name}}</h3>
+<span style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6B5B4E">{{m.role}}</span>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="height: 1040px; flex-shrink: 0; box-sizing: border-box; padding: 120px 0 80px; background: #EDE4D8; display: flex; flex-direction: column; gap: 32px">
+<div style="padding: 0 96px; display: flex; justify-content: space-between; align-items: flex-end; gap: 64px">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<div class="eyebrow" style="color: #8A6128">From the studio</div>
+<h2 class="serif" style="margin: 0; font-size: 60px; line-height: 1.05; font-weight: 300">Recent <em>work.</em></h2>
+</div>
+<a class="text-link" href="https://www.instagram.com/glozia_unisex_salon/">Instagram · @glozia_unisex_salon</a>
+</div>
+<div class="glz-cyl-stage" style="position: relative; height: 620px; flex-shrink: 0; perspective: 1700px; perspective-origin: 50% 46%">
+<div class="glz-cyl glz-anim" style="position: absolute; left: 50%; top: 56px; width: 300px; height: 450px; margin-left: -150px; transform-style: preserve-3d; transform: translateZ(-500px); animation: glz-cyl 70s linear infinite">
+<sc-for list="{{gallery}}" as="g" hint-placeholder-count="10">
+<img src="{{g.img}}" alt="{{g.alt}}" style="position: absolute; left: 0; top: 0; width: 300px; height: 450px; object-fit: cover; border-radius: 150px 150px 2px 2px; display: block; backface-visibility: hidden; transform: rotateY({{g.rot}}deg) translateZ(500px); box-shadow: 0 30px 50px -30px rgba(42,33,28,0.5)">
+</sc-for>
+</div>
+</div>
+<p style="margin: 0; text-align: center; font-size: 13px; letter-spacing: 0.06em; color: #6B5B4E">Hover to pause the carousel</p>
+</section>
+
+<section style="height: 800px; flex-shrink: 0; box-sizing: border-box; padding: 120px 96px; display: flex; align-items: center; gap: 96px">
+<div style="width: 440px; flex-shrink: 0; display: flex; flex-direction: column; gap: 28px">
+<div class="eyebrow" style="color: #8A6128">Kind words</div>
+<div style="display: flex; align-items: baseline; gap: 20px">
+<span class="serif" style="font-size: 132px; line-height: 0.85; font-weight: 300">4.8</span>
+<span style="font-size: 15px; line-height: 1.6; color: #6B5B4E">on Google,<br>from 106+ reviews</span>
+</div>
+<div style="display: flex; align-items: center; gap: 20px">
+<button class="round" type="button" aria-label="Previous review" onClick="{{revPrev}}">
+<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round"><path d="M20 12H4M10 6l-6 6 6 6"></path></svg>
+</button>
+<span style="font-size: 13px; letter-spacing: 0.16em">{{revNum}} / 03</span>
+<button class="round" type="button" aria-label="Next review" onClick="{{revNext}}">
+<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round"><path d="M4 12h16M14 6l6 6-6 6"></path></svg>
+</button>
+</div>
+<a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Glozia+Unisex+Salon+and+ladies+Spa+Nagarbhavi" style="align-self: flex-start">Read all reviews</a>
+</div>
+<div style="position: relative; flex: 1 1 0; min-width: 0; height: 440px; perspective: 1400px">
+<sc-for list="{{reviews}}" as="r" hint-placeholder-count="3">
+<figure aria-hidden="{{r.hidden}}" style="position: absolute; left: 0; top: 0; width: 640px; height: 360px; margin: 0; box-sizing: border-box; padding: 48px 52px; border-radius: 4px; background: {{r.bg}}; border: 1px solid rgba(42,33,28,0.12); display: flex; flex-direction: column; justify-content: space-between; transform: {{r.transform}}; z-index: {{r.z}}; opacity: {{r.opacity}}; transition: transform .8s cubic-bezier(.3,.7,.2,1), opacity .8s ease, background-color .8s ease; box-shadow: 0 40px 70px -40px rgba(42,33,28,0.45)">
+<span class="serif" aria-hidden="true" style="font-size: 96px; line-height: 0.5; height: 40px; color: #C4914D">“</span>
+<blockquote class="serif" style="margin: 0; font-size: 34px; line-height: 1.3; font-weight: 300; font-style: italic; color: #2A211C">{{r.quote}}</blockquote>
+<figcaption style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #6B5B4E">{{r.name}} · Google</figcaption>
+</figure>
+</sc-for>
+</div>
+</section>
+
+<section id="visit" style="height: 816px; flex-shrink: 0; box-sizing: border-box; padding: 128px 96px; border-top: 1px solid rgba(42,33,28,0.12); display: flex; gap: 96px">
+<div style="width: 600px; flex-shrink: 0; position: relative; overflow: hidden; border-radius: 2px; background-color: #E0D5C6; background-image: repeating-linear-gradient(135deg, rgba(42,33,28,0.07) 0 1px, transparent 1px 11px)">
+<span style="position: absolute; left: 16px; bottom: 14px; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #4F4238; background: rgba(246,241,234,0.88); padding: 6px 10px; border-radius: 2px">Map · Google Maps embed, Mallathahalli Lake Road</span>
+</div>
+<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 36px">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<div class="eyebrow" style="color: #8A6128">Visit</div>
+<h2 class="serif" style="margin: 0; font-size: 60px; line-height: 1.05; font-weight: 300">Come in, <em>slow down.</em></h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #6B5B4E">Address</span>
+<p style="margin: 0; font-size: 16px; line-height: 1.7">Mallathahalli Lake Road, Nagarbhavi<br>Bengaluru, Karnataka 560056</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #6B5B4E">Hours</span>
+<div style="display: grid; grid-template-columns: auto auto; justify-content: start; column-gap: 20px; row-gap: 6px; font-size: 16px; line-height: 1.6">
+<span>Sat – Thu</span><span>9:00 am – 8:30 pm</span>
+<span>Friday</span><span>10:00 am – 8:30 pm</span>
+</div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 16px; line-height: 1.6">
+<span>Call or WhatsApp · +91 73378 76023</span>
+<a href="https://www.instagram.com/glozia_unisex_salon/" style="color: #6B5B4E; text-decoration: none">@glozia_unisex_salon</a>
+</div>
+<div style="display: flex; gap: 16px">
+<a class="btn-dark" href="Booking.dc.html">Book an appointment</a>
+<a class="btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Glozia+Unisex+Salon+and+ladies+Spa+Nagarbhavi">Get directions</a>
+</div>
+</div>
+</section>
+
+<footer style="height: 560px; flex-grow: 1; flex-shrink: 0; box-sizing: border-box; padding: 96px 96px 40px; background: #1B1512; color: #F6F1EA; display: flex; flex-direction: column; justify-content: space-between">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 64px">
+<h2 class="serif" style="margin: 0; font-size: 72px; line-height: 1; font-weight: 300; color: #F6F1EA">Your chair is <em class="shimmer">waiting.</em></h2>
+<a class="btn-light" href="Booking.dc.html">Book an appointment</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 48px; padding-top: 48px; border-top: 1px solid rgba(246,241,234,0.14)">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<img src="/_blob/2e4bc8b0c1a1c64cb51bd825878b1a83" alt="Glozia Unisex Salon" style="width: 170px; height: 108px; display: block">
+<span style="font-size: 10px; letter-spacing: 0.38em; text-transform: uppercase; color: #BDAE9F">&amp; Ladies Spa</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; line-height: 1.7; color: #BDAE9F">
+<span style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #C4914D">Studio</span>
+<span>Mallathahalli Lake Road, Nagarbhavi<br>Bengaluru 560056<br>+91 73378 76023</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; line-height: 1.7; color: #BDAE9F">
+<span style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #C4914D">Hours</span>
+<span>Sat – Thu · 9:00 am – 8:30 pm<br>Friday · 10:00 am – 8:30 pm</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; line-height: 1.7">
+<span style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #C4914D">Follow</span>
+<a href="https://www.instagram.com/glozia_unisex_salon/" style="color: #BDAE9F; text-decoration: none">Instagram</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Glozia+Unisex+Salon+and+ladies+Spa+Nagarbhavi" style="color: #BDAE9F; text-decoration: none">Google reviews</a>
+</div>
+</div>
+<div style="display: flex; justify-content: space-between; font-size: 12px; letter-spacing: 0.08em; color: #968777">
+<span>© 2026 Glozia Unisex Salon &amp; Ladies Spa</span>
+<span>Privacy · Terms</span>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"startMode":{"editor":"enum","options":["day","dusk"],"default":"day","section":"3D hero"},"autoplay":{"editor":"boolean","default":true,"section":"Motion"},"$preview":{"width":1440,"height":7820}}'>
+class Component extends DCLogic {
+  componentDidMount() {
+    this.__alive = true;
+    this.__mountScene();
+    var self = this;
+    var reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    if (!reduce && this.props.autoplay !== false) {
+      this.__auto = setInterval(function () {
+        if (!self.__alive) return;
+        var s = self.state || {};
+        var patch = null;
+        if (!s.flipTouched) { patch = patch || {}; patch.flipped = !s.flipped; }
+        if (!s.svcTouched && !self.__sd) { patch = patch || {}; patch.svcPos = (s.svcPos || 0) + 1; }
+        if (patch) self.setState(patch);
+      }, 5200);
+    }
+  }
+  componentWillUnmount() {
+    this.__alive = false;
+    clearTimeout(this.__retry);
+    clearInterval(this.__auto);
+    if (this.__scene) { try { this.__scene.dispose(); } catch (e) {} this.__scene = null; }
+  }
+  __mode() {
+    var s = this.state || {};
+    return s.mode || (this.props.startMode === 'dusk' ? 'dusk' : 'day');
+  }
+  __mountScene() {
+    var self = this, tries = 0;
+    clearTimeout(this.__retry);
+    (function attempt() {
+      if (!self.__alive) return;
+      var api = window.GloziaScene;
+      if (!api || !self.__canvas) {
+        if (tries++ < 60) self.__retry = setTimeout(attempt, 150);
+        return;
+      }
+      try {
+        self.__sceneCanvas = self.__canvas;
+        self.__scene = api.mount(self.__canvas, {
+          mode: self.__mode(),
+          onReady: function () { if (self.__alive && !(self.state && self.state.sceneReady)) self.setState({ sceneReady: true }); }
+        });
+      } catch (err) {
+        console.error('[Glozia] 3D scene could not start', err);
+      }
+    })();
+  }
+  __setMode(m) {
+    this.setState({ mode: m });
+    if (this.__scene) this.__scene.setMode(m);
+  }
+  __flowRel(i, pos) {
+    return ((((i - pos) % 6) + 9) % 6) - 3;
+  }
+  __flowStyle(i, pos) {
+    var rel = this.__flowRel(i, pos);
+    var a = Math.abs(rel), sg = rel < 0 ? -1 : 1;
+    var x = rel * 290 - sg * Math.max(0, a - 1) * 50;
+    var z = -a * 240;
+    var ry = -sg * (Math.min(a, 1) * 36 + Math.max(0, a - 1) * 10);
+    var o = a <= 1 ? 1 : (a <= 2 ? 1 - (a - 1) * 0.12 : (a < 2.5 ? 0.88 * (2.5 - a) / 0.5 : 0));
+    return { t: 'translateX(' + x.toFixed(1) + 'px) translateZ(' + z.toFixed(1) + 'px) rotateY(' + ry.toFixed(1) + 'deg)', o: o.toFixed(2), z: String(Math.round(100 - a * 10)) };
+  }
+  renderVals() {
+    var self = this;
+    var s = this.state || {};
+    var mode = this.__mode();
+    var dusk = mode === 'dusk';
+
+    if (!this.__setCanvas) {
+      this.__setCanvas = function (el) {
+        if (!el) return;
+        self.__canvas = el;
+        if (self.__scene && self.__sceneCanvas !== el) {
+          try { self.__scene.dispose(); } catch (e) {}
+          self.__scene = null;
+          self.__mountScene();
+        }
+      };
+    }
+    if (!this.__tilt) {
+      this.__tilt = function (e) {
+        var host = e.currentTarget, card = host && host.firstElementChild;
+        if (!card) return;
+        var r = host.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        card.style.transform = 'rotateX(' + ((0.5 - y) * 12).toFixed(2) + 'deg) rotateY(' + ((x - 0.5) * 16).toFixed(2) + 'deg)';
+        card.style.setProperty('--gx', (x * 100).toFixed(1) + '%');
+        card.style.setProperty('--gy', (y * 100).toFixed(1) + '%');
+      };
+      this.__untilt = function (e) {
+        var card = e.currentTarget && e.currentTarget.firstElementChild;
+        if (card) card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      };
+    }
+
+    // ---- services carousel -------------------------------------------------
+    var SVC = [
+      { name: 'Hair', price: 'Haircuts from ₹220', desc: 'cuts, beard work and styling for men and women.', img: '/_blob/e08d7dcf8c765f4bd46c352dd980c49a' },
+      { name: 'Colour & Keratin', price: 'Global colour from ₹1,500', desc: 'global colour, highlights, keratin, nanoplastia and smoothening.', img: '/_blob/b5fcf14903123a410613e816ca02b867' },
+      { name: 'Skin', price: 'Facials from ₹999', desc: 'facials, clean-ups, acne care, de-tan and threading.', img: '/_blob/2961c35577fd193d0055cd5d2538f7d1' },
+      { name: 'Ladies Spa', price: 'Massages from ₹600', desc: 'aroma and deep-tissue massages, polishing and Glozia’s signature rituals.', img: '/_blob/a12d1db780a758e1638e8ffd3620dbeb' },
+      { name: 'Hands & Feet', price: 'Manicures from ₹300', desc: 'manicures, pedicures, gel polish and nail extensions.', img: '/_blob/35ada588ceec977480e2ad14d09cba04' },
+      { name: 'Bridal', price: 'Bridal make-up ₹10,000', desc: 'bridal hair and make-up, the O3 bridal facial and saree draping.', img: '/_blob/6b06ef098b52015b53ef3ce98071bb02' }
+    ];
+    var pos = s.svcPos || 0;
+    var front = ((Math.round(pos) % 6) + 6) % 6;
+    function goTo(target) { self.setState({ svcPos: target, svcTouched: true }); }
+    var svcCards = SVC.map(function (c, i) {
+      var st = self.__flowStyle(i, pos);
+      return {
+        i: String(i), name: c.name, price: c.price, img: c.img, num: '0' + (i + 1),
+        transform: st.t, opacity: st.o, z: st.z, labelOpacity: Math.abs(self.__flowRel(i, pos)) < 0.5 ? '1' : '0',
+        aria: c.name + ' — ' + c.price,
+        pick: function () {
+          var cur = (self.state && self.state.svcPos) || 0;
+          var rel = self.__flowRel(i, cur);
+          if (Math.abs(rel) > 0.01) goTo(Math.round(cur + rel));
+        }
+      };
+    });
+    var svcDown = function (e) {
+      if (e.button != null && e.button !== 0) return;
+      self.__sd = { x: e.clientX, p: (self.state && self.state.svcPos) || 0, host: e.currentTarget, id: e.pointerId, moved: 0, cur: null };
+    };
+    var svcMove = function (e) {
+      var d = self.__sd;
+      if (!d) return;
+      var dx = e.clientX - d.x;
+      d.moved = Math.max(d.moved, Math.abs(dx));
+      if (d.moved < 5) return;
+      var cards = d.host.querySelectorAll('.svc-card');
+      if (!d.captured) {
+        d.captured = true;
+        try { d.host.setPointerCapture(d.id); } catch (err) {}
+        d.host.style.cursor = 'grabbing';
+        for (var k = 0; k < cards.length; k++) { cards[k].style.transition = 'none'; }
+      }
+      d.cur = d.p - dx / 260;
+      for (var j = 0; j < cards.length; j++) {
+        var st = self.__flowStyle(+cards[j].getAttribute('data-i'), d.cur);
+        cards[j].style.transform = st.t; cards[j].style.opacity = st.o; cards[j].style.zIndex = st.z;
+      }
+    };
+    var svcUp = function () {
+      var d = self.__sd;
+      self.__sd = null;
+      if (!d || !d.captured) return;
+      d.host.style.cursor = '';
+      var snap = Math.round(d.cur);
+      var cards = d.host.querySelectorAll('.svc-card');
+      for (var j = 0; j < cards.length; j++) {
+        var st = self.__flowStyle(+cards[j].getAttribute('data-i'), snap);
+        cards[j].style.transition = '';
+        cards[j].style.transform = st.t; cards[j].style.opacity = st.o; cards[j].style.zIndex = st.z;
+      }
+      goTo(snap);
+    };
+
+    // ---- reviews deck ------------------------------------------------------
+    var REV = [
+      { q: 'Had a great experience at the salon. Great ambience, warm service, and attention to detail', n: 'Arpitha Bollalli' },
+      { q: 'Very professional and skilled hair stylist Sajan', n: 'Prashantha MP' },
+      { q: 'Wonderful experience friendly team and beautiful results highly recommend', n: 'Muraleedharan' }
+    ];
+    var ri = (((s.rev || 0) % 3) + 3) % 3;
+    var POS = [
+      { t: 'translate3d(0px, 0px, 0px) rotate(0deg)', o: '1', bg: '#FFFFFF' },
+      { t: 'translate3d(34px, 30px, -90px) rotate(2.4deg)', o: '0.92', bg: '#F3ECE2' },
+      { t: 'translate3d(68px, 60px, -180px) rotate(4.8deg)', o: '0.78', bg: '#EDE4D8' }
+    ];
+    var reviews = REV.map(function (r, i) {
+      var pos = (i - ri + 3) % 3;
+      return { quote: r.q, name: r.n, transform: POS[pos].t, opacity: POS[pos].o, bg: POS[pos].bg, z: String(3 - pos), hidden: pos === 0 ? 'false' : 'true' };
+    });
+
+    var GAL = [
+      ['/_blob/6d191d7fc3443f850c012dee72bf957e', 'A bright salon interior with round mirrors'],
+      ['/_blob/66c21aa5a1be61205d16e4c78c7b76fd', 'A stylist blow-drying a man’s hair'],
+      ['/_blob/28920e392f9d66cd065347117cf59da0', 'A client having her hair washed at the basin'],
+      ['/_blob/a55478a91c84af5ebc2ca9525c69f8f9', 'A cream mask being applied during a facial'],
+      ['/_blob/0b030c8a5363e071c4e672b39a5c2e61', 'Glossy dark and tortoiseshell nail art'],
+      ['/_blob/6cf2b4fafb1d213beba1c7780273f28e', 'A smiling stylist blow-drying a client’s hair'],
+      ['/_blob/0c0e62b670c6c6b2428eeb7dcd712e32', 'Scissors, comb and grooming products on wood'],
+      ['/_blob/35ada588ceec977480e2ad14d09cba04', 'Manicured nails in soft neutral shades'],
+      ['/_blob/f04a2a9fae93bdd011b25d96454ec5a0', 'A salon chair under warm pendant lights'],
+      ['/_blob/1aea8aefa01d3eeb130c12f78be41b56', 'Warm stones laid along a back during a spa treatment']
+    ];
+    var gallery = GAL.map(function (g, i) { return { img: g[0], alt: g[1], rot: String(i * 36) }; });
+
+    var team = [
+      { name: 'Sajan', role: 'Hair stylist', initial: 'S' },
+      { name: 'Salman', role: 'Hair & beard', initial: 'S' },
+      { name: 'Arjun', role: 'Hair stylist', initial: 'A' },
+      { name: '[SPA THERAPIST]', role: 'Ladies spa', initial: '' }
+    ].map(function (m) { return { name: m.name, role: m.role, initial: m.initial, hasInitial: !!m.initial, noInitial: !m.initial }; });
+
+    var flipped = !!s.flipped;
+
+    return {
+      ink: dusk ? '#F6F1EA' : '#2A211C',
+      muted: dusk ? '#CDBFAF' : '#4F4238',
+      acc: dusk ? '#D9A962' : '#8A6128',
+      line: dusk ? 'rgba(246,241,234,0.26)' : 'rgba(42,33,28,0.2)',
+      btnBg: dusk ? '#C4914D' : '#2A211C',
+      btnFg: dusk ? '#1B1512' : '#F6F1EA',
+      duskOpacity: dusk ? '1' : '0',
+      lockupSrc: dusk ? '/_blob/05f4e531774dbfe57f0cd5770ed26893' : '/_blob/e9666be69117daefd0452595aa1fd57b',
+      fallbackOpacity: s.sceneReady ? '0' : '1',
+      setCanvas: this.__setCanvas,
+      isDay: dusk ? 'false' : 'true',
+      isDusk: dusk ? 'true' : 'false',
+      dayBg: dusk ? 'transparent' : '#2A211C',
+      dayFg: dusk ? '#CDBFAF' : '#F6F1EA',
+      duskBg: dusk ? '#C4914D' : 'transparent',
+      duskFg: dusk ? '#1B1512' : '#4F4238',
+      setDay: function () { self.__setMode('day'); },
+      setDusk: function () { self.__setMode('dusk'); },
+
+      svcCards: svcCards,
+      svcNum: '0' + (front + 1),
+      svcName: SVC[front].name,
+      svcDesc: SVC[front].desc,
+      svcPrev: function () { goTo(Math.round(((self.state && self.state.svcPos) || 0) - 1)); },
+      svcNext: function () { goTo(Math.round(((self.state && self.state.svcPos) || 0) + 1)); },
+      svcDown: svcDown, svcMove: svcMove, svcUp: svcUp,
+
+      tilt: this.__tilt, untilt: this.__untilt,
+      flipDeg: flipped ? '180' : '0',
+      flipLabel: flipped ? 'Show the booking' : 'Show the receipt',
+      flip: function () { self.setState({ flipped: !(self.state && self.state.flipped), flipTouched: true }); },
+
+      team: team,
+      gallery: gallery,
+      reviews: reviews,
+      revNum: '0' + (ri + 1),
+      revNext: function () { self.setState({ rev: ((self.state && self.state.rev) || 0) + 1 }); },
+      revPrev: function () { self.setState({ rev: ((self.state && self.state.rev) || 0) + 2 }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

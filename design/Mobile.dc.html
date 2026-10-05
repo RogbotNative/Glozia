@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Glozia — Home (mobile)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Jost:wght@300;400;500&amp;display=swap">
+<style>
+body{margin:0;background:#F6F1EA;color:#2A211C;font-family:'Jost','Futura','Avenir Next','Helvetica Neue',sans-serif;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Cormorant Garamond','Cormorant',Garamond,'Times New Roman',serif}
+a{color:#7D5F38}a:hover{color:#2A211C}
+a:focus-visible,button:focus-visible{outline:2px solid #7D5F38;outline-offset:3px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:0.26em;text-transform:uppercase}
+.btn-dark{display:flex;align-items:center;justify-content:center;gap:12px;height:52px;padding:0 24px;box-sizing:border-box;background:#2A211C;color:#F6F1EA;font-size:12px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;border-radius:2px}
+.btn-dark:hover{background:#000;color:#F6F1EA}
+.btn-light{display:flex;align-items:center;justify-content:center;height:52px;padding:0 24px;box-sizing:border-box;background:#F6F1EA;color:#2A211C;font-size:12px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;border-radius:2px}
+.btn-line{display:flex;align-items:center;justify-content:center;height:52px;padding:0 24px;box-sizing:border-box;border:1px solid #2A211C;color:#2A211C;font-size:12px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;border-radius:2px}
+.text-link{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:#2A211C;text-decoration:none;padding-bottom:6px;border-bottom:1px solid rgba(42,33,28,0.35)}
+.icon-btn{display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:0;background:transparent;color:#2A211C;cursor:pointer}
+.ph{position:relative;overflow:hidden;background-color:#E3D8CA;background-image:repeating-linear-gradient(135deg,rgba(42,33,28,0.07) 0 1px,transparent 1px 11px)}
+.ph-dark{position:relative;overflow:hidden;background-color:#3A2E27;background-image:repeating-linear-gradient(135deg,rgba(246,241,234,0.08) 0 1px,transparent 1px 11px)}
+.ph-cap{position:absolute;left:12px;bottom:12px;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:#4F4238;background:rgba(246,241,234,0.88);padding:5px 8px;border-radius:2px}
+</style>
+</helmet>
+<div style="width: 390px; height: 8080px; position: relative; display: flex; flex-direction: column; background: #F6F1EA; color: #2A211C; overflow: hidden">
+
+<header style="height: 72px; flex-shrink: 0; box-sizing: border-box; padding: 0 12px 0 24px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(42,33,28,0.12)">
+<a href="#top" aria-label="Glozia — home" style="display: flex; align-items: center">
+<img src="/_blob/e9666be69117daefd0452595aa1fd57b" alt="Glozia" style="height: 46px; width: 66px; display: block">
+</a>
+<button class="icon-btn" type="button" aria-label="Open menu">
+<svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round"><path d="M4 8h16M4 16h16"></path></svg>
+</button>
+</header>
+
+<section id="top" style="height: 1060px; flex-shrink: 0; box-sizing: border-box; padding: 36px 24px 48px; display: flex; flex-direction: column; gap: 20px">
+<div class="eyebrow" style="color: {{accent}}">Nagarbhavi, Bengaluru</div>
+<h1 class="serif" style="margin: 0; font-size: 52px; line-height: 0.98; font-weight: 300; letter-spacing: -0.01em; text-wrap: balance">The quiet art of <em style="color: {{accent}}">looking like</em> yourself.</h1>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; font-weight: 300; color: #4F4238">Premium haircuts, colour, skin and spa care for men and women — with warm service and real attention to detail, on Mallathahalli Lake Road.</p>
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px; margin-top: 4px">
+<a class="btn-dark" href="Booking.dc.html" style="align-self: stretch">Book an appointment</a>
+<a class="text-link" href="Services.dc.html">Services &amp; prices</a>
+</div>
+<img src="/_blob/b5fcf14903123a410613e816ca02b867" alt="A stylist pinning a client's hair into soft sculpted curls" style="width: 100%; height: 420px; margin-top: 16px; object-fit: cover; border-radius: 171px 171px 2px 2px; display: block">
+</section>
+
+<section id="studio" style="height: 520px; flex-shrink: 0; box-sizing: border-box; padding: 72px 24px; background: #EDE4D8; display: flex; flex-direction: column; justify-content: center; gap: 24px">
+<div style="display: flex; align-items: center; gap: 16px">
+<div class="eyebrow" style="color: {{accent}}">Our approach</div>
+<div style="width: 40px; height: 1px; background: {{accent}}"></div>
+</div>
+<p class="serif" style="margin: 0; font-size: 28px; line-height: 1.28; font-weight: 300; text-wrap: pretty">Good work starts with listening. Every visit begins with a conversation about your hair, your skin and your routine — so you leave with something that suits the way you <em>actually</em> live.</p>
+</section>
+
+<section style="height: 1140px; flex-shrink: 0; box-sizing: border-box; padding: 72px 24px; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div class="eyebrow" style="color: {{accent}}">Services</div>
+<h2 class="serif" style="margin: 0; font-size: 40px; line-height: 1.08; font-weight: 300">Considered care, head to toe.</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #6B5B4E">From a quick tidy-up to a full transformation — every service is priced clearly before you sit down.</p>
+</div>
+<div style="display: flex; flex-direction: column">
+<a href="Services.dc.html#hair" style="display: flex; gap: 20px; padding: 20px 0; border-top: 1px solid rgba(42,33,28,0.14); text-decoration: none; color: #2A211C">
+<img src="/_blob/e08d7dcf8c765f4bd46c352dd980c49a" alt="" style="width: 104px; height: 132px; flex-shrink: 0; object-fit: cover; border-radius: 52px 52px 2px 2px; display: block">
+<div style="display: flex; flex-direction: column; gap: 6px; justify-content: center">
+<h3 class="serif" style="margin: 0; font-size: 28px; font-weight: 400">Hair</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.55; color: #6B5B4E">Cuts and beard work, colour, keratin, smoothening and hair spa.</p>
+<span style="font-size: 12px; letter-spacing: 0.08em; margin-top: 4px">Haircuts from ₹220</span>
+</div>
+</a>
+<a href="Services.dc.html#skin" style="display: flex; gap: 20px; padding: 20px 0; border-top: 1px solid rgba(42,33,28,0.14); text-decoration: none; color: #2A211C">
+<img src="/_blob/2961c35577fd193d0055cd5d2538f7d1" alt="" style="width: 104px; height: 132px; flex-shrink: 0; object-fit: cover; border-radius: 52px 52px 2px 2px; display: block">
+<div style="display: flex; flex-direction: column; gap: 6px; justify-content: center">
+<h3 class="serif" style="margin: 0; font-size: 28px; font-weight: 400">Skin</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.55; color: #6B5B4E">Facials, acne treatment, eyebrow shaping and threading.</p>
+<span style="font-size: 12px; letter-spacing: 0.08em; margin-top: 4px">Facials from ₹999</span>
+</div>
+</a>
+<a href="Services.dc.html#spa" style="display: flex; gap: 20px; padding: 20px 0; border-top: 1px solid rgba(42,33,28,0.14); text-decoration: none; color: #2A211C">
+<img src="/_blob/a12d1db780a758e1638e8ffd3620dbeb" alt="" style="width: 104px; height: 132px; flex-shrink: 0; object-fit: cover; border-radius: 52px 52px 2px 2px; display: block">
+<div style="display: flex; flex-direction: column; gap: 6px; justify-content: center">
+<h3 class="serif" style="margin: 0; font-size: 28px; font-weight: 400">Ladies Spa</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.55; color: #6B5B4E">Relaxing spa rituals and full-body waxing, just for women.</p>
+<span style="font-size: 12px; letter-spacing: 0.08em; margin-top: 4px">Massages from ₹1,799</span>
+</div>
+</a>
+<a href="Services.dc.html#hands" style="display: flex; gap: 20px; padding: 20px 0; border-top: 1px solid rgba(42,33,28,0.14); border-bottom: 1px solid rgba(42,33,28,0.14); text-decoration: none; color: #2A211C">
+<img src="/_blob/35ada588ceec977480e2ad14d09cba04" alt="" style="width: 104px; height: 132px; flex-shrink: 0; object-fit: cover; border-radius: 52px 52px 2px 2px; display: block">
+<div style="display: flex; flex-direction: column; gap: 6px; justify-content: center">
+<h3 class="serif" style="margin: 0; font-size: 28px; font-weight: 400">Hands &amp; Feet</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.55; color: #6B5B4E">Manicures, pedicures and acrylic nails, done slowly and properly.</p>
+<span style="font-size: 12px; letter-spacing: 0.08em; margin-top: 4px">Manicures from ₹300</span>
+</div>
+</a>
+</div>
+<a class="text-link" href="Services.dc.html" style="align-self: flex-start">Full menu &amp; prices</a>
+</section>
+
+<section style="height: 1240px; flex-shrink: 0; box-sizing: border-box; padding: 72px 24px; background: #231B17; color: #F6F1EA; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div class="eyebrow" style="color: #C4914D">The experience</div>
+<h2 class="serif" style="margin: 0; font-size: 38px; line-height: 1.1; font-weight: 300; color: #F6F1EA">From booking to bill, <em>looked after.</em></h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #BDAE9F">The details that usually get in the way are handled quietly in the background, so the time in the chair is all yours.</p>
+</div>
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid rgba(246,241,234,0.14)">
+<span class="serif" style="font-size: 20px; color: #C4914D; width: 26px; flex-shrink: 0">01</span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 class="serif" style="margin: 0; font-size: 24px; font-weight: 400; color: #F6F1EA">Book in a minute</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.6; color: #BDAE9F">Choose your service, stylist and time online — day or night.</p>
+</div>
+</div>
+<div style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid rgba(246,241,234,0.14)">
+<span class="serif" style="font-size: 20px; color: #C4914D; width: 26px; flex-shrink: 0">02</span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 class="serif" style="margin: 0; font-size: 24px; font-weight: 400; color: #F6F1EA">Updates on WhatsApp</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.6; color: #BDAE9F">Your confirmation, and the occasional note from the studio, arrive where you already are.</p>
+</div>
+</div>
+<div style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid rgba(246,241,234,0.14); border-bottom: 1px solid rgba(246,241,234,0.14)">
+<span class="serif" style="font-size: 20px; color: #C4914D; width: 26px; flex-shrink: 0">03</span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 class="serif" style="margin: 0; font-size: 24px; font-weight: 400; color: #F6F1EA">Receipts that arrive on their own</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.6; color: #BDAE9F">Your bill lands on WhatsApp the moment you check out. No paper, no waiting.</p>
+</div>
+</div>
+</div>
+<img src="/_blob/f04a2a9fae93bdd011b25d96454ec5a0" alt="A salon chair under warm pendant lights" style="width: 100%; height: 320px; flex-shrink: 0; object-fit: cover; border-radius: 171px 171px 2px 2px; display: block">
+</section>
+
+<section id="team" style="height: 980px; flex-shrink: 0; box-sizing: border-box; padding: 72px 24px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div class="eyebrow" style="color: {{accent}}">The team</div>
+<h2 class="serif" style="margin: 0; font-size: 40px; line-height: 1.08; font-weight: 300">The hands behind the chair.</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #6B5B4E">Meet the stylists and therapists who’ll look after you — and ask for anyone by name when you book.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div class="ph" style="height: 204px; border-radius: 2px"></div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 class="serif" style="margin: 0; font-size: 22px; font-weight: 400">Sajan</h3>
+<span style="font-size: 10px; line-height: 1.5; letter-spacing: 0.18em; text-transform: uppercase; color: #6B5B4E">Hair stylist</span>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div class="ph" style="height: 204px; border-radius: 2px; background-color: #DDD0C0"></div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 class="serif" style="margin: 0; font-size: 22px; font-weight: 400">Salman</h3>
+<span style="font-size: 10px; line-height: 1.5; letter-spacing: 0.18em; text-transform: uppercase; color: #6B5B4E">Hair &amp; beard</span>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div class="ph" style="height: 204px; border-radius: 2px; background-color: #DDD0C0"></div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 class="serif" style="margin: 0; font-size: 22px; font-weight: 400">Arjun</h3>
+<span style="font-size: 10px; line-height: 1.5; letter-spacing: 0.18em; text-transform: uppercase; color: #6B5B4E">Hair stylist</span>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div class="ph" style="height: 204px; border-radius: 2px"></div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 class="serif" style="margin: 0; font-size: 22px; font-weight: 400">[SPA THERAPIST]</h3>
+<span style="font-size: 10px; line-height: 1.5; letter-spacing: 0.18em; text-transform: uppercase; color: #6B5B4E">Ladies spa</span>
+</div>
+</div>
+</div>
+</section>
+
+<section style="height: 780px; flex-shrink: 0; box-sizing: border-box; padding: 72px 24px; background: #EDE4D8; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div class="eyebrow" style="color: {{accent}}">From the studio</div>
+<h2 class="serif" style="margin: 0; font-size: 40px; line-height: 1.08; font-weight: 300">Recent <em>work.</em></h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: 260px 200px; gap: 16px">
+<img src="/_blob/6d191d7fc3443f850c012dee72bf957e" alt="A bright salon interior with round mirrors" style="grid-column: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: 2px; display: block">
+<img src="/_blob/28920e392f9d66cd065347117cf59da0" alt="A client having her hair washed" style="width: 100%; height: 100%; object-fit: cover; border-radius: 82px 82px 2px 2px; display: block">
+<img src="/_blob/66c21aa5a1be61205d16e4c78c7b76fd" alt="A stylist blow-drying a man's hair" style="width: 100%; height: 100%; object-fit: cover; border-radius: 2px; display: block">
+</div>
+<a class="text-link" href="https://www.instagram.com/glozia_unisex_salon/" style="align-self: flex-start">@glozia_unisex_salon</a>
+</section>
+
+<section style="height: 680px; flex-shrink: 0; box-sizing: border-box; padding: 72px 24px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div class="eyebrow" style="color: {{accent}}">Kind words</div>
+<div style="display: flex; align-items: baseline; gap: 16px">
+<span class="serif" style="font-size: 72px; line-height: 0.9; font-weight: 300">4.8</span>
+<span style="font-size: 14px; line-height: 1.5; color: #6B5B4E">on Google,<br>from 106+ reviews</span>
+</div>
+</div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 14px; padding-top: 20px; border-top: 1px solid rgba(42,33,28,0.2)">
+<blockquote class="serif" style="margin: 0; font-size: 23px; line-height: 1.35; font-weight: 300; font-style: italic">“Had a great experience at the salon. Great ambience, warm service, and attention to detail”</blockquote>
+<figcaption style="font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #6B5B4E">Arpitha Bollalli · Google</figcaption>
+</figure>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 14px; padding-top: 20px; border-top: 1px solid rgba(42,33,28,0.2)">
+<blockquote class="serif" style="margin: 0; font-size: 23px; line-height: 1.35; font-weight: 300; font-style: italic">“Wonderful experience friendly team and beautiful results highly recommend”</blockquote>
+<figcaption style="font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #6B5B4E">Muraleedharan · Google</figcaption>
+</figure>
+<a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Glozia+Unisex+Salon+and+ladies+Spa+Nagarbhavi" style="align-self: flex-start">Read all reviews</a>
+</section>
+
+<section id="visit" style="height: 980px; flex-shrink: 0; box-sizing: border-box; padding: 72px 24px; border-top: 1px solid rgba(42,33,28,0.12); display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div class="eyebrow" style="color: {{accent}}">Visit</div>
+<h2 class="serif" style="margin: 0; font-size: 40px; line-height: 1.08; font-weight: 300">Come in, <em>slow down.</em></h2>
+</div>
+<div class="ph" style="height: 220px; flex-shrink: 0; border-radius: 2px; background-color: #E0D5C6"><span class="ph-cap">Map · Google Maps embed</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #6B5B4E">Address</span>
+<p style="margin: 0; font-size: 16px; line-height: 1.7">Mallathahalli Lake Road, Nagarbhavi<br>Bengaluru, Karnataka 560056</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #6B5B4E">Hours</span>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 4px; font-size: 16px; line-height: 1.6">
+<span>Sat – Thu</span><span>9:00 am – 8:30 pm</span>
+<span>Friday</span><span>10:00 am – 8:30 pm</span>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px; font-size: 16px; line-height: 1.6">
+<span>Call or WhatsApp · +91 73378 76023</span>
+<a href="https://www.instagram.com/glozia_unisex_salon/" style="color: #6B5B4E; text-decoration: none">@glozia_unisex_salon</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<a class="btn-dark" href="Booking.dc.html">Book an appointment</a>
+<a class="btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Glozia+Unisex+Salon+and+ladies+Spa+Nagarbhavi">Get directions</a>
+</div>
+</section>
+
+<footer style="height: 620px; flex-grow: 1; flex-shrink: 0; box-sizing: border-box; padding: 64px 24px 32px; background: #1B1512; color: #F6F1EA; display: flex; flex-direction: column; gap: 24px">
+<h2 class="serif" style="margin: 0; font-size: 44px; line-height: 1.02; font-weight: 300; color: #F6F1EA">Your chair is <em style="color: #C4914D">waiting.</em></h2>
+<a class="btn-light" href="Booking.dc.html">Book an appointment</a>
+<div style="display: flex; flex-direction: column; gap: 24px; margin-top: 16px; padding-top: 32px; border-top: 1px solid rgba(246,241,234,0.14)">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<img src="/_blob/2e4bc8b0c1a1c64cb51bd825878b1a83" alt="Glozia Unisex Salon" style="width: 140px; height: 89px; display: block">
+<span style="font-size: 9px; letter-spacing: 0.36em; text-transform: uppercase; color: #BDAE9F">&amp; Ladies Spa</span>
+</div>
+<span style="font-size: 14px; line-height: 1.7; color: #BDAE9F">Mallathahalli Lake Road, Nagarbhavi<br>Bengaluru 560056 · +91 73378 76023</span>
+<span style="font-size: 14px; line-height: 1.7; color: #BDAE9F">Sat – Thu · 9:00 am – 8:30 pm<br>Friday · 10:00 am – 8:30 pm</span>
+<div style="display: flex; gap: 24px; font-size: 14px">
+<a href="https://www.instagram.com/glozia_unisex_salon/" style="color: #F6F1EA; text-decoration: none">Instagram</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Glozia+Unisex+Salon+and+ladies+Spa+Nagarbhavi" style="color: #F6F1EA; text-decoration: none">Google reviews</a>
+</div>
+</div>
+<span style="margin-top: auto; font-size: 11px; letter-spacing: 0.08em; color: #968777">© 2026 {{brand}} · Privacy · Terms</span>
+</footer>
+
+<div style="position: absolute; left: 0; top: 760px; width: 390px; height: 84px; box-sizing: border-box; padding: 16px 24px; display: flex; align-items: center; gap: 12px; background: rgba(246,241,234,0.96); border-top: 1px solid rgba(42,33,28,0.14); box-shadow: 0 -12px 32px rgba(42,33,28,0.08)">
+<div style="display: flex; flex-direction: column; gap: 2px; flex: 1 1 0; min-width: 0">
+<span style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #6B5B4E">Open today</span>
+<span class="serif" style="font-size: 20px">Until 8:30 pm</span>
+</div>
+<a class="btn-dark" href="Booking.dc.html" style="height: 48px; padding: 0 20px">Book</a>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"brand":{"editor":"text","default":"Glozia","section":"Brand"},"accent":{"editor":"color","default":"#8A6128","options":["#8A6128","#7D5F38","#6E4B3A","#4E5A44","#2A211C"],"section":"Brand"},"$preview":{"width":390,"height":8080}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      brand: this.props.brand ?? 'Glozia',
+      accent: this.props.accent ?? '#8A6128'
+    };
+  }
+}
+</script>
+</body>
+</html>

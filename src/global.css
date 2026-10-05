@@ -1,0 +1,122 @@
+/* Web-only styles. Everything else is styled with React Native StyleSheets. */
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #e7d6bb;
+  color: #2a211c;
+}
+
+a:focus-visible,
+[role='link']:focus-visible,
+[role='button']:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #8a6128;
+  outline-offset: 3px;
+}
+
+/* "waiting." in the footer */
+.glz-shimmer {
+  background-image: linear-gradient(100deg, #c4914d 20%, #f6deaa 42%, #c4914d 64%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glz-shimmer 5.5s ease-in-out infinite;
+}
+
+@keyframes glz-shimmer {
+  0% {
+    background-position: 120% 50%;
+  }
+  100% {
+    background-position: -120% 50%;
+  }
+}
+
+/* Falling dot on the hero's hours line */
+.glz-drop {
+  position: absolute;
+  left: -2px;
+  top: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  animation: glz-drop 2.2s ease-in-out infinite;
+}
+
+@keyframes glz-drop {
+  0% {
+    transform: translateY(-6px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+}
+
+/* Recent work: photos on a turning cylinder (desktop) */
+.glz-cyl-stage {
+  position: relative;
+  height: 620px;
+  perspective: 1700px;
+  perspective-origin: 50% 46%;
+  overflow: hidden;
+}
+
+.glz-cyl {
+  position: absolute;
+  left: 50%;
+  top: 56px;
+  width: 300px;
+  height: 450px;
+  margin-left: -150px;
+  transform-style: preserve-3d;
+  transform: translateZ(-500px);
+  animation: glz-cyl 70s linear infinite;
+}
+
+.glz-cyl-stage:hover .glz-cyl {
+  animation-play-state: paused;
+}
+
+.glz-cyl-face {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300px;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 150px 150px 2px 2px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0 30px 50px -30px rgba(42, 33, 28, 0.5);
+}
+
+@keyframes glz-cyl {
+  from {
+    transform: translateZ(-500px) rotateY(0deg);
+  }
+  to {
+    transform: translateZ(-500px) rotateY(-360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .glz-shimmer,
+  .glz-drop,
+  .glz-cyl {
+    animation: none !important;
+  }
+}

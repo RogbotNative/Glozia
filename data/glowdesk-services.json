@@ -1,0 +1,2034 @@
+[
+ {
+  "gender": "Female",
+  "category": "Back Massage",
+  "name": "Coconut Oil Back Massage",
+  "price": 550,
+  "durationMin": 20,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Back Massage",
+  "name": "Aroma Relaxation Oil Back Massage",
+  "price": 700,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Back Massage",
+  "name": "Cream Back Massage",
+  "price": 750,
+  "durationMin": 25,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Back Massage",
+  "name": "Glozia Signature Relaxation Oil Back Massage",
+  "price": 800,
+  "durationMin": 20,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Clean-Up",
+  "name": "Face Massage",
+  "price": 350,
+  "durationMin": 25,
+  "gstRate": 0
+ },
+ {
+  "gender": "Female",
+  "category": "Clean-Up",
+  "name": "Oil Face Massage",
+  "price": 400,
+  "durationMin": 25,
+  "gstRate": 0
+ },
+ {
+  "gender": "Female",
+  "category": "Clean-Up",
+  "name": "Basic Clean-Up",
+  "price": 600,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Clean-Up",
+  "name": "Diamond Clean-Up",
+  "price": 700,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Clean-Up",
+  "name": "Peel-Off Facial Mask",
+  "price": 800,
+  "durationMin": 25,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Clean-Up",
+  "name": "Detan+Clean-Up",
+  "price": 900,
+  "durationMin": 40,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "De-Tan & Bleach",
+  "name": "Under Arms",
+  "price": 250,
+  "durationMin": 20,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "De-Tan & Bleach",
+  "name": "Back Blouse Length",
+  "price": 350,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "De-Tan & Bleach",
+  "name": "Foot",
+  "price": 350,
+  "durationMin": 20,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "De-Tan & Bleach",
+  "name": "Stomach",
+  "price": 500,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "De-Tan & Bleach",
+  "name": "Full Back",
+  "price": 500,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "De-Tan & Bleach",
+  "name": "Face Neck",
+  "price": 550,
+  "durationMin": 20,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "De-Tan & Bleach",
+  "name": "Full Arms",
+  "price": 600,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "De-Tan & Bleach",
+  "name": "Half Leg",
+  "price": 800,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "De-Tan & Bleach",
+  "name": "Full Leg",
+  "price": 1000,
+  "durationMin": 40,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "De-Tan & Bleach",
+  "name": "Full Body",
+  "price": 3499,
+  "durationMin": 60,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Face Wax",
+  "name": "Nose",
+  "price": 50,
+  "durationMin": 10,
+  "gstRate": 0
+ },
+ {
+  "gender": "Female",
+  "category": "Face Wax",
+  "name": "Upper Lip",
+  "price": 50,
+  "durationMin": 10,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Face Wax",
+  "name": "Lower Lip",
+  "price": 50,
+  "durationMin": 10,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Face Wax",
+  "name": "Forehead",
+  "price": 50,
+  "durationMin": 10,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Face Wax",
+  "name": "Chin",
+  "price": 60,
+  "durationMin": 15,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Face Wax",
+  "name": "Side Lock",
+  "price": 80,
+  "durationMin": 15,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Face Wax",
+  "name": "Full Face",
+  "price": 500,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Facials",
+  "name": "Basic Facial",
+  "price": 999,
+  "durationMin": 45,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Facials",
+  "name": "Detan+Facial",
+  "price": 1499,
+  "durationMin": 60,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Facials",
+  "name": "Natures Essence Pro Lacto-Protein Facial",
+  "price": 1599,
+  "durationMin": 50,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Facials",
+  "name": "Diamond Facial",
+  "price": 1599,
+  "durationMin": 50,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Facials",
+  "name": "Herbal Facial",
+  "price": 1999,
+  "durationMin": 60,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Facials",
+  "name": "Lotus Papaya/Kiwi/ Bearberry Facial",
+  "price": 2200,
+  "durationMin": 60,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Facials",
+  "name": "O3 Whitening Facial",
+  "price": 2499,
+  "durationMin": 65,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Facials",
+  "name": "Hydra Facial",
+  "price": 2500,
+  "durationMin": 120,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Facials",
+  "name": "O3 Shine/Glow Facial",
+  "price": 2899,
+  "durationMin": 65,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Facials",
+  "name": "Lotus Acne Control Treatment",
+  "price": 2999,
+  "durationMin": 65,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Facials",
+  "name": "Korean Glass",
+  "price": 2999,
+  "durationMin": 65,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Facials",
+  "name": "Lotus Depigmentation Treatment",
+  "price": 2999,
+  "durationMin": 65,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Facials",
+  "name": "Korean Glass Skin Rice Water Facial",
+  "price": 3500,
+  "durationMin": 65,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Facials",
+  "name": "FYC Hydra Boost Facial",
+  "price": 3999,
+  "durationMin": 120,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Facials",
+  "name": "O3 Bridal Facial",
+  "price": 3999,
+  "durationMin": 70,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Foot Massage",
+  "name": "Coconut Oil Foot Massage",
+  "price": 550,
+  "durationMin": 20,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Foot Massage",
+  "name": "Cream Foot Massage",
+  "price": 700,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Foot Massage",
+  "name": "Aroma Relaxation Oil Foot Massage",
+  "price": 700,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Foot Massage",
+  "name": "Glozia Signature Relaxation Oil Foot Massage",
+  "price": 800,
+  "durationMin": 20,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Hair Colour",
+  "name": "Streaks For One",
+  "price": 349,
+  "durationMin": 40,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Hair Colour",
+  "name": "Root Touch-Up",
+  "price": 1199,
+  "durationMin": 60,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Hair Colour",
+  "name": "Global Color",
+  "price": 2500,
+  "durationMin": 180,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Hair Colour",
+  "name": "Global Highlight",
+  "price": 3999,
+  "durationMin": 240,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Hair Colour",
+  "name": "Global Fashion",
+  "price": 5500,
+  "durationMin": 240,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Hair Spa",
+  "name": "Hydrating Hair Spa",
+  "price": 1200,
+  "durationMin": 45,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Hair Spa",
+  "name": "Frizzy Control Spa",
+  "price": 1800,
+  "durationMin": 45,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Hair Spa",
+  "name": "Moroccan Oil Hair And Scalp Therapy",
+  "price": 2000,
+  "durationMin": 45,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Hair Spa",
+  "name": "Hair Loss/Hair Fall Control Treatment",
+  "price": 2500,
+  "durationMin": 45,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Hair Spa",
+  "name": "Dandruff Detox Spa",
+  "price": 3000,
+  "durationMin": 45,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Haircuts & Styling",
+  "name": "Normal Hair Wash+Blow-Dry",
+  "price": 350,
+  "durationMin": 25,
+  "gstRate": 0
+ },
+ {
+  "gender": "Female",
+  "category": "Haircuts & Styling",
+  "name": "Kids Hair Cut",
+  "price": 400,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Haircuts & Styling",
+  "name": "Hair Wash+Setting",
+  "price": 500,
+  "durationMin": 30,
+  "gstRate": 0
+ },
+ {
+  "gender": "Female",
+  "category": "Haircuts & Styling",
+  "name": "Loreal Hair Wash +Blow-Dry",
+  "price": 500,
+  "durationMin": 30,
+  "gstRate": 0
+ },
+ {
+  "gender": "Female",
+  "category": "Haircuts & Styling",
+  "name": "U/V Cut",
+  "price": 500,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Haircuts & Styling",
+  "name": "Advance Setting",
+  "price": 550,
+  "durationMin": 40,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Haircuts & Styling",
+  "name": "Graduation Cut",
+  "price": 600,
+  "durationMin": 60,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Haircuts & Styling",
+  "name": "Ironing",
+  "price": 700,
+  "durationMin": 40,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Haircuts & Styling",
+  "name": "Advance Hair Wash+Setting",
+  "price": 700,
+  "durationMin": 40,
+  "gstRate": 0
+ },
+ {
+  "gender": "Female",
+  "category": "Haircuts & Styling",
+  "name": "Tongs",
+  "price": 800,
+  "durationMin": 40,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Haircuts & Styling",
+  "name": "Advance Hair Cut",
+  "price": 999,
+  "durationMin": 45,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Head Massage",
+  "name": "Coconut Oil Head Massage",
+  "price": 550,
+  "durationMin": 20,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Head Massage",
+  "name": "Almond Oil Head Massage",
+  "price": 650,
+  "durationMin": 25,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Head Massage",
+  "name": "Bhringraj/Rosemary/Navratna Oil Head Massage",
+  "price": 700,
+  "durationMin": 25,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Head Massage",
+  "name": "Aroma Relaxation Oil Head Massage",
+  "price": 750,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Head Massage",
+  "name": "Moroccan Argan Oil Head Massage",
+  "price": 850,
+  "durationMin": 35,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Head Massage",
+  "name": "Glozia Signature Relaxation Oil Head Massage",
+  "price": 1000,
+  "durationMin": 40,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Make-Up",
+  "name": "Saree Draping",
+  "price": 500,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Make-Up",
+  "name": "Hairstyle",
+  "price": 800,
+  "durationMin": 40,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Make-Up",
+  "name": "Basic Make-Up",
+  "price": 3000,
+  "durationMin": 90,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Make-Up",
+  "name": "Bridal Hair Brush Make-Up",
+  "price": 10000,
+  "durationMin": 180,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Manicure",
+  "name": "Dry Manicure",
+  "price": 300,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Manicure",
+  "name": "Regular Manicure",
+  "price": 500,
+  "durationMin": 25,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Manicure",
+  "name": "Aroma Manicure",
+  "price": 750,
+  "durationMin": 30,
+  "gstRate": 0
+ },
+ {
+  "gender": "Female",
+  "category": "Manicure",
+  "name": "Raaga Manicure",
+  "price": 800,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Manicure",
+  "name": "O3 Manicure",
+  "price": 1000,
+  "durationMin": 35,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Manicure",
+  "name": "FYC-Jelly Manicure",
+  "price": 1000,
+  "durationMin": 40,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Nails",
+  "name": "Gel Polish Removal",
+  "price": 199,
+  "durationMin": 20,
+  "gstRate": 0
+ },
+ {
+  "gender": "Female",
+  "category": "Nails",
+  "name": "Extension Removal",
+  "price": 399,
+  "durationMin": 20,
+  "gstRate": 0
+ },
+ {
+  "gender": "Female",
+  "category": "Nails",
+  "name": "Gel Polishing Foot",
+  "price": 499,
+  "durationMin": 30,
+  "gstRate": 0
+ },
+ {
+  "gender": "Female",
+  "category": "Nails",
+  "name": "Gel Polishing",
+  "price": 599,
+  "durationMin": 30,
+  "gstRate": 0
+ },
+ {
+  "gender": "Female",
+  "category": "Nails",
+  "name": "Foot Extension",
+  "price": 1399,
+  "durationMin": 90,
+  "gstRate": 0
+ },
+ {
+  "gender": "Female",
+  "category": "Nails",
+  "name": "Soft Gel Extension",
+  "price": 1599,
+  "durationMin": 120,
+  "gstRate": 0
+ },
+ {
+  "gender": "Female",
+  "category": "Nails",
+  "name": "Polygel Extension",
+  "price": 1999,
+  "durationMin": 120,
+  "gstRate": 0
+ },
+ {
+  "gender": "Female",
+  "category": "Nails",
+  "name": "Acrylic Extension",
+  "price": 2199,
+  "durationMin": 150,
+  "gstRate": 0
+ },
+ {
+  "gender": "Female",
+  "category": "Pedicure",
+  "name": "Dry Pedicure",
+  "price": 400,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Pedicure",
+  "name": "Regular Pedicure",
+  "price": 800,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Pedicure",
+  "name": "Aroma Pedicure",
+  "price": 1000,
+  "durationMin": 45,
+  "gstRate": 0
+ },
+ {
+  "gender": "Female",
+  "category": "Pedicure",
+  "name": "Raaga Pedicure",
+  "price": 1300,
+  "durationMin": 45,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Pedicure",
+  "name": "O3 Pedicure",
+  "price": 1400,
+  "durationMin": 50,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Pedicure",
+  "name": "FYC -Jelly Pedicure",
+  "price": 1650,
+  "durationMin": 50,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Pedicure",
+  "name": "Luxury Chocolate Pedicure",
+  "price": 2500,
+  "durationMin": 60,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Pedicure",
+  "name": "Heel Peel Treatment",
+  "price": 3000,
+  "durationMin": 55,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Spa",
+  "name": "Under Arms Polishing",
+  "price": 400,
+  "durationMin": 30,
+  "gstRate": 0
+ },
+ {
+  "gender": "Female",
+  "category": "Spa",
+  "name": "Hand And Shoulder Massage 20mins",
+  "price": 600,
+  "durationMin": 20,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Spa",
+  "name": "Leg Massage 30Mins",
+  "price": 750,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Spa",
+  "name": "Hand Polishing 45mins",
+  "price": 750,
+  "durationMin": 45,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Spa",
+  "name": "Back Polishing 40mins",
+  "price": 850,
+  "durationMin": 40,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Spa",
+  "name": "Glow Relax Therapy",
+  "price": 1499,
+  "durationMin": 45,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Spa",
+  "name": "Leg Polishing 45Mins",
+  "price": 1500,
+  "durationMin": 45,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Spa",
+  "name": "Aroma Bliss Massage 65mins",
+  "price": 1799,
+  "durationMin": 65,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Spa",
+  "name": "Bikini Wax",
+  "price": 1999,
+  "durationMin": 20,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Spa",
+  "name": "Deep Tissue Full Body Massage 65mins",
+  "price": 1999,
+  "durationMin": 65,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Spa",
+  "name": "Aroma Bliss Massage 100mins",
+  "price": 2199,
+  "durationMin": 100,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Spa",
+  "name": "Deep Tissue Full Body Massage 100mins",
+  "price": 2699,
+  "durationMin": 65,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Spa",
+  "name": "Aroma Bliss Massage 135mins(Head To Toe)",
+  "price": 2999,
+  "durationMin": 135,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Spa",
+  "name": "Deep Tissue Full Body Massage 135mins(Head To Toe)",
+  "price": 3499,
+  "durationMin": 100,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Spa",
+  "name": "Body Polishing 120mins",
+  "price": 3999,
+  "durationMin": 120,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Spa",
+  "name": "Glozia Signature Wellness 195mins",
+  "price": 4999,
+  "durationMin": 140,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Spa",
+  "name": "Ultimate Luxury Retreat 200mins",
+  "price": 6999,
+  "durationMin": 200,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Threading",
+  "name": "Lower Lip",
+  "price": 30,
+  "durationMin": 5,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Threading",
+  "name": "Upper Lip",
+  "price": 30,
+  "durationMin": 5,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Threading",
+  "name": "Forehead",
+  "price": 30,
+  "durationMin": 5,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Threading",
+  "name": "Chin",
+  "price": 40,
+  "durationMin": 10,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Threading",
+  "name": "Eyebrow",
+  "price": 50,
+  "durationMin": 10,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Threading",
+  "name": "Side Lock",
+  "price": 60,
+  "durationMin": 10,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Threading",
+  "name": "Full Face",
+  "price": 300,
+  "durationMin": 20,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Hair Treatments",
+  "name": "Botox",
+  "price": 4000,
+  "durationMin": 300,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Hair Treatments",
+  "name": "Pro-Keratin Treatment",
+  "price": 4500,
+  "durationMin": 300,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Hair Treatments",
+  "name": "Nanoplastia",
+  "price": 4500,
+  "durationMin": 300,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Hair Treatments",
+  "name": "Re-Bonding And Smoothing",
+  "price": 5000,
+  "durationMin": 240,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Chocolate Under Arms",
+  "price": 180,
+  "durationMin": 10,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Rica Under Arms",
+  "price": 200,
+  "durationMin": 10,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Roll On Under Arms",
+  "price": 220,
+  "durationMin": 10,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Brazilian Wax Under Arms",
+  "price": 250,
+  "durationMin": 10,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Chocolate Back Blouse Length",
+  "price": 350,
+  "durationMin": 25,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Rica Back Blouse Length",
+  "price": 450,
+  "durationMin": 25,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Chocolate Full Arms",
+  "price": 450,
+  "durationMin": 20,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Chocolate Stomach",
+  "price": 450,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Rica Full Arms",
+  "price": 500,
+  "durationMin": 20,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Chocolate Half Leg",
+  "price": 500,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Chocolate Full Back",
+  "price": 500,
+  "durationMin": 35,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Rica Half Leg",
+  "price": 550,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Roll On Back Blouse Length",
+  "price": 550,
+  "durationMin": 25,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Roll On Full Arms",
+  "price": 600,
+  "durationMin": 20,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Rica Stomach",
+  "price": 600,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Roll On Half Leg",
+  "price": 650,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Roll On Stomach",
+  "price": 700,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Rica Full Back",
+  "price": 700,
+  "durationMin": 35,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Chocolate Full Leg",
+  "price": 800,
+  "durationMin": 40,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Roll On Full Back",
+  "price": 800,
+  "durationMin": 35,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Rica Full Leg",
+  "price": 999,
+  "durationMin": 40,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Roll On Full Leg",
+  "price": 1099,
+  "durationMin": 40,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Brazilian Wax V",
+  "price": 1999,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Chocolate Full Body Wax",
+  "price": 2999,
+  "durationMin": 60,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Rica Full Body Wax",
+  "price": 3999,
+  "durationMin": 60,
+  "gstRate": 10
+ },
+ {
+  "gender": "Female",
+  "category": "Waxing",
+  "name": "Roll On Full Body Wax",
+  "price": 4999,
+  "durationMin": 60,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Clean-Up",
+  "name": "Face Massage",
+  "price": 350,
+  "durationMin": 25,
+  "gstRate": 18
+ },
+ {
+  "gender": "Male",
+  "category": "Clean-Up",
+  "name": "Oil Face Massage",
+  "price": 400,
+  "durationMin": 25,
+  "gstRate": 0
+ },
+ {
+  "gender": "Male",
+  "category": "Clean-Up",
+  "name": "Basic Clean Up",
+  "price": 600,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Clean-Up",
+  "name": "Diamond Clean Up",
+  "price": 700,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Clean-Up",
+  "name": "Peel Off Facial Mask",
+  "price": 800,
+  "durationMin": 20,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Clean-Up",
+  "name": "De Tan + Clean Up",
+  "price": 900,
+  "durationMin": 40,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "De-Tan & Bleach",
+  "name": "Under Arms",
+  "price": 250,
+  "durationMin": 15,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "De-Tan & Bleach",
+  "name": "Foot",
+  "price": 350,
+  "durationMin": 15,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "De-Tan & Bleach",
+  "name": "Full Back",
+  "price": 500,
+  "durationMin": 15,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "De-Tan & Bleach",
+  "name": "Face Neck",
+  "price": 550,
+  "durationMin": 15,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "De-Tan & Bleach",
+  "name": "Full Arms",
+  "price": 600,
+  "durationMin": 15,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "De-Tan & Bleach",
+  "name": "Half Leg",
+  "price": 800,
+  "durationMin": 15,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "De-Tan & Bleach",
+  "name": "Full Leg",
+  "price": 1000,
+  "durationMin": 15,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "De-Tan & Bleach",
+  "name": "Full Body",
+  "price": 3499,
+  "durationMin": 15,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Facials",
+  "name": "Basic Facial",
+  "price": 999,
+  "durationMin": 45,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Facials",
+  "name": "Detan + Facial",
+  "price": 1499,
+  "durationMin": 50,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Facials",
+  "name": "Natures Essence Pro Lacto-Protein",
+  "price": 1599,
+  "durationMin": 45,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Facials",
+  "name": "Diamond Facial",
+  "price": 1599,
+  "durationMin": 50,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Facials",
+  "name": "Herbal Facial",
+  "price": 1999,
+  "durationMin": 50,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Facials",
+  "name": "Beardo Facial",
+  "price": 1999,
+  "durationMin": 65,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Facials",
+  "name": "Lotus Papaya/Kiwi/Bearberry Facial",
+  "price": 2200,
+  "durationMin": 50,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Facials",
+  "name": "O3 Whitening Facial",
+  "price": 2499,
+  "durationMin": 65,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Facials",
+  "name": "Hydra Facial",
+  "price": 2500,
+  "durationMin": 120,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Facials",
+  "name": "O3 Shine And Glow Facial",
+  "price": 2899,
+  "durationMin": 65,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Facials",
+  "name": "Lotus Depigmentation Treatment",
+  "price": 2999,
+  "durationMin": 50,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Facials",
+  "name": "Lotus Acne Control Treatment",
+  "price": 2999,
+  "durationMin": 50,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Facials",
+  "name": "Korean Glass",
+  "price": 2999,
+  "durationMin": 50,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Facials",
+  "name": "Korean Glass Skin Rice Water Facial",
+  "price": 3499,
+  "durationMin": 65,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Facials",
+  "name": "FYC Hydra Boost Facial [Hydra Facial]",
+  "price": 3999,
+  "durationMin": 120,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Foot Massage",
+  "name": "Olive Oil Foot Massage",
+  "price": 600,
+  "durationMin": 20,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Foot Massage",
+  "name": "Coconut Oil Foot Massage",
+  "price": 600,
+  "durationMin": 30,
+  "gstRate": 18
+ },
+ {
+  "gender": "Male",
+  "category": "Foot Massage",
+  "name": "Almond Oil Foot Massage",
+  "price": 700,
+  "durationMin": 20,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Foot Massage",
+  "name": "Cream Foot Massage",
+  "price": 700,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Foot Massage",
+  "name": "Aroma Relaxation Foot Massage",
+  "price": 700,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Foot Massage",
+  "name": "Glozia Signature Relaxation Oil Foot Massage",
+  "price": 800,
+  "durationMin": 30,
+  "gstRate": 18
+ },
+ {
+  "gender": "Male",
+  "category": "Hair & Beard",
+  "name": "Beard Trim/Shaving",
+  "price": 150,
+  "durationMin": 25,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Hair & Beard",
+  "name": "Kids Hair Wash",
+  "price": 150,
+  "durationMin": 10,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Hair & Beard",
+  "name": "Kids Hair Cut",
+  "price": 170,
+  "durationMin": 25,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Hair & Beard",
+  "name": "Ironing",
+  "price": 200,
+  "durationMin": 30,
+  "gstRate": 18
+ },
+ {
+  "gender": "Male",
+  "category": "Hair & Beard",
+  "name": "Beard Styling",
+  "price": 200,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Hair & Beard",
+  "name": "Hair Cut",
+  "price": 220,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Hair & Beard",
+  "name": "Shampoo Conditioner",
+  "price": 250,
+  "durationMin": 15,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Hair & Beard",
+  "name": "Beard + Haircut",
+  "price": 300,
+  "durationMin": 105,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Hair & Beard",
+  "name": "Loreal Hair Wash+ Setting",
+  "price": 350,
+  "durationMin": 20,
+  "gstRate": 0
+ },
+ {
+  "gender": "Male",
+  "category": "Hair & Beard",
+  "name": "Head Shave",
+  "price": 350,
+  "durationMin": 20,
+  "gstRate": 18
+ },
+ {
+  "gender": "Male",
+  "category": "Hair & Beard",
+  "name": "Beard Styling + Advance Haircut",
+  "price": 400,
+  "durationMin": 60,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Hair Colour",
+  "name": "Streaks For One",
+  "price": 100,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Hair Colour",
+  "name": "Beard Color",
+  "price": 350,
+  "durationMin": 35,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Hair Colour",
+  "name": "Root Touch Up",
+  "price": 700,
+  "durationMin": 45,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Hair Colour",
+  "name": "Global Color",
+  "price": 1500,
+  "durationMin": 55,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Hair Colour",
+  "name": "Global Highlights",
+  "price": 2000,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Hair Spa",
+  "name": "Hydrating Hair Spa",
+  "price": 750,
+  "durationMin": 35,
+  "gstRate": 5
+ },
+ {
+  "gender": "Male",
+  "category": "Hair Spa",
+  "name": "Frizzy Control Spa",
+  "price": 1200,
+  "durationMin": 45,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Hair Spa",
+  "name": "Hair Loss /Hair Fall Control Treatment",
+  "price": 1499,
+  "durationMin": 45,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Hair Spa",
+  "name": "Dandruff Detox Spa",
+  "price": 1799,
+  "durationMin": 45,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Hair Spa",
+  "name": "Moroccan Oil Hair Scalp Therapy",
+  "price": 2500,
+  "durationMin": 45,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Head Massage",
+  "name": "Coconut Oil Head Massage",
+  "price": 300,
+  "durationMin": 20,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Head Massage",
+  "name": "Almond Oil Head Massage",
+  "price": 350,
+  "durationMin": 25,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Head Massage",
+  "name": "Bhringraj / Rosemary / Navratna Oil Head Massage",
+  "price": 370,
+  "durationMin": 25,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Head Massage",
+  "name": "Moroccan Argan Oil Head Massage",
+  "price": 430,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Head Massage",
+  "name": "Aroma Relaxation Head Massage",
+  "price": 430,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Head Massage",
+  "name": "Glozia Signature Relaxation Oil",
+  "price": 550,
+  "durationMin": 30,
+  "gstRate": 18
+ },
+ {
+  "gender": "Male",
+  "category": "Manicure",
+  "name": "Dry Manicure",
+  "price": 300,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Manicure",
+  "name": "Regular Manicure",
+  "price": 500,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Manicure",
+  "name": "Aroma Manicure",
+  "price": 750,
+  "durationMin": 40,
+  "gstRate": 18
+ },
+ {
+  "gender": "Male",
+  "category": "Manicure",
+  "name": "Raaga Manicure",
+  "price": 800,
+  "durationMin": 35,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Manicure",
+  "name": "FYC-Jelly Manicure",
+  "price": 1000,
+  "durationMin": 35,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Manicure",
+  "name": "O3 Manicure",
+  "price": 1000,
+  "durationMin": 35,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Pedicure",
+  "name": "Dry Pedicure",
+  "price": 300,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Pedicure",
+  "name": "Fruit Pedicure",
+  "price": 800,
+  "durationMin": 45,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Pedicure",
+  "name": "Aroma Pedicure",
+  "price": 1000,
+  "durationMin": 60,
+  "gstRate": 18
+ },
+ {
+  "gender": "Male",
+  "category": "Pedicure",
+  "name": "Raaga Pedicure",
+  "price": 1300,
+  "durationMin": 60,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Pedicure",
+  "name": "O3 Pedicure",
+  "price": 1400,
+  "durationMin": 60,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Pedicure",
+  "name": "FYC-Jelly Pedicure",
+  "price": 1650,
+  "durationMin": 60,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Pedicure",
+  "name": "Luxury Chocolate Pedicure",
+  "price": 2500,
+  "durationMin": 65,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Pedicure",
+  "name": "Heel Peel Treatment Pedicure",
+  "price": 3000,
+  "durationMin": 45,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Hair Treatments",
+  "name": "Re Bonding And Smoothing",
+  "price": 3000,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Hair Treatments",
+  "name": "Nanoplastia",
+  "price": 3500,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Hair Treatments",
+  "name": "Botox",
+  "price": 3500,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Hair Treatments",
+  "name": "Pro Keratin Treatment",
+  "price": 4000,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Chocolate Under Arms",
+  "price": 180,
+  "durationMin": 10,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Rica Under Arms",
+  "price": 200,
+  "durationMin": 10,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Roll On Under Arms",
+  "price": 220,
+  "durationMin": 10,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Chocolate Stomach",
+  "price": 450,
+  "durationMin": 25,
+  "gstRate": 18
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Chocolate Full Arms",
+  "price": 450,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Chocolate Full Back",
+  "price": 500,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Chocolate Half Leg",
+  "price": 500,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Rica Full Arms",
+  "price": 500,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Rica Half Leg",
+  "price": 550,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Chocolate Chest",
+  "price": 600,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Roll On Full Arms",
+  "price": 600,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Rica Stomach",
+  "price": 600,
+  "durationMin": 25,
+  "gstRate": 18
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Roll On Half Leg",
+  "price": 650,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Roll On Stomach",
+  "price": 700,
+  "durationMin": 25,
+  "gstRate": 18
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Rica Chest",
+  "price": 700,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Rica Full Back",
+  "price": 700,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Roll On Chest",
+  "price": 750,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Chocolate Full Leg",
+  "price": 800,
+  "durationMin": 40,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Roll On Full Back",
+  "price": 800,
+  "durationMin": 30,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Rica Full Leg",
+  "price": 999,
+  "durationMin": 40,
+  "gstRate": 10
+ },
+ {
+  "gender": "Male",
+  "category": "Waxing",
+  "name": "Roll On Full Leg",
+  "price": 1099,
+  "durationMin": 40,
+  "gstRate": 10
+ }
+]
