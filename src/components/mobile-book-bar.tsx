@@ -18,6 +18,7 @@ export function MobileBookBar() {
 
   return (
     <View
+      {...({ dataSet: { enter: 'up' } } as object)}
       style={[
         styles.bar,
         Platform.OS === 'web' ? ({ position: 'fixed' } as object) : null,

@@ -15,6 +15,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import { Platform } from 'react-native';
 
+import { RevealObserver } from '@/components/motion';
 import { LayoutProvider } from '@/hooks/use-layout';
 
 if (Platform.OS !== 'web') SplashScreen.preventAutoHideAsync();
@@ -42,6 +43,7 @@ export default function RootLayout() {
   return (
     <LayoutProvider>
       <StatusBar style="dark" />
+      <RevealObserver />
       <Slot />
     </LayoutProvider>
   );

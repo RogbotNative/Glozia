@@ -6,6 +6,7 @@ import { Button } from '@/components/buttons';
 import { Gradient } from '@/components/gradient';
 import { Bottle } from '@/components/home/bottles';
 import { Container, Section } from '@/components/layout';
+import { Enter, Reveal } from '@/components/motion';
 import { Tilt } from '@/components/tilt';
 import { Em, Eyebrow, Label, Sans, Serif } from '@/components/typography';
 import { whatsappUrl } from '@/constants/site';
@@ -63,7 +64,7 @@ function RoutineTabs({ active, onChange, narrow }: { active: number; onChange: (
 function RoutinePanel({ routine, wide }: { routine: Routine; wide: boolean }) {
   const { isMobile } = useLayout();
   return (
-    <View aria-live="polite" style={[styles.panel, wide ? { width: 340 } : { maxWidth: 560 }]}>
+    <View aria-live="polite" style={[styles.panel, wide ? { flex: 1 } : { maxWidth: 560 }]}>
       <Serif size={34} lh={1.15} color={colors.cream} heading={3}>
         {routine.title}
       </Serif>
@@ -157,7 +158,9 @@ function ShelfItem({ product, tint, index, compact }: { product: Product; tint: 
 function Shelf({ routine, narrow, routineIndex }: { routine: Routine; narrow: boolean; routineIndex: number }) {
   const { gutter } = useLayout();
   const items = routine.products.map((p, i) => (
-    <ShelfItem key={`${routineIndex}-${i}`} product={p} tint={routine.tint} index={i} compact={narrow} />
+    <Enter key={`${routineIndex}-${i}`} delay={120 + i * 140}>
+      <ShelfItem product={p} tint={routine.tint} index={i} compact={narrow} />
+    </Enter>
   ));
   if (narrow) {
     return (
@@ -185,7 +188,7 @@ export function Shop() {
   return (
     <Section id="shop" bg={colors.espresso}>
       <Container style={{ paddingVertical: isMobile ? 72 : 104, gap: 40 }}>
-        <View style={{ maxWidth: 660, gap: 18 }}>
+        <Reveal style={{ maxWidth: 660, gap: 18 }}>
           <Eyebrow color={colors.gold} size={isMobile ? 11 : 12}>
             Shop
           </Eyebrow>
@@ -196,18 +199,25 @@ export function Shop() {
             The professional ranges on our shelf, matched to the service you came in for — so your colour,
             smoothness and shine keep going between visits.
           </Sans>
-        </View>
+        </Reveal>
 
-        <RoutineTabs active={active} onChange={setActive} narrow={narrow} />
+        <Reveal delay={100}>
+          <RoutineTabs active={active} onChange={setActive} narrow={narrow} />
+        </Reveal>
 
-        <View style={wide ? styles.bodyWide : styles.bodyStacked}>
-          <RoutinePanel routine={routine} wide={wide} />
+        <Reveal delay={150} style={wide ? styles.bodyWide : styles.bodyStacked}>
+          {/* Keyed by routine so the details slide in afresh with each choice. */}
+          <Enter key={active} variant="left" style={wide ? { width: 340 } : null}>
+            <RoutinePanel routine={routine} wide={wide} />
+          </Enter>
           <Shelf routine={routine} narrow={narrow} routineIndex={active} />
-        </View>
+        </Reveal>
 
-        <Sans size={13} lh={1.6} color={colors.faint}>
-          {shop.alsoOnShelf}
-        </Sans>
+        <Reveal variant="fade">
+          <Sans size={13} lh={1.6} color={colors.faint}>
+            {shop.alsoOnShelf}
+          </Sans>
+        </Reveal>
       </Container>
     </Section>
   );

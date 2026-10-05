@@ -3,6 +3,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { Button, MaybeLink, type PressState } from '@/components/buttons';
 import { Container, Section } from '@/components/layout';
 import { MapEmbed } from '@/components/map-embed';
+import { Reveal } from '@/components/motion';
 import { Em, Eyebrow, Label, Sans, Serif } from '@/components/typography';
 import { hours, site } from '@/constants/site';
 import { colors } from '@/constants/theme';
@@ -32,11 +33,11 @@ export function Visit() {
           isDesktop && { flexDirection: 'row', gap: 96, minHeight: 816 },
         ]}>
         {isDesktop ? (
-          <View style={{ width: 600 }}>
+          <Reveal style={{ width: 600 }}>
             <MapEmbed height="100%" />
-          </View>
+          </Reveal>
         ) : null}
-        <View style={{ flex: isDesktop ? 1 : undefined, minWidth: 0, justifyContent: 'center', gap: isMobile ? 24 : 36 }}>
+        <Reveal delay={150} style={{ flex: isDesktop ? 1 : undefined, minWidth: 0, justifyContent: 'center', gap: isMobile ? 24 : 36 }}>
           <View style={{ gap: isMobile ? 16 : 20 }}>
             <Eyebrow size={isMobile ? 11 : 12}>Visit</Eyebrow>
             <Serif size={isMobile ? 40 : 60} lh={1.05} heading={2}>
@@ -84,7 +85,7 @@ export function Visit() {
             <Button label="Book an appointment" href="/book" full={isMobile} />
             <Button label="Get directions" href={site.directionsUrl} variant="line" full={isMobile} />
           </View>
-        </View>
+        </Reveal>
       </Container>
     </Section>
   );

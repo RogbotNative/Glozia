@@ -2,6 +2,7 @@ import { GalleryHeader } from '@/components/home/gallery-header';
 import { GalleryStrip } from '@/components/home/gallery-strip';
 import { Image } from '@/components/image';
 import { Section } from '@/components/layout';
+import { Reveal } from '@/components/motion';
 import { gallery } from '@/constants/content';
 import { colors } from '@/constants/theme';
 import { useLayout } from '@/hooks/use-layout';
@@ -33,8 +34,12 @@ export function Gallery() {
         gap: isMobile ? 28 : 32,
         minHeight: isDesktop ? 990 : undefined,
       }}>
-      <GalleryHeader />
-      {isDesktop ? <Cylinder /> : <GalleryStrip />}
+      <Reveal>
+        <GalleryHeader />
+      </Reveal>
+      <Reveal variant="fade" delay={150}>
+        {isDesktop ? <Cylinder /> : <GalleryStrip />}
+      </Reveal>
     </Section>
   );
 }

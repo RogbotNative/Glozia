@@ -4,6 +4,7 @@ import Animated, { cubicBezier, useReducedMotion } from 'react-native-reanimated
 
 import { RoundButton, TextLink } from '@/components/buttons';
 import { Container, Section } from '@/components/layout';
+import { Reveal } from '@/components/motion';
 import { Eyebrow, Label, Sans, Serif } from '@/components/typography';
 import { reviews } from '@/constants/content';
 import { site } from '@/constants/site';
@@ -35,7 +36,7 @@ export function Reviews() {
           { paddingVertical: isMobile ? 72 : 120, gap: isMobile ? 36 : 64, minHeight: isDesktop ? 800 : undefined },
           isDesktop && { flexDirection: 'row', alignItems: 'center', gap: 96 },
         ]}>
-        <View style={{ width: isDesktop ? 440 : undefined, gap: isMobile ? 20 : 28 }}>
+        <Reveal style={{ width: isDesktop ? 440 : undefined, gap: isMobile ? 20 : 28 }}>
           <Eyebrow size={isMobile ? 11 : 12}>Kind words</Eyebrow>
           <View style={styles.score}>
             <Serif size={isMobile ? 72 : 132} lh={0.9} heading={2} accessibilityLabel={`Rated ${site.rating} on Google`}>
@@ -53,9 +54,9 @@ export function Reviews() {
             <RoundButton direction="right" label="Next review" onPress={() => setIndex((i) => i + 1)} />
           </View>
           {isDesktop ? <TextLink label="Read all reviews" href={site.mapsUrl} /> : null}
-        </View>
+        </Reveal>
 
-        <View style={{ flex: isDesktop ? 1 : undefined, minWidth: 0, height: cardHeight + 80 }}>
+        <Reveal variant={isDesktop ? 'right' : 'up'} delay={150} style={{ flex: isDesktop ? 1 : undefined, minWidth: 0, height: cardHeight + 80 }}>
           {reviews.map((r, i) => {
             const slot = (i - front + count) % count;
             const p = STACK[slot];
@@ -95,7 +96,7 @@ export function Reviews() {
               </Animated.View>
             );
           })}
-        </View>
+        </Reveal>
         {!isDesktop ? <TextLink label="Read all reviews" href={site.mapsUrl} /> : null}
       </Container>
     </Section>

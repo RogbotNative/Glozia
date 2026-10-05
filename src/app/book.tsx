@@ -3,17 +3,21 @@ import Head from 'expo-router/head';
 import { useState } from 'react';
 import { Linking, Pressable, ScrollView, StyleSheet, TextInput, View, type TextInputProps } from 'react-native';
 
+import { AmbientGold } from '@/components/ambient-gold';
 import { Button, MaybeLink, TextLink, type PressState } from '@/components/buttons';
 import { Chat, Check } from '@/components/icons';
 import { Image } from '@/components/image';
 import { Container, Grid } from '@/components/layout';
+import { Enter, Reveal } from '@/components/motion';
 import { Page } from '@/components/page';
+import { Pulse } from '@/components/sheen';
 import { Em, Eyebrow, Label, Sans, Serif } from '@/components/typography';
-import { brand, photos } from '@/constants/images';
+import { brand } from '@/constants/images';
 import { formatClock, hours, nowInBengaluru, site, whatsappUrl } from '@/constants/site';
 import { colors, sansFamily, webTransition } from '@/constants/theme';
 import { findService, inr, type Gender } from '@/data/services';
 import { useMinute } from '@/hooks/use-clock';
+import { useCountUp } from '@/hooks/use-count-up';
 import { useLayout } from '@/hooks/use-layout';
 
 const LINE = 'rgba(42,33,28,0.18)';
@@ -36,12 +40,12 @@ const POPULAR: { id: string; name: string; group: string; ref: [Gender, string, 
 
 const SERVICES = POPULAR.map((s) => ({ ...s, price: findService(...s.ref)?.price ?? s.fallback }));
 
-/** Avatars reuse the team-card photos; "Any stylist" shows the crown. */
-const STYLISTS: { id: string; name: string; role: string; img?: number }[] = [
+/** Avatars match the team-card placeholders: a gold initial, or the crown for "Any stylist". */
+const STYLISTS: { id: string; name: string; role: string; initial?: string }[] = [
   { id: 'any', name: 'Any stylist', role: 'First available' },
-  { id: 'sajan', name: 'Sajan', role: 'Hair stylist', img: photos.teamHairCut },
-  { id: 'salman', name: 'Salman', role: 'Hair & beard', img: photos.teamBarberTools },
-  { id: 'arjun', name: 'Arjun', role: 'Hair stylist', img: photos.teamHairDetail },
+  { id: 'sajan', name: 'Sajan', role: 'Hair stylist', initial: 'S' },
+  { id: 'salman', name: 'Salman', role: 'Hair & beard', initial: 'S' },
+  { id: 'arjun', name: 'Arjun', role: 'Hair stylist', initial: 'A' },
 ];
 
 /** Start times in minutes from midnight. */
@@ -113,15 +117,21 @@ function Option({
       accessibilityLabel={label}
       disabled={disabled}
       onPress={onPress}
-      style={(s) => [
-        styles.option,
-        {
-          borderColor: selected ? colors.ink : disabled ? 'rgba(42,33,28,0.08)' : (s as PressState).hovered ? colors.ink : LINE,
-          backgroundColor: selected ? (dark ? colors.ink : colors.white) : 'transparent',
-        },
-        webTransition('border-color, background-color', 200),
-        style,
-      ]}>
+      style={(s) => {
+        const hovered = !disabled && !!(s as PressState).hovered;
+        return [
+          styles.option,
+          {
+            borderColor: selected ? colors.ink : disabled ? 'rgba(42,33,28,0.08)' : hovered ? colors.ink : LINE,
+            backgroundColor: selected ? (dark ? colors.ink : colors.white) : 'transparent',
+          },
+          // Cards lift a little under the pointer and settle when chosen.
+          hovered && !selected ? styles.optionLift : null,
+          selected ? styles.optionChosen : null,
+          webTransition('border-color, background-color, transform, box-shadow', 250),
+          style,
+        ];
+      }}>
       {children}
     </Pressable>
   );
@@ -165,6 +175,7 @@ export default function Book() {
 
   const chosen = SERVICES.filter((s) => picked.includes(s.id));
   const total = chosen.reduce((n, s) => n + s.price, 0);
+  const shownTotal = useCountUp(total);
   const day = days.find((d) => d.key === dayKey) ?? null;
   const opensAt = day ? hours.open(day.dow) : 0;
   const stylistName = STYLISTS.find((s) => s.id === stylist)?.name ?? 'Any stylist';
@@ -214,7 +225,7 @@ export default function Book() {
 
   const form = (
     <View style={{ gap: 56 }}>
-      <View style={{ gap: 20 }}>
+      <Reveal style={{ gap: 20 }}>
         <StepHeading n="01" title="Choose your services" aside="Select one or more" />
         <Grid columns={isDesktop ? 3 : isMobile ? 1 : 2} gap={12}>
           {SERVICES.map((s) => {
@@ -233,27 +244,38 @@ export default function Book() {
                     {s.group} · {inr(s.price)}
                   </Sans>
                 </View>
-                <View style={[styles.tick, { borderColor: on ? colors.ink : LINE, backgroundColor: on ? colors.ink : 'transparent' }]}>
-                  {on ? <Check size={14} color={colors.cream} /> : null}
+                <View
+                  style={[
+                    styles.tick,
+                    { borderColor: on ? colors.ink : LINE, backgroundColor: on ? colors.ink : 'transparent' },
+                    webTransition('background-color, border-color', 200),
+                  ]}>
+                  {on ? (
+                    <Enter variant="pop">
+                      <Check size={14} color={colors.cream} />
+                    </Enter>
+                  ) : null}
                 </View>
               </Option>
             );
           })}
         </Grid>
-      </View>
+      </Reveal>
 
-      <View style={{ gap: 20 }}>
+      <Reveal style={{ gap: 20 }}>
         <StepHeading n="02" title="Choose a stylist" />
         <Grid columns={isMobile ? 2 : 4} gap={12}>
           {STYLISTS.map((s) => (
             <Option key={s.id} selected={stylist === s.id} onPress={() => setStylist(s.id)} style={styles.stylistOption}>
-              {s.img ? (
-                <Image source={s.img} alt="" contentFit="cover" style={styles.avatar} />
-              ) : (
-                <View aria-hidden style={[styles.avatar, styles.avatarAny]}>
+              <View aria-hidden style={styles.avatar}>
+                {s.initial ? (
+                  <Serif size={26} lh={1} color={colors.gold}>
+                    {s.initial}
+                  </Serif>
+                ) : (
                   <Image source={brand.crownGold} alt="" contentFit="contain" style={{ width: 30, height: 15 }} />
-                </View>
-              )}
+                )}
+              </View>
               <Serif size={20} lh={1.1} weight="regular" align="center">
                 {s.name}
               </Serif>
@@ -263,9 +285,9 @@ export default function Book() {
             </Option>
           ))}
         </Grid>
-      </View>
+      </Reveal>
 
-      <View style={{ gap: 20 }}>
+      <Reveal style={{ gap: 20 }}>
         <StepHeading n="03" title="Pick a date & time" />
         <ScrollView
           horizontal
@@ -273,27 +295,24 @@ export default function Book() {
           showsHorizontalScrollIndicator={false}
           style={isMobile ? { marginHorizontal: -gutter } : null}
           contentContainerStyle={[{ gap: 10, minHeight: 88 }, isMobile ? { paddingHorizontal: gutter } : { flexGrow: 1 }]}>
-          {days.map((d) => {
+          {/* The days arrive after hydration (they depend on today's date), so they cascade in. */}
+          {days.map((d, i) => {
             const on = d.key === dayKey;
             const fg = on ? colors.cream : colors.ink;
             return (
-              <Option
-                key={d.key}
-                dark
-                selected={on}
-                label={d.long}
-                onPress={() => pickDay(d)}
-                style={[styles.dayOption, isMobile ? { width: 72 } : { flex: 1 }]}>
-                <Sans size={11} tracking={0.18} upper color={fg}>
-                  {DAY_SHORT[d.dow]}
-                </Sans>
-                <Serif size={30} lh={1} weight="regular" color={fg}>
-                  {d.date}
-                </Serif>
-                <Sans size={11} tracking={0.1} color={fg}>
-                  {MONTHS[d.month].slice(0, 3)}
-                </Sans>
-              </Option>
+              <Enter key={d.key} variant="up" delay={i * 60} style={isMobile ? { width: 72 } : { flex: 1 }}>
+                <Option dark selected={on} label={d.long} onPress={() => pickDay(d)} style={styles.dayOption}>
+                  <Sans size={11} tracking={0.18} upper color={fg}>
+                    {DAY_SHORT[d.dow]}
+                  </Sans>
+                  <Serif size={30} lh={1} weight="regular" color={fg}>
+                    {d.date}
+                  </Serif>
+                  <Sans size={11} tracking={0.1} color={fg}>
+                    {MONTHS[d.month].slice(0, 3)}
+                  </Sans>
+                </Option>
+              </Enter>
             );
           })}
         </ScrollView>
@@ -321,9 +340,9 @@ export default function Book() {
             );
           })}
         </Grid>
-      </View>
+      </Reveal>
 
-      <View style={{ gap: 20 }}>
+      <Reveal style={{ gap: 20 }}>
         <StepHeading n="04" title="Your details" />
         <View style={{ flexDirection: isMobile ? 'column' : 'row', gap: 16 }}>
           <Field label="Name" value={name} onChangeText={setName} placeholder="Your full name" autoComplete="name" />
@@ -343,29 +362,38 @@ export default function Book() {
           placeholder="Hair length, allergies to products, a reference photo you’ll bring…"
           multiline
         />
-      </View>
+      </Reveal>
     </View>
   );
 
   const confirmation = (
-    <View aria-live="polite" style={[styles.confirmed, { padding: isMobile ? 28 : 56 }]}>
-      <View style={styles.checkCircle}>
-        <Check size={28} color={colors.cream} stroke={1.6} />
+    <Enter variant="scale" style={[styles.confirmed, { padding: isMobile ? 28 : 56 }]}>
+      <View aria-live="polite" style={{ gap: 28, alignItems: 'flex-start' }}>
+        <Enter variant="pop" delay={250}>
+          <View style={styles.checkCircle}>
+            <Pulse />
+            <Check size={28} color={colors.cream} stroke={1.6} />
+          </View>
+        </Enter>
+        <Enter delay={350}>
+          <Serif size={isMobile ? 40 : 56} lh={1.05}>
+            {first ? `Almost there, ${first}.` : 'Almost there.'}
+          </Serif>
+        </Enter>
+        <Enter delay={450}>
+          <Sans size={17} lh={1.7} color={colors.body} style={{ maxWidth: 560 }}>
+            We’ve opened WhatsApp with your request for {day?.long} at {time != null ? formatClock(time) : ''}.
+            Press send and we’ll confirm your chair — please arrive five minutes early so there’s time for a cup
+            of something warm.
+          </Sans>
+        </Enter>
+        <Enter delay={550} style={[styles.confirmActions, isMobile && { flexDirection: 'column', alignItems: 'stretch' }]}>
+          <Button label="Open WhatsApp again" onPress={send} icon={(c) => <Chat color={c} />} />
+          <Button label="Book another" variant="line" onPress={reset} />
+          <Button label="Back to home" variant="line" href="/" />
+        </Enter>
       </View>
-      <Serif size={isMobile ? 40 : 56} lh={1.05}>
-        {first ? `Almost there, ${first}.` : 'Almost there.'}
-      </Serif>
-      <Sans size={17} lh={1.7} color={colors.body} style={{ maxWidth: 560 }}>
-        We’ve opened WhatsApp with your request for {day?.long} at {time != null ? formatClock(time) : ''}. Press
-        send and we’ll confirm your chair — please arrive five minutes early so there’s time for a cup of
-        something warm.
-      </Sans>
-      <View style={[styles.confirmActions, isMobile && { flexDirection: 'column', alignItems: 'stretch' }]}>
-        <Button label="Open WhatsApp again" onPress={send} icon={(c) => <Chat color={c} />} />
-        <Button label="Book another" variant="line" onPress={reset} />
-        <Button label="Back to home" variant="line" href="/" />
-      </View>
-    </View>
+    </Enter>
   );
 
   const summary = (
@@ -377,13 +405,14 @@ export default function Book() {
             No services chosen yet.
           </Serif>
         ) : (
+          // Each chosen service slides in as it's added.
           chosen.map((s) => (
-            <View key={s.id} style={styles.summaryRow}>
+            <Enter key={s.id} variant="right" style={styles.summaryRow}>
               <Serif size={22} lh={1.2} weight="regular" style={{ flex: 1 }}>
                 {s.name}
               </Serif>
               <Sans size={14}>{inr(s.price)}</Sans>
-            </View>
+            </Enter>
           ))
         )}
       </View>
@@ -397,7 +426,10 @@ export default function Book() {
             <Sans size={15} color={colors.muted}>
               {k}
             </Sans>
-            <Sans size={15}>{v}</Sans>
+            {/* Keyed by value so a new choice fades in. */}
+            <Enter key={v} variant="fade">
+              <Sans size={15}>{v}</Sans>
+            </Enter>
           </View>
         ))}
       </View>
@@ -409,7 +441,7 @@ export default function Book() {
           </Sans>
         </Sans>
         <Serif size={30} weight="regular">
-          {total ? inr(total) : '—'}
+          {total ? inr(shownTotal) : '—'}
         </Serif>
       </View>
       <Button
@@ -417,6 +449,7 @@ export default function Book() {
         onPress={send}
         disabled={!ready}
         full
+        sheen={ready}
         icon={(c) => <Chat color={c} />}
       />
       <Sans size={13} color={colors.muted}>
@@ -469,40 +502,57 @@ export default function Book() {
         </Container>
       </View>
 
-      <Container
-        style={[
-          { paddingTop: isMobile ? 40 : 64, paddingBottom: isMobile ? 72 : 96, gap: isMobile ? 48 : 80 },
-          isDesktop && { flexDirection: 'row', alignItems: 'flex-start' },
-        ]}>
-        <View style={{ flex: isDesktop ? 1 : undefined, minWidth: 0, gap: 56 }}>
-          <View style={{ gap: 18 }}>
-            <Eyebrow size={isMobile ? 11 : 12}>Book an appointment</Eyebrow>
-            <Serif size={isMobile ? 52 : 72} lh={1} heading={1}>
-              Reserve your <Em>chair.</Em>
-            </Serif>
-            <Sans size={16} lh={1.7} color={colors.body}>
-              Pick what you’d like, who you’d like and when — we’ll confirm on WhatsApp.
-            </Sans>
-          </View>
-          {sent ? confirmation : form}
+      <View style={styles.main}>
+        {/* Pearls and gold rings drifting in the open space between the heading and the summary. */}
+        <View style={[styles.ambient, { height: isMobile ? 300 : 420 }]}>
+          <AmbientGold layout="center" />
         </View>
-        {/* Stretched to the form's height so the sticky summary can follow the visitor down the page. */}
-        <View style={isDesktop ? { width: 420, alignSelf: 'stretch' } : null}>{summary}</View>
-      </Container>
+        <Container
+          style={[
+            { paddingTop: isMobile ? 40 : 64, paddingBottom: isMobile ? 72 : 96, gap: isMobile ? 48 : 80 },
+            isDesktop && { flexDirection: 'row', alignItems: 'flex-start' },
+          ]}>
+          <View style={{ flex: isDesktop ? 1 : undefined, minWidth: 0, gap: 56 }}>
+            <View style={{ gap: 18 }}>
+              <Enter>
+                <Eyebrow size={isMobile ? 11 : 12}>Book an appointment</Eyebrow>
+              </Enter>
+              <Enter delay={120}>
+                <Serif size={isMobile ? 52 : 72} lh={1} heading={1}>
+                  Reserve your <Em>chair.</Em>
+                </Serif>
+              </Enter>
+              <Enter delay={240}>
+                <Sans size={16} lh={1.7} color={colors.body}>
+                  Pick what you’d like, who you’d like and when — we’ll confirm on WhatsApp.
+                </Sans>
+              </Enter>
+            </View>
+            {sent ? confirmation : form}
+          </View>
+          {/* Stretched to the form's height so the sticky summary can follow the visitor down the page. */}
+          <Enter variant={isDesktop ? 'right' : 'up'} delay={300} style={isDesktop ? { width: 420, alignSelf: 'stretch' } : null}>
+            {summary}
+          </Enter>
+        </Container>
+      </View>
     </Page>
   );
 }
 
 const styles = StyleSheet.create({
   header: { borderBottomWidth: 1, borderBottomColor: colors.line, justifyContent: 'center' },
+  main: { position: 'relative' },
+  ambient: { position: 'absolute', top: 0, left: 0, right: 0, overflow: 'hidden', pointerEvents: 'none' },
   headerRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   stepHead: { flexDirection: 'row', alignItems: 'baseline', gap: 16 },
   option: { borderWidth: 1, borderRadius: 2 },
+  optionLift: { transform: [{ translateY: -3 }], boxShadow: '0 16px 28px -18px rgba(42,33,28,0.45)' },
+  optionChosen: { boxShadow: '0 10px 22px -16px rgba(42,33,28,0.5)' },
   serviceOption: { minHeight: 84, paddingHorizontal: 20, paddingVertical: 8, flexDirection: 'row', alignItems: 'center', gap: 16 },
   tick: { width: 26, height: 26, borderRadius: 13, borderWidth: 1, alignItems: 'center', justifyContent: 'center' },
   stylistOption: { height: 150, padding: 18, alignItems: 'center', justifyContent: 'center', gap: 10 },
-  avatar: { width: 56, height: 56, borderRadius: 28, backgroundColor: '#DDD0C0' },
-  avatarAny: { backgroundColor: colors.espresso, alignItems: 'center', justifyContent: 'center' },
+  avatar: { width: 56, height: 56, borderRadius: 28, backgroundColor: colors.espresso, alignItems: 'center', justifyContent: 'center' },
   dayOption: { height: 88, alignItems: 'center', justifyContent: 'center', gap: 2 },
   timeOption: { height: 48, alignItems: 'center', justifyContent: 'center' },
   field: {

@@ -111,13 +111,271 @@ textarea:focus-visible {
   }
 }
 
+/* ---- Page motion (see src/components/motion.web.tsx) --------------------------------------- */
+
+/* <Enter>: plays on first paint (paused while wide screens wait for hydration, see +html.tsx). */
+[data-enter] {
+  animation: glz-enter-up 1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+[data-enter='fade'] {
+  animation-name: glz-enter-fade;
+}
+[data-enter='scale'] {
+  animation-name: glz-enter-scale;
+}
+[data-enter='left'] {
+  animation-name: glz-enter-left;
+}
+[data-enter='right'] {
+  animation-name: glz-enter-right;
+}
+[data-enter='arch'] {
+  animation-name: glz-enter-arch;
+  animation-duration: 1.4s;
+}
+[data-enter='pop'] {
+  animation: glz-enter-pop 0.5s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+}
+[data-enter='draw'] {
+  transform-origin: left center;
+  animation-name: glz-enter-draw;
+  animation-duration: 1.1s;
+}
+html.glz-wait [data-enter] {
+  animation-play-state: paused;
+}
+
+@keyframes glz-enter-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes glz-enter-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes glz-enter-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes glz-enter-left {
+  from {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes glz-enter-right {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes glz-enter-arch {
+  from {
+    clip-path: inset(100% 0 0 0);
+    transform: translateY(24px);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    transform: none;
+  }
+}
+@keyframes glz-enter-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes glz-enter-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: none;
+  }
+}
+
+/* <Reveal>: hidden only once RevealObserver marks it as waiting below the fold. */
+[data-reveal] {
+  transition:
+    opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
+    clip-path 1.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+[data-reveal][data-reveal-wait] {
+  opacity: 0;
+  transform: translateY(40px);
+}
+[data-reveal='fade'][data-reveal-wait] {
+  transform: none;
+}
+[data-reveal='scale'][data-reveal-wait] {
+  transform: scale(0.94);
+}
+[data-reveal='left'][data-reveal-wait] {
+  transform: translateX(-40px);
+}
+[data-reveal='right'][data-reveal-wait] {
+  transform: translateX(40px);
+}
+[data-reveal='arch'][data-reveal-wait] {
+  opacity: 1;
+  transform: translateY(24px);
+  clip-path: inset(100% 0 0 0);
+}
+[data-reveal='draw'] {
+  transform-origin: left center;
+}
+[data-reveal='draw'][data-reveal-wait] {
+  opacity: 1;
+  transform: scaleX(0);
+}
+
+/* Slow float for photos and the crown coin on the 404 page. */
+[data-float] {
+  animation: glz-float 8s ease-in-out infinite;
+}
+@keyframes glz-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Light gold dust behind headings on phones (the three.js layer is used on larger screens). */
+.glz-dust-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.glz-dust {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(220, 166, 80, 0.9), rgba(220, 166, 80, 0) 70%);
+  animation: glz-dust-rise linear infinite;
+}
+@keyframes glz-dust-rise {
+  0% {
+    transform: translate(0, 24px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(10px, -90px);
+    opacity: 0;
+  }
+}
+
+/* Light sweep across a button that's ready to press. */
+.glz-sheen {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  pointer-events: none;
+  background: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(255, 236, 200, 0.35) 50%, rgba(255, 255, 255, 0) 100%);
+  animation: glz-sheen 2.8s ease-in-out infinite;
+}
+@keyframes glz-sheen {
+  0% {
+    transform: translateX(-120%);
+  }
+  60%,
+  100% {
+    transform: translateX(320%);
+  }
+}
+
+/* Soft ring that pulses out from the booking confirmation tick. */
+.glz-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(196, 145, 77, 0.7);
+  animation: glz-pulse 2.4s ease-out infinite;
+}
+@keyframes glz-pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(2.1);
+    opacity: 0;
+  }
+}
+
+/* Printing shows everything, even sections that were never scrolled into view. */
+@media print {
+  [data-reveal][data-reveal-wait] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
   .glz-shimmer,
   .glz-drop,
-  .glz-cyl {
+  .glz-cyl,
+  .glz-dust,
+  .glz-sheen,
+  .glz-pulse,
+  [data-enter],
+  [data-float] {
     animation: none !important;
+  }
+  .glz-dust,
+  .glz-sheen,
+  .glz-pulse {
+    display: none;
+  }
+  [data-reveal] {
+    transition: none !important;
+  }
+  [data-reveal][data-reveal-wait] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
   }
 }

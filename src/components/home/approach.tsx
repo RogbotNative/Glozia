@@ -12,13 +12,14 @@ import Animated, {
 
 import { Image } from '@/components/image';
 import { Container, Section } from '@/components/layout';
+import { Reveal } from '@/components/motion';
 import { Em, Eyebrow, Serif } from '@/components/typography';
 import { brand } from '@/constants/images';
 import { colors } from '@/constants/theme';
 import { useLayout } from '@/hooks/use-layout';
 
 /** The crown turning like a coin inside a slowly rotating dashed ring. */
-function CrownCoin({ size }: { size: number }) {
+export function CrownCoin({ size }: { size: number }) {
   const reduceMotion = useReducedMotion();
   const spin = useSharedValue(0);
   const ring = useSharedValue(0);
@@ -63,17 +64,21 @@ export function Approach() {
           styles.inner,
           isMobile ? { paddingVertical: 72, flexDirection: 'column', alignItems: 'flex-start', gap: 24 } : { minHeight: isDesktop ? 560 : 440 },
         ]}>
-        <View style={{ flex: isMobile ? undefined : 1, maxWidth: 840, gap: isMobile ? 24 : 28 }}>
+        <Reveal style={{ flex: isMobile ? undefined : 1, maxWidth: 840, gap: isMobile ? 24 : 28 }}>
           <View style={styles.eyebrowRow}>
             <Eyebrow size={isMobile ? 11 : 12}>Our approach</Eyebrow>
-            <View style={[styles.rule, { width: isMobile ? 40 : 56 }]} />
+            <Reveal variant="draw" delay={300} style={[styles.rule, { width: isMobile ? 40 : 56 }]} />
           </View>
           <Serif size={isMobile ? 28 : isDesktop ? 46 : 36} lh={isMobile ? 1.28 : 1.22} style={{ textWrap: 'pretty' } as TextStyle}>
             Good work starts with listening. Every visit begins with a conversation about your hair, your
             skin and your routine — so you leave with something that suits the way you <Em>actually</Em> live.
           </Serif>
-        </View>
-        {!isMobile ? <CrownCoin size={isDesktop ? 320 : 220} /> : null}
+        </Reveal>
+        {!isMobile ? (
+          <Reveal variant="scale" delay={200}>
+            <CrownCoin size={isDesktop ? 320 : 220} />
+          </Reveal>
+        ) : null}
       </Container>
     </Section>
   );

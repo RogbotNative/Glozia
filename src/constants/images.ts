@@ -15,11 +15,6 @@ export const photos = {
   bridal: require('../../photos/bridal.jpg'),
   menuSpa: require('../../photos/menu-spa.jpg'),
   menuHero: require('../../photos/menu-hero.jpg'),
-  // Team cards: Pexels stand-ins showing hands at work, not the actual team.
-  teamHairCut: require('../../photos/team-hair-cut.jpg'),
-  teamBarberTools: require('../../photos/team-barber-tools.jpg'),
-  teamHairDetail: require('../../photos/team-hair-detail.jpg'),
-  teamSpaMassage: require('../../photos/team-spa-massage.jpg'),
 };
 
 export const brand = {

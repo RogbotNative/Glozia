@@ -78,14 +78,14 @@ export const marqueeWords = [
   'Bridal',
 ];
 
-export type TeamMember = { id: string; name: string; role: string; img: number; alt: string };
+export type TeamMember = { id: string; name: string; role: string; initial?: string };
 
-/** The photos are stock stand-ins of hands at work, so the alt text describes the photo, not the person. */
+/** Team cards show placeholder initials (the crown when there's none) until the studio's own portraits exist. */
 export const team: TeamMember[] = [
-  { id: 'sajan', name: 'Sajan', role: 'Hair stylist', img: photos.teamHairCut, alt: 'Scissors and a comb cutting long dark hair' },
-  { id: 'salman', name: 'Salman', role: 'Hair & beard', img: photos.teamBarberTools, alt: 'A barber’s hands holding clippers and a comb' },
-  { id: 'arjun', name: 'Arjun', role: 'Hair stylist', img: photos.teamHairDetail, alt: 'A stylist trimming a client’s dark hair' },
-  { id: 'spa', name: 'Spa team', role: 'Ladies spa', img: photos.teamSpaMassage, alt: 'A therapist giving a relaxing back massage' },
+  { id: 'sajan', name: 'Sajan', role: 'Hair stylist', initial: 'S' },
+  { id: 'salman', name: 'Salman', role: 'Hair & beard', initial: 'S' },
+  { id: 'arjun', name: 'Arjun', role: 'Hair stylist', initial: 'A' },
+  { id: 'spa', name: 'Spa team', role: 'Ladies spa' },
 ];
 
 export const gallery = [

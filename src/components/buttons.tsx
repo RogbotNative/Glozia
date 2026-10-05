@@ -3,6 +3,7 @@ import { cloneElement, useState, type ReactNode } from 'react';
 import { Platform, Pressable, StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
 
 import { ArrowLeft, ArrowRight } from '@/components/icons';
+import { Sheen } from '@/components/sheen';
 import { Sans } from '@/components/typography';
 import { colors, webTransition } from '@/constants/theme';
 
@@ -68,6 +69,8 @@ type ButtonProps = {
   height?: number;
   style?: StyleProp<ViewStyle>;
   accessibilityLabel?: string;
+  /** A slow light sweep across the button, to draw the eye when it becomes available (web). */
+  sheen?: boolean;
 };
 
 export function Button({
@@ -82,6 +85,7 @@ export function Button({
   height = 52,
   style,
   accessibilityLabel,
+  sheen,
 }: ButtonProps) {
   const v = VARIANTS[variant];
   const [hovered, hover] = useHover();
@@ -101,14 +105,22 @@ export function Button({
           { backgroundColor: disabled ? colors.disabled : active ? v.bgHover : v.bg },
           v.border ? { borderWidth: 1, borderColor: v.border } : null,
           full ? styles.full : null,
-          webTransition('background-color, transform', 250),
+          // Filled buttons lift slightly on hover, like the hero buttons in the design.
+          active && !v.border ? styles.lifted : null,
+          sheen && !disabled ? styles.sheenHost : null,
+          webTransition('background-color, color, transform, box-shadow', 250),
           style,
         ]}>
+        {sheen && !disabled ? <Sheen /> : null}
         {icon ? <View style={styles.icon}>{icon(fg)}</View> : null}
         <Sans size={12} lh={1.2} weight="medium" tracking={0.22} upper color={fg} numberOfLines={1}>
           {label}
         </Sans>
-        {arrow ? <ArrowRight color={fg} /> : null}
+        {arrow ? (
+          <View style={[active ? styles.arrowNudge : null, webTransition('transform', 250)]}>
+            <ArrowRight color={fg} />
+          </View>
+        ) : null}
       </Pressable>
     </MaybeLink>
   );
@@ -183,6 +195,9 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
   },
   full: { alignSelf: 'stretch' },
+  lifted: { transform: [{ translateY: -2 }], boxShadow: '0 14px 24px -14px rgba(42,33,28,0.55)' },
+  sheenHost: { position: 'relative', overflow: 'hidden' },
+  arrowNudge: { transform: [{ translateX: 4 }] },
   icon: { marginRight: -2 },
   textLink: {
     alignSelf: 'flex-start',

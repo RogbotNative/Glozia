@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { StyleSheet, View, type TextStyle } from 'react-native';
 
-import type { GloziaScene } from '../../../3d/src/scene';
+import type { GloziaScene } from '../../../3d/src/web';
 
 import { Button, TextLink } from '@/components/buttons';
 import { StaticHero } from '@/components/home/static-hero';
 import { Hand } from '@/components/icons';
 import { Image } from '@/components/image';
 import { Container } from '@/components/layout';
+import { Enter } from '@/components/motion';
 import { SiteHeader } from '@/components/site-header';
 import { Em, Sans, Serif } from '@/components/typography';
 import { brand } from '@/constants/images';
@@ -38,7 +39,7 @@ function CrownHero() {
   useEffect(() => {
     let disposed = false;
     // three.js is loaded on demand so phones and the first paint don't pay for it.
-    import('../../../3d/src/scene')
+    import('../../../3d/src/web')
       .then(({ mount }) => {
         if (disposed || !canvasRef.current) return;
         sceneRef.current = mount(canvasRef.current, {
@@ -74,24 +75,31 @@ function CrownHero() {
 
       <View style={styles.overlay}>
         <Container style={styles.inner}>
+          {/* Staggered entrance; the wrappers let pointer events through to the crown canvas. */}
           <View style={styles.copy}>
-            <Sans size={12} lh={1.4} weight="medium" tracking={0.26} upper color={colors.bronze}>
-              Unisex salon & ladies spa · Nagarbhavi, Bengaluru
-            </Sans>
-            <Serif size={96} lh={0.96} heading={1} style={styles.title}>
-              The quiet art of <Em color={colors.bronze}>looking like</Em> yourself.
-            </Serif>
-            <Sans size={18} lh={1.65} weight="light" color={colors.body} style={{ maxWidth: 470 }}>
-              Premium haircuts, colour, skin and spa care for men and women — with warm service and real
-              attention to detail, on Mallathahalli Lake Road.
-            </Sans>
-            <View style={styles.ctas}>
+            <Enter style={styles.passThrough}>
+              <Sans size={12} lh={1.4} weight="medium" tracking={0.26} upper color={colors.bronze}>
+                Unisex salon & ladies spa · Nagarbhavi, Bengaluru
+              </Sans>
+            </Enter>
+            <Enter delay={120} style={styles.passThrough}>
+              <Serif size={96} lh={0.96} heading={1} style={styles.title}>
+                The quiet art of <Em color={colors.bronze}>looking like</Em> yourself.
+              </Serif>
+            </Enter>
+            <Enter delay={240} style={styles.passThrough}>
+              <Sans size={18} lh={1.65} weight="light" color={colors.body} style={{ maxWidth: 470 }}>
+                Premium haircuts, colour, skin and spa care for men and women — with warm service and real
+                attention to detail, on Mallathahalli Lake Road.
+              </Sans>
+            </Enter>
+            <Enter delay={360} style={[styles.ctas, styles.passThrough]}>
               <Button label="Book an appointment" href="/book" arrow />
               <TextLink label="Services & prices" href="/services" lineColor={LINE} />
-            </View>
+            </Enter>
           </View>
 
-          <View style={[styles.bottom, { left: gutter, right: gutter }]}>
+          <Enter variant="fade" delay={700} style={[styles.bottom, { left: gutter, right: gutter }]}>
             <View style={styles.hint}>
               <Hand color={colors.body} />
               <Sans size={13} tracking={0.04} color={colors.body}>
@@ -106,7 +114,7 @@ function CrownHero() {
                 <span className="glz-drop" style={{ background: colors.bronze }} />
               </span>
             </View>
-          </View>
+          </Enter>
         </Container>
       </View>
     </View>
@@ -125,6 +133,7 @@ const styles = StyleSheet.create({
   // Balanced over three lines, as in the design ("The quiet / art of looking / like yourself.").
   title: { letterSpacing: -1.44, textWrap: 'balance' } as TextStyle,
   ctas: { flexDirection: 'row', alignItems: 'center', gap: 36, marginTop: 6 },
+  passThrough: { pointerEvents: 'box-none' },
   bottom: {
     position: 'absolute',
     bottom: 36,

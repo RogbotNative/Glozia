@@ -7,6 +7,7 @@ import { CoverFlowStage } from '@/components/home/cover-flow';
 import { COUNT, pad2, wrap } from '@/components/home/cover-flow-math';
 import { Image } from '@/components/image';
 import { Container, Section } from '@/components/layout';
+import { Reveal } from '@/components/motion';
 import { Eyebrow, Sans, Serif } from '@/components/typography';
 import { servicesHref, showcase } from '@/constants/content';
 import { colors } from '@/constants/theme';
@@ -38,27 +39,29 @@ function ServiceList() {
   return (
     <View>
       {showcase.map((item, i) => (
-        <MaybeLink key={item.name} href={servicesHref(item.link)}>
-          <Pressable role="link" style={[styles.listRow, i === COUNT - 1 && styles.listLast]}>
-            <Image
-              source={item.img}
-              alt=""
-              contentFit="cover"
-              style={{ width: 104, height: 132, borderTopLeftRadius: 52, borderTopRightRadius: 52, borderBottomLeftRadius: 2, borderBottomRightRadius: 2 }}
-            />
-            <View style={{ flex: 1, gap: 6, justifyContent: 'center' }}>
-              <Serif size={28} weight="regular" heading={3}>
-                {item.name}
-              </Serif>
-              <Sans size={14} lh={1.55} color={colors.muted}>
-                {item.desc.charAt(0).toUpperCase() + item.desc.slice(1)}
-              </Sans>
-              <Sans size={12} tracking={0.08} style={{ marginTop: 4 }}>
-                {item.price}
-              </Sans>
-            </View>
-          </Pressable>
-        </MaybeLink>
+        <Reveal key={item.name}>
+          <MaybeLink href={servicesHref(item.link)}>
+            <Pressable role="link" style={[styles.listRow, i === COUNT - 1 && styles.listLast]}>
+              <Image
+                source={item.img}
+                alt=""
+                contentFit="cover"
+                style={{ width: 104, height: 132, borderTopLeftRadius: 52, borderTopRightRadius: 52, borderBottomLeftRadius: 2, borderBottomRightRadius: 2 }}
+              />
+              <View style={{ flex: 1, gap: 6, justifyContent: 'center' }}>
+                <Serif size={28} weight="regular" heading={3}>
+                  {item.name}
+                </Serif>
+                <Sans size={14} lh={1.55} color={colors.muted}>
+                  {item.desc.charAt(0).toUpperCase() + item.desc.slice(1)}
+                </Sans>
+                <Sans size={12} tracking={0.08} style={{ marginTop: 4 }}>
+                  {item.price}
+                </Sans>
+              </View>
+            </Pressable>
+          </MaybeLink>
+        </Reveal>
       ))}
     </View>
   );
@@ -134,8 +137,12 @@ export function ServicesShowcase() {
     <Section>
       <Container
         style={{ paddingTop: isMobile ? 72 : 120, paddingBottom: isMobile ? 72 : 96, gap: isMobile ? 36 : 40, minHeight: isDesktop ? 1160 : undefined }}>
-        <SectionHeader />
-        {isMobile ? <ServiceList /> : <CoverFlow key={isDesktop ? 'd' : 't'} />}
+        <Reveal>
+          <SectionHeader />
+        </Reveal>
+        <Reveal variant="fade" delay={150}>
+          {isMobile ? <ServiceList /> : <CoverFlow key={isDesktop ? 'd' : 't'} />}
+        </Reveal>
         {isMobile ? <TextLink label="Full menu & prices" href="/services" /> : null}
       </Container>
     </Section>

@@ -16,6 +16,14 @@ iOS / Android app.
 
 From other pages, the Studio / Shop / Team / Visit links go to `/?s=<section>`.
 
+## Motion
+
+Every page animates, and all of it switches off when the visitor prefers reduced motion.
+
+- **3D (three.js, screens 720px and wider):** the gold crown on the home page, and a layer of floating pearls, gold rings and gold dust behind the Services, Booking and 404 headings (`3d/src/ambient.js`). Both share one on-demand three.js download. Phones get light CSS gold dust instead.
+- **Entrances and scroll reveals:** `<Enter>` plays on first paint (pure CSS, so it needs no JavaScript); `<Reveal>` rises in as a section scrolls into view (`src/components/motion.web.tsx`, styles in `src/global.css`).
+- **Interactions:** sliding For her / For him switch and category marker, cascading price rows with dotted leaders that draw in, lifting option cards, a counting booking total, a sheen on the ready booking button, tilt and glare on the team cards and Shop niches, and button and nav hover states.
+
 ## Develop
 
 ```bash
@@ -43,7 +51,7 @@ src/components/     shared UI; home/ holds the home-page sections
 src/constants/      brand colours & fonts, contact details & hours, page copy, image map
 src/data/           menu.ts (menu copy from design/Services.dc.html), shop.ts (reads data/shop-routines.json)
 data/               glowdesk-services.json (raw GlowDesk catalogue), shop-routines.json (Shop routines)
-3d/                 three.js crown scene (src/scene.js), loaded on demand by the desktop hero
+3d/                 three.js scenes: src/scene.js (hero crown), src/ambient.js (pearls behind headings), src/web.js (shared entry)
 brand/ photos/      logo SVGs and photography
 design/             design boards, handoff notes and reference screenshots (reference only)
 public/             favicons, copied as-is into the export
@@ -55,6 +63,6 @@ price, edit `src/data/menu.ts` (services) or `data/shop-routines.json` (Shop).
 ## Before launch
 
 - **Photos** in `photos/` are stock placeholders (Unsplash and Pexels licences, see `photos/SOURCES.txt`) — swap in the studio's own.
-- **Team photos** (`photos/team-*.jpg`) are Pexels stand-ins showing hands at work, not the actual team. Replace them with real portraits, and update the alt text in `src/constants/content.ts` to match. The fourth card reads "Spa team" — use the therapist's name if you prefer.
+- **Team portraits**: the team cards (and the stylist avatars on `/book`) show the design's placeholder — a gold initial in a dark arch, with "Portrait coming soon" — until real portraits exist. The fourth card reads "Spa team"; use the therapist's name if you prefer (`src/constants/content.ts`). The Pexels team photos in `photos/team-*.jpg` aren't used.
 - **Bookings** open WhatsApp with a pre-filled request to +91 73378 76023; the studio confirms by reply. Add a cancellation policy line to the booking page if you have one.
 - **Social preview image**: once the site has its final domain, add an `og:image` tag in `src/app/+html.tsx`.
