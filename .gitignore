@@ -42,7 +42,8 @@ example
 /ios
 /android
 
-# local tooling
+# local tooling (Vercel CLI link and its token in .env.local)
 .claude/settings.local.json
 .claude/launch.json
 .vercel
+.env*
