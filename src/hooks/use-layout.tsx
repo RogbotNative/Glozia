@@ -33,8 +33,9 @@ export const DESKTOP_MIN = 1100;
 function compute(width: number, height: number, hydrated: boolean): Layout {
   const w = width > 0 ? width : STATIC_WIDTH;
   const bp: Breakpoint = w >= DESKTOP_MIN ? 'desktop' : w >= TABLET_MIN ? 'tablet' : 'mobile';
+  // Desktop gutter grows from 48px to the design's 96px, reached at 1400px (a 1440px window with a scrollbar).
   const gutter =
-    bp === 'desktop' ? Math.round(48 + (Math.min(w, MAX_WIDTH) - DESKTOP_MIN) * (48 / 340)) : bp === 'tablet' ? 40 : 24;
+    bp === 'desktop' ? Math.round(48 + Math.min(1, (w - DESKTOP_MIN) / 300) * 48) : bp === 'tablet' ? 40 : 24;
   return {
     width: w,
     height: height > 0 ? height : STATIC_HEIGHT,

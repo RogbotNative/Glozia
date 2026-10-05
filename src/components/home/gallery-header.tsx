@@ -12,13 +12,14 @@ export function GalleryHeader() {
     <Container style={[styles.row, isMobile && styles.stacked]}>
       <View style={{ gap: isMobile ? 16 : 20 }}>
         <Eyebrow size={isMobile ? 11 : 12}>From the studio</Eyebrow>
-        <Serif size={isMobile ? 40 : isDesktop ? 60 : 48} lh={1.06} heading={2}>
+        <Serif size={isMobile ? 40 : isDesktop ? 60 : 48} lh={1.05} heading={2}>
           Recent <Em>work.</Em>
         </Serif>
       </View>
       <TextLink
         label={isMobile ? site.instagramHandle : `Instagram · ${site.instagramHandle}`}
         href={site.instagramUrl}
+        style={isMobile ? null : { alignSelf: 'flex-end' }}
       />
     </Container>
   );

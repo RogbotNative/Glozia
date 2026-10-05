@@ -1,0 +1,184 @@
+{
+  "_note": "Shop section data for the home page. Prices are the salon’s GlowDesk retail prices in INR, before GST. Static on purpose: do not connect to GlowDesk.",
+  "brand": "L’Oréal Professionnel",
+  "whatsappNumber": "917337876023",
+  "messageTemplate": "Hi Glozia, I’d like the {label lowercased} routine: {Range type lowercased, comma-separated}.",
+  "routines": [
+    {
+      "label": "After colour",
+      "title": "Keep colour bright",
+      "tint": "#D9A08E",
+      "description": "For colour-treated hair — Vitamino Color shampoo and masque help your shade last between visits.",
+      "pairsWith": [
+        "Global colour",
+        "Global highlights",
+        "Root touch-up"
+      ],
+      "products": [
+        {
+          "range": "Vitamino Color",
+          "type": "Shampoo",
+          "price": 1175,
+          "shape": "shampoo"
+        },
+        {
+          "range": "Vitamino Color",
+          "type": "Masque",
+          "price": 990,
+          "shape": "masque"
+        }
+      ],
+      "total": 2165
+    },
+    {
+      "label": "After smoothening",
+      "title": "Care for straightened hair",
+      "tint": "#E6D3AF",
+      "description": "Xtenso Care is made for chemically straightened hair — the routine to follow re-bonding, smoothing or nanoplastia.",
+      "pairsWith": [
+        "Re-bonding & smoothing",
+        "Nanoplastia"
+      ],
+      "products": [
+        {
+          "range": "Xtenso Care",
+          "type": "Shampoo",
+          "price": 1175,
+          "shape": "shampoo"
+        },
+        {
+          "range": "Xtenso Care",
+          "type": "Masque",
+          "price": 850,
+          "shape": "masque"
+        }
+      ],
+      "total": 2025
+    },
+    {
+      "label": "After keratin",
+      "title": "Stay sleek at home",
+      "tint": "#EDE6DC",
+      "description": "A shampoo, masque and serum trio to keep the smoothness from your keratin going.",
+      "pairsWith": [
+        "Pro-keratin treatment",
+        "Hair botox"
+      ],
+      "products": [
+        {
+          "range": "Keratin Alpha Sleek",
+          "type": "Shampoo",
+          "price": 1120,
+          "shape": "shampoo"
+        },
+        {
+          "range": "Keratin Alpha Sleek",
+          "type": "Masque",
+          "price": 1350,
+          "shape": "masque"
+        },
+        {
+          "range": "Keratin Alpha Sleek",
+          "type": "Serum",
+          "price": 2000,
+          "shape": "serum"
+        }
+      ],
+      "total": 4470
+    },
+    {
+      "label": "Frizz control",
+      "title": "Calm the frizz",
+      "tint": "#D4BFC7",
+      "description": "Liss Unlimited is designed for frizzy, unruly hair — shampoo, masque and a finishing serum.",
+      "pairsWith": [
+        "Frizzy control spa",
+        "Hydrating hair spa"
+      ],
+      "products": [
+        {
+          "range": "Liss Unlimited",
+          "type": "Shampoo",
+          "price": 1175,
+          "shape": "shampoo"
+        },
+        {
+          "range": "Liss Unlimited",
+          "type": "Masque",
+          "price": 975,
+          "shape": "masque"
+        },
+        {
+          "range": "Liss Unlimited",
+          "type": "Serum",
+          "price": 820,
+          "shape": "serum"
+        }
+      ],
+      "total": 2970
+    },
+    {
+      "label": "Repair & strength",
+      "title": "Repair and strengthen",
+      "tint": "#D8B47A",
+      "description": "Inforcer for weak, breakage-prone hair, finished with Absolut Repair oil for damaged lengths.",
+      "pairsWith": [
+        "Moroccan oil therapy",
+        "Hydrating hair spa"
+      ],
+      "products": [
+        {
+          "range": "Inforcer",
+          "type": "Shampoo",
+          "price": 790,
+          "shape": "shampoo"
+        },
+        {
+          "range": "Inforcer",
+          "type": "Masque",
+          "price": 990,
+          "shape": "masque"
+        },
+        {
+          "range": "Absolut Repair",
+          "type": "Oil",
+          "price": 1380,
+          "shape": "oil"
+        }
+      ],
+      "total": 3160
+    },
+    {
+      "label": "Scalp & hair fall",
+      "title": "A healthier scalp",
+      "tint": "#B9C1AC",
+      "description": "Scalp Advanced shampoo and masque for scalp care, plus Density Advanced shampoo for thinning hair.",
+      "pairsWith": [
+        "Dandruff detox spa",
+        "Hair fall control treatment"
+      ],
+      "products": [
+        {
+          "range": "Scalp Advanced",
+          "type": "Shampoo",
+          "price": 990,
+          "shape": "shampoo"
+        },
+        {
+          "range": "Scalp Advanced",
+          "type": "Masque",
+          "price": 1075,
+          "shape": "masque"
+        },
+        {
+          "range": "Density Advanced",
+          "type": "Shampoo",
+          "price": 790,
+          "shape": "shampoo"
+        }
+      ],
+      "total": 2855
+    }
+  ],
+  "alsoOnShelf": "Also on the shelf: Biolage serum ₹350 · Streax Professional serum ₹340 · Hydra Keratin shampoo ₹870 and mask ₹999. All prices before GST."
+}

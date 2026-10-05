@@ -8,6 +8,8 @@ export const site = {
   instagramUrl: 'https://www.instagram.com/glozia_unisex_salon/',
   mapsUrl:
     'https://www.google.com/maps/search/?api=1&query=Glozia+Unisex+Salon+and+ladies+Spa+Nagarbhavi',
+  directionsUrl:
+    'https://www.google.com/maps/dir/?api=1&destination=Glozia+Unisex+Salon+and+ladies+Spa+Nagarbhavi&destination_place_id=ChIJu1QiTQU_rjsR5uzM3TJKhCQ',
   mapsEmbedUrl:
     'https://www.google.com/maps?q=Glozia+Unisex+Salon+and+ladies+Spa,+Mallathahalli+Lake+Road,+Nagarbhavi,+Bengaluru&output=embed',
   addressLines: ['Mallathahalli Lake Road, Nagarbhavi', 'Bengaluru, Karnataka 560056'],

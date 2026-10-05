@@ -84,8 +84,9 @@ textarea:focus-visible {
   animation: glz-cyl 70s linear infinite;
 }
 
+/* Hovering pauses the carousel (no caption; the pause is the affordance). */
 .glz-cyl-stage:hover .glz-cyl {
-  animation-play-state: paused;
+  animation-play-state: paused !important;
 }
 
 .glz-cyl-face {

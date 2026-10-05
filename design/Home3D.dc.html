@@ -38,33 +38,34 @@ a:focus-visible,button:focus-visible{outline:2px solid #C4914D;outline-offset:3p
 .svc-card{font:inherit;color:inherit}
 .svc-card:focus-visible{outline:none}
 .svc-card:focus-visible img{outline:2px solid #C4914D;outline-offset:6px}
-.glz-cyl-stage:hover .glz-cyl{animation-play-state:paused}
+.glz-cyl-stage:hover .glz-cyl{animation-play-state:paused !important}
 .shimmer{background-image:linear-gradient(100deg,#C4914D 20%,#F6DEAA 42%,#C4914D 64%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:glz-shimmer 5.5s ease-in-out infinite}
 @keyframes glz-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes glz-coin{from{transform:rotateY(0deg)}to{transform:rotateY(360deg)}}
 @keyframes glz-turn{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @keyframes glz-cyl{from{transform:translateZ(-500px) rotateY(0deg)}to{transform:translateZ(-500px) rotateY(-360deg)}}
 @keyframes glz-shimmer{0%{background-position:120% 50%}100%{background-position:-120% 50%}}
+@keyframes glz-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 @keyframes glz-drop{0%{transform:translateY(-6px);opacity:0}30%{opacity:1}100%{transform:translateY(30px);opacity:0}}
 @media (prefers-reduced-motion: reduce){.glz-anim,.shimmer{animation:none !important}}
 </style>
 </helmet>
-<div style="width: 1440px; height: 7820px; position: relative; display: flex; flex-direction: column; background: #F6F1EA; color: #2A211C; overflow: hidden">
+<div style="width: 1440px; height: 7850px; position: relative; display: flex; flex-direction: column; background: #F6F1EA; color: #2A211C; overflow: hidden">
 
-<section id="top" style="position: relative; height: 920px; flex-shrink: 0; overflow: hidden; background: radial-gradient(70% 80% at 70% 46%, #FBF7F0 0%, #F2E9DD 62%, #EADFD0 100%); --ink: {{ink}}; --muted: {{muted}}; --acc: {{acc}}; --line: {{line}}; --btn-bg: {{btnBg}}; --btn-fg: {{btnFg}}">
-<div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(58% 72% at 69% 47%, #45301F 0%, #241A15 52%, #140F0C 100%); opacity: {{duskOpacity}}; transition: opacity 1.1s ease"></div>
+<section id="top" style="position: relative; height: 920px; flex-shrink: 0; overflow: hidden; background: radial-gradient(70% 80% at 70% 46%, #FBF7F0 0%, #F2E9DD 62%, #EADFD0 100%); --ink: #2A211C; --muted: #4F4238; --acc: #8A6128; --line: rgba(42,33,28,0.2); --btn-bg: #2A211C; --btn-fg: #F6F1EA">
 <img src="/_blob/30d8817c940852821345f06122fd62d1" alt="" aria-hidden="true" style="position: absolute; left: 660px; top: 300px; width: 640px; height: 310px; opacity: {{fallbackOpacity}}; transition: opacity .8s ease; display: block">
 <canvas ref="{{setCanvas}}" width="1440" height="920" role="img" aria-label="An interactive 3D gold Glozia crown floating among pearls and gold rings" style="position: absolute; left: 0; top: 0; width: 1440px; height: 920px; display: block"></canvas>
 
-<header style="position: absolute; left: 0; top: 0; width: 1440px; height: 104px; box-sizing: border-box; padding: 0 96px; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; border-bottom: 1px solid var(--line); z-index: 3; transition: border-color .8s ease">
+<header style="position: absolute; left: 0; top: 0; width: 1440px; height: 104px; box-sizing: border-box; padding: 0 96px; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; z-index: 3">
 <nav aria-label="Primary" style="display: flex; gap: 36px; align-items: center">
 <a class="hnav" href="Services.dc.html">Services</a>
 <a class="hnav" href="#studio">Studio</a>
+<a class="hnav" href="#shop">Shop</a>
 <a class="hnav" href="#team">Team</a>
 <a class="hnav" href="#visit">Visit</a>
 </nav>
 <a href="#top" aria-label="Glozia — home" style="display: flex; align-items: center; justify-content: center">
-<img src="{{lockupSrc}}" alt="Glozia" style="height: 60px; width: 86px; display: block">
+<img src="/_blob/e9666be69117daefd0452595aa1fd57b" alt="Glozia" style="height: 60px; width: 86px; display: block">
 </a>
 <div style="display: flex; justify-content: flex-end; align-items: center; gap: 32px">
 <a class="hnav" href="#visit">+91 73378 76023</a>
@@ -85,23 +86,12 @@ a:focus-visible,button:focus-visible{outline:2px solid #C4914D;outline-offset:3p
 </div>
 
 <div style="position: absolute; left: 96px; right: 96px; bottom: 36px; display: flex; align-items: center; justify-content: space-between; gap: 32px; z-index: 2; pointer-events: none">
-<div role="group" aria-label="Lighting" style="display: flex; align-items: center; gap: 14px; pointer-events: auto">
-<span style="font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); transition: color .8s ease">Light</span>
-<div style="display: flex; gap: 4px; padding: 4px; border-radius: 999px; border: 1px solid var(--line); transition: border-color .8s ease">
-<button class="seg" type="button" aria-pressed="{{isDay}}" onClick="{{setDay}}" style="background: {{dayBg}}; color: {{dayFg}}">
-<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"></path></svg>
-Day</button>
-<button class="seg" type="button" aria-pressed="{{isDusk}}" onClick="{{setDusk}}" style="background: {{duskBg}}; color: {{duskFg}}">
-<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg>
-Dusk</button>
-</div>
-</div>
 <div style="display: flex; align-items: center; gap: 12px; font-size: 13px; letter-spacing: 0.04em; color: var(--muted); transition: color .8s ease">
 <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round"><path d="M8 13V6.5a1.5 1.5 0 0 1 3 0V12m0-1.5a1.5 1.5 0 0 1 3 0V12m0-.5a1.5 1.5 0 0 1 3 0v3.5a6 6 0 0 1-6 6h-.5a5.5 5.5 0 0 1-4.6-2.5L4.5 15a1.5 1.5 0 0 1 2.4-1.8L8 14.5"></path></svg>
 <span>Drag the crown to turn it · tap it to make it shine</span>
 </div>
 <div style="display: flex; align-items: center; gap: 16px; font-size: 13px; letter-spacing: 0.04em; color: var(--muted); transition: color .8s ease">
-<span>Open every day · 9:00 am – 8:30 pm</span>
+<span>Open every day · 9:00 am – 8:30 pm (Fridays from 10:00 am)</span>
 <span aria-hidden="true" style="position: relative; width: 1px; height: 44px; background: var(--line); overflow: hidden">
 <span class="glz-anim" style="position: absolute; left: -2px; top: 0; width: 5px; height: 5px; border-radius: 50%; background: var(--acc); animation: glz-drop 2.2s ease-in-out infinite"></span>
 </span>
@@ -191,99 +181,105 @@ Dusk</button>
 </div>
 </section>
 
-<section style="height: 940px; flex-shrink: 0; box-sizing: border-box; padding: 120px 96px; background: #231B17; color: #F6F1EA; display: flex; align-items: center; gap: 96px">
-<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-direction: column; gap: 20px">
-<div class="eyebrow" style="color: #C4914D">The experience</div>
-<h2 class="serif" style="margin: 0; font-size: 56px; line-height: 1.08; font-weight: 300; color: #F6F1EA; max-width: 600px">From booking to bill, <em>looked after.</em></h2>
-<p style="margin: 0; max-width: 520px; font-size: 16px; line-height: 1.7; color: #BDAE9F">The details that usually get in the way are handled quietly in the background, so the time in the chair is all yours.</p>
+<section id="shop" style="height: 1020px; flex-shrink: 0; box-sizing: border-box; padding: 104px 96px; background: #231B17; color: #F6F1EA; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 18px; max-width: 660px">
+<div class="eyebrow" style="color: #C4914D">Shop</div>
+<h2 class="serif" style="margin: 0; font-size: 56px; line-height: 1.06; font-weight: 300; color: #F6F1EA">Take the salon <em>home.</em></h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #BDAE9F">The professional ranges on our shelf, matched to the service you came in for — so your colour, smoothness and shine keep going between visits.</p>
 </div>
-<div style="display: flex; flex-direction: column">
-<div style="display: flex; gap: 28px; padding: 22px 0; border-top: 1px solid rgba(246,241,234,0.14)">
-<span class="serif" style="font-size: 22px; color: #C4914D; width: 32px; flex-shrink: 0">01</span>
+<div role="group" aria-label="Choose a routine" style="display: flex; gap: 6px; padding: 5px; border: 1px solid rgba(246,241,234,0.2); border-radius: 999px; align-self: flex-start">
+<sc-for list="{{routines}}" as="r" hint-placeholder-count="6">
+<button class="seg" type="button" aria-pressed="{{r.on}}" onClick="{{r.pick}}" style="background: {{r.bg}}; color: {{r.fg}}">{{r.label}}</button>
+</sc-for>
+</div>
+<div style="display: flex; gap: 56px; align-items: stretch">
+<div aria-live="polite" style="width: 340px; flex-shrink: 0; display: flex; flex-direction: column; gap: 22px">
+<h3 class="serif" style="margin: 0; font-size: 34px; line-height: 1.15; font-weight: 300; color: #F6F1EA">{{rtTitle}}</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.65; color: #BDAE9F">{{rtDesc}}</p>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #BDAE9F">Pairs with</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{pairs}}" as="sv" hint-placeholder-count="2">
+<span style="font-size: 13px; line-height: 1; padding: 8px 12px; border: 1px solid rgba(196,145,77,0.45); border-radius: 999px; color: #EDE4D8">{{sv.name}}</span>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; align-items: baseline; justify-content: space-between; padding-top: 18px; border-top: 1px solid rgba(246,241,234,0.14)">
+<span style="font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #BDAE9F">Full routine</span>
+<span class="serif" style="font-size: 38px; line-height: 1; color: #E6BE7E">{{rtTotal}}</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; margin-top: auto">
+<a class="btn-light" href="{{waLink}}" style="align-self: flex-start">Order on WhatsApp</a>
+<span style="font-size: 13px; color: #BDAE9F">or pick it up at the front desk</span>
+</div>
+</div>
+<div style="flex: 1 1 0; min-width: 0; display: flex; justify-content: center; gap: 28px">
+<sc-for list="{{shelf}}" as="pr" hint-placeholder-count="3">
+<div style="width: 254px; display: flex; flex-direction: column; gap: 16px">
+<div onPointerMove="{{tilt}}" onPointerLeave="{{untilt}}" style="height: 340px; perspective: 900px">
+<div style="position: relative; height: 340px; box-sizing: border-box; border-radius: 127px 127px 4px 4px; border: 1px solid rgba(196,145,77,0.28); background: radial-gradient(70% 55% at 50% 40%, rgba(255,222,170,0.16), rgba(255,222,170,0) 70%), #2B221D; overflow: hidden; display: flex; align-items: flex-end; justify-content: center; transition: transform .35s ease-out">
+<span aria-hidden="true" style="position: absolute; left: 50%; bottom: 34px; width: 160px; height: 20px; margin-left: -80px; border-radius: 50%; background: radial-gradient(closest-side, rgba(0,0,0,0.55), rgba(0,0,0,0))"></span>
+<div class="glz-anim" style="position: relative; margin-bottom: 40px; animation: glz-bob 5.5s ease-in-out infinite; animation-delay: {{pr.delay}}">
+<sc-if value="{{pr.isShampoo}}" hint-placeholder-val="{{ true }}">
+<svg width="150" height="268" viewBox="0 0 132 236" aria-hidden="true" style="display: block">
+<rect x="44" y="4" width="44" height="34" rx="7" fill="#C4914D"></rect>
+<rect x="40" y="30" width="52" height="10" rx="3" fill="#A97A35"></rect>
+<rect x="22" y="38" width="88" height="194" rx="26" fill="{{pr.tint}}"></rect>
+<rect x="22" y="112" width="88" height="62" fill="rgba(255,255,255,0.32)"></rect>
+<rect x="32" y="52" width="9" height="164" rx="4.5" fill="rgba(255,255,255,0.45)"></rect>
+<rect x="90" y="48" width="12" height="172" rx="6" fill="rgba(0,0,0,0.13)"></rect>
+<rect x="40" y="134" width="52" height="3" rx="1.5" fill="rgba(42,33,28,0.35)"></rect>
+<rect x="48" y="144" width="36" height="3" rx="1.5" fill="rgba(42,33,28,0.22)"></rect>
+</svg>
+</sc-if>
+<sc-if value="{{pr.isMasque}}" hint-placeholder-val="{{ false }}">
+<svg width="170" height="170" viewBox="0 0 150 150" aria-hidden="true" style="display: block">
+<rect x="14" y="8" width="122" height="42" rx="10" fill="#C4914D"></rect>
+<rect x="14" y="40" width="122" height="8" fill="rgba(0,0,0,0.14)"></rect>
+<rect x="8" y="46" width="134" height="100" rx="22" fill="{{pr.tint}}"></rect>
+<rect x="8" y="74" width="134" height="40" fill="rgba(255,255,255,0.32)"></rect>
+<rect x="20" y="56" width="9" height="80" rx="4.5" fill="rgba(255,255,255,0.45)"></rect>
+<rect x="122" y="54" width="12" height="86" rx="6" fill="rgba(0,0,0,0.13)"></rect>
+<rect x="45" y="92" width="60" height="3" rx="1.5" fill="rgba(42,33,28,0.35)"></rect>
+</svg>
+</sc-if>
+<sc-if value="{{pr.isSerum}}" hint-placeholder-val="{{ false }}">
+<svg width="114" height="239" viewBox="0 0 100 210" aria-hidden="true" style="display: block">
+<rect x="38" y="4" width="24" height="44" rx="12" fill="#2A211C"></rect>
+<rect x="32" y="44" width="36" height="26" rx="5" fill="#C4914D"></rect>
+<rect x="18" y="68" width="64" height="138" rx="18" fill="{{pr.tint}}"></rect>
+<rect x="18" y="116" width="64" height="44" fill="rgba(255,255,255,0.32)"></rect>
+<rect x="27" y="80" width="7" height="110" rx="3.5" fill="rgba(255,255,255,0.45)"></rect>
+<rect x="66" y="76" width="10" height="122" rx="5" fill="rgba(0,0,0,0.14)"></rect>
+<rect x="34" y="136" width="32" height="3" rx="1.5" fill="rgba(42,33,28,0.32)"></rect>
+</svg>
+</sc-if>
+<sc-if value="{{pr.isOil}}" hint-placeholder-val="{{ false }}">
+<svg width="125" height="268" viewBox="0 0 110 236" aria-hidden="true" style="display: block">
+<rect x="46" y="2" width="46" height="12" rx="4" fill="#C4914D"></rect>
+<rect x="46" y="10" width="14" height="30" rx="3" fill="#C4914D"></rect>
+<rect x="36" y="36" width="38" height="22" rx="5" fill="#A97A35"></rect>
+<rect x="22" y="56" width="66" height="176" rx="20" fill="{{pr.tint}}"></rect>
+<rect x="22" y="122" width="66" height="50" fill="rgba(255,255,255,0.32)"></rect>
+<rect x="31" y="68" width="8" height="150" rx="4" fill="rgba(255,255,255,0.45)"></rect>
+<rect x="72" y="64" width="10" height="160" rx="5" fill="rgba(0,0,0,0.13)"></rect>
+<rect x="38" y="145" width="34" height="3" rx="1.5" fill="rgba(42,33,28,0.32)"></rect>
+</svg>
+</sc-if>
+</div>
+<span aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(circle at var(--gx, 50%) var(--gy, 0%), rgba(255,236,200,0.2), rgba(255,236,200,0) 46%); pointer-events: none"></span>
+</div>
+</div>
 <div style="display: flex; flex-direction: column; gap: 6px">
-<h3 class="serif" style="margin: 0; font-size: 28px; font-weight: 400; color: #F6F1EA">Book in a minute</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #BDAE9F">Choose your service, stylist and time online — day or night.</p>
+<span style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #C4914D">L’Oréal Professionnel</span>
+<span class="serif" style="font-size: 25px; line-height: 1.15; color: #F6F1EA">{{pr.name}}</span>
+<span style="display: flex; justify-content: space-between; padding-top: 10px; border-top: 1px solid rgba(246,241,234,0.12); font-size: 14px; color: #BDAE9F"><span>{{pr.type}}</span><span style="color: #F6F1EA">{{pr.price}}</span></span>
 </div>
 </div>
-<div style="display: flex; gap: 28px; padding: 22px 0; border-top: 1px solid rgba(246,241,234,0.14)">
-<span class="serif" style="font-size: 22px; color: #C4914D; width: 32px; flex-shrink: 0">02</span>
-<div style="display: flex; flex-direction: column; gap: 6px">
-<h3 class="serif" style="margin: 0; font-size: 28px; font-weight: 400; color: #F6F1EA">Updates on WhatsApp</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #BDAE9F">Your confirmation, and the occasional note from the studio, arrive where you already are.</p>
+</sc-for>
 </div>
 </div>
-<div style="display: flex; gap: 28px; padding: 22px 0; border-top: 1px solid rgba(246,241,234,0.14); border-bottom: 1px solid rgba(246,241,234,0.14)">
-<span class="serif" style="font-size: 22px; color: #C4914D; width: 32px; flex-shrink: 0">03</span>
-<div style="display: flex; flex-direction: column; gap: 6px">
-<h3 class="serif" style="margin: 0; font-size: 28px; font-weight: 400; color: #F6F1EA">Receipts that arrive on their own</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #BDAE9F">Your bill lands on WhatsApp the moment you check out. No paper, no waiting.</p>
-</div>
-</div>
-</div>
-</div>
-<div style="width: 520px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 32px">
-<div onPointerMove="{{tilt}}" onPointerLeave="{{untilt}}" style="width: 420px; height: 560px; perspective: 1300px">
-<div style="width: 420px; height: 560px; transform-style: preserve-3d; transition: transform .35s ease-out">
-<div style="position: relative; width: 420px; height: 560px; transform-style: preserve-3d; transform: rotateY({{flipDeg}}deg); transition: transform 1.1s cubic-bezier(.3,.7,.2,1)">
-<div style="position: absolute; inset: 0; box-sizing: border-box; padding: 28px; border-radius: 22px; background: #F6F1EA; color: #2A211C; backface-visibility: hidden; display: flex; flex-direction: column; gap: 20px; box-shadow: 0 50px 80px -40px rgba(0,0,0,0.8)">
-<div style="display: flex; align-items: center; justify-content: space-between">
-<div style="display: flex; align-items: center; gap: 12px">
-<span style="width: 40px; height: 40px; border-radius: 50%; background: #231B17; display: flex; align-items: center; justify-content: center">
-<img src="/_blob/05f4e531774dbfe57f0cd5770ed26893" alt="" style="width: 26px; height: 18px; display: block">
-</span>
-<span style="display: flex; flex-direction: column; gap: 2px">
-<span style="font-size: 14px; font-weight: 500">Glozia Unisex Salon</span>
-<span style="font-size: 12px; color: #6B5B4E">on WhatsApp · just now</span>
-</span>
-</div>
-<span style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #8A6128; border: 1px solid rgba(138,97,40,0.4); border-radius: 999px; padding: 4px 10px">Sample</span>
-</div>
-<div style="flex: 1 1 0; display: flex; flex-direction: column; gap: 14px; padding: 22px; border-radius: 4px 18px 18px 18px; background: #FFFFFF; box-shadow: 0 1px 0 rgba(42,33,28,0.08)">
-<span class="serif" style="font-size: 30px; line-height: 1.1">Hi Ananya — you’re booked.</span>
-<div style="display: grid; grid-template-columns: 84px minmax(0, 1fr); row-gap: 10px; font-size: 14px; line-height: 1.45">
-<span style="color: #6B5B4E">When</span><span>Sat, 11 Oct · 4:30 pm</span>
-<span style="color: #6B5B4E">Services</span><span>Advance haircut, Hydrating hair spa</span>
-<span style="color: #6B5B4E">Stylist</span><span>Sajan</span>
-<span style="color: #6B5B4E">Where</span><span>Mallathahalli Lake Road, Nagarbhavi</span>
-</div>
-<span style="margin-top: auto; font-size: 14px; color: #4F4238">See you soon. — Team Glozia</span>
-</div>
-<div style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #6B5B4E">
-<span>Booking confirmation</span>
-<span style="letter-spacing: 0.16em">1 / 2</span>
-</div>
-</div>
-<div style="position: absolute; inset: 0; box-sizing: border-box; padding: 28px; border-radius: 22px; background: #FBF8F3; color: #2A211C; backface-visibility: hidden; transform: rotateY(180deg); display: flex; flex-direction: column; gap: 18px; box-shadow: 0 50px 80px -40px rgba(0,0,0,0.8)">
-<div style="display: flex; align-items: flex-start; justify-content: space-between">
-<img src="/_blob/e9666be69117daefd0452595aa1fd57b" alt="Glozia" style="width: 58px; height: 40px; display: block">
-<span style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #8A6128; border: 1px solid rgba(138,97,40,0.4); border-radius: 999px; padding: 4px 10px">Sample</span>
-</div>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<span class="serif" style="font-size: 34px; line-height: 1">Receipt</span>
-<span style="font-size: 12px; letter-spacing: 0.06em; color: #6B5B4E">Sat, 11 Oct · paid by UPI</span>
-</div>
-<div style="display: flex; flex-direction: column; border-top: 1px dashed rgba(42,33,28,0.3)">
-<div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(42,33,28,0.08); font-size: 15px"><span>Advance haircut</span><span>₹999</span></div>
-<div style="display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(42,33,28,0.08); font-size: 15px"><span>Hydrating hair spa</span><span>₹1,200</span></div>
-<div style="display: flex; justify-content: space-between; padding: 14px 0; font-size: 15px; color: #6B5B4E"><span>GST</span><span>as billed</span></div>
-</div>
-<div style="margin-top: auto; display: flex; justify-content: space-between; align-items: baseline; padding-top: 16px; border-top: 1px dashed rgba(42,33,28,0.3)">
-<span style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase">Subtotal</span>
-<span class="serif" style="font-size: 34px">₹2,199</span>
-</div>
-<div style="display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #6B5B4E">
-<span>Sent to WhatsApp at checkout</span>
-<span style="letter-spacing: 0.16em">2 / 2</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<button class="round-light" type="button" onClick="{{flip}}">
-<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.7 5.7L4 15.5M4 20v-4.5h4.5"></path></svg>
-{{flipLabel}}</button>
-</div>
+<p style="margin: 0; font-size: 13px; line-height: 1.6; color: #968777">Also on the shelf: Biolage serum ₹350 · Streax Professional serum ₹340 · Hydra Keratin shampoo ₹870 and mask ₹999. All prices before GST.</p>
 </section>
 
 <section id="team" style="height: 940px; flex-shrink: 0; box-sizing: border-box; padding: 120px 96px; display: flex; flex-direction: column; gap: 64px">
@@ -298,16 +294,11 @@ Dusk</button>
 <sc-for list="{{team}}" as="m" hint-placeholder-count="4">
 <div style="display: flex; flex-direction: column; gap: 18px">
 <div onPointerMove="{{tilt}}" onPointerLeave="{{untilt}}" style="height: 380px; perspective: 900px">
-<div style="position: relative; height: 380px; border-radius: 144px 144px 2px 2px; background: #231B17; overflow: hidden; display: flex; align-items: center; justify-content: center; transition: transform .35s ease-out; box-shadow: 0 30px 50px -30px rgba(42,33,28,0.6)">
-<div style="position: absolute; inset: 12px; border-radius: 132px 132px 2px 2px; border: 1px solid rgba(196,145,77,0.4)"></div>
-<sc-if value="{{m.hasInitial}}" hint-placeholder-val="{{ true }}">
-<span class="serif" aria-hidden="true" style="font-size: 190px; line-height: 1; font-weight: 300; color: #C4914D">{{m.initial}}</span>
-</sc-if>
-<sc-if value="{{m.noInitial}}" hint-placeholder-val="{{ false }}">
-<img src="/_blob/30d8817c940852821345f06122fd62d1" alt="" style="width: 150px; height: 73px; display: block">
-</sc-if>
+<div style="position: relative; height: 380px; border-radius: 144px 144px 2px 2px; background: #231B17; overflow: hidden; transition: transform .35s ease-out; box-shadow: 0 30px 50px -30px rgba(42,33,28,0.6)">
+<img src="{{m.img}}" alt="{{m.alt}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(27,21,18,0) 55%, rgba(27,21,18,0.45) 100%); pointer-events: none"></div>
+<div aria-hidden="true" style="position: absolute; inset: 12px; border-radius: 132px 132px 2px 2px; border: 1px solid rgba(233,207,160,0.62); pointer-events: none"></div>
 <div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(circle at var(--gx, 50%) var(--gy, 0%), rgba(255,232,190,0.26), rgba(255,232,190,0) 46%); pointer-events: none"></div>
-<span style="position: absolute; left: 0; right: 0; bottom: 22px; text-align: center; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: #BDAE9F">Portrait coming soon</span>
 </div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px">
@@ -319,7 +310,7 @@ Dusk</button>
 </div>
 </section>
 
-<section style="height: 1040px; flex-shrink: 0; box-sizing: border-box; padding: 120px 0 80px; background: #EDE4D8; display: flex; flex-direction: column; gap: 32px">
+<section style="height: 990px; flex-shrink: 0; box-sizing: border-box; padding: 120px 0 80px; background: #EDE4D8; display: flex; flex-direction: column; gap: 32px">
 <div style="padding: 0 96px; display: flex; justify-content: space-between; align-items: flex-end; gap: 64px">
 <div style="display: flex; flex-direction: column; gap: 20px">
 <div class="eyebrow" style="color: #8A6128">From the studio</div>
@@ -334,7 +325,6 @@ Dusk</button>
 </sc-for>
 </div>
 </div>
-<p style="margin: 0; text-align: center; font-size: 13px; letter-spacing: 0.06em; color: #6B5B4E">Hover to pause the carousel</p>
 </section>
 
 <section style="height: 800px; flex-shrink: 0; box-sizing: border-box; padding: 120px 96px; display: flex; align-items: center; gap: 96px">
@@ -367,8 +357,10 @@ Dusk</button>
 </section>
 
 <section id="visit" style="height: 816px; flex-shrink: 0; box-sizing: border-box; padding: 128px 96px; border-top: 1px solid rgba(42,33,28,0.12); display: flex; gap: 96px">
-<div style="width: 600px; flex-shrink: 0; position: relative; overflow: hidden; border-radius: 2px; background-color: #E0D5C6; background-image: repeating-linear-gradient(135deg, rgba(42,33,28,0.07) 0 1px, transparent 1px 11px)">
-<span style="position: absolute; left: 16px; bottom: 14px; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #4F4238; background: rgba(246,241,234,0.88); padding: 6px 10px; border-radius: 2px">Map · Google Maps embed, Mallathahalli Lake Road</span>
+<div style="width: 600px; flex-shrink: 0; position: relative; overflow: hidden; border-radius: 2px; background-color: #E0D5C6">
+<img src="/_blob/936bc7ac838dfda16c294548a5f29840" alt="Map of Mallathahalli Lake and Nagarbhavi, Bengaluru" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+<span style="position: absolute; left: 16px; bottom: 14px; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #4F4238; background: rgba(246,241,234,0.92); padding: 6px 10px; border-radius: 2px">Mallathahalli Lake Road · Nagarbhavi</span>
+<span style="position: absolute; right: 0; bottom: 0; font-size: 9px; line-height: 1.4; color: #6B5B4E; background: rgba(246,241,234,0.88); padding: 2px 6px">© OpenStreetMap contributors</span>
 </div>
 <div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 36px">
 <div style="display: flex; flex-direction: column; gap: 20px">
@@ -431,7 +423,7 @@ Dusk</button>
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"startMode":{"editor":"enum","options":["day","dusk"],"default":"day","section":"3D hero"},"autoplay":{"editor":"boolean","default":true,"section":"Motion"},"$preview":{"width":1440,"height":7820}}'>
+<script type="text/x-dc" data-dc-script data-props='{"autoplay":{"editor":"boolean","default":true,"section":"Motion"},"$preview":{"width":1440,"height":7850}}'>
 class Component extends DCLogic {
   componentDidMount() {
     this.__alive = true;
@@ -443,7 +435,6 @@ class Component extends DCLogic {
         if (!self.__alive) return;
         var s = self.state || {};
         var patch = null;
-        if (!s.flipTouched) { patch = patch || {}; patch.flipped = !s.flipped; }
         if (!s.svcTouched && !self.__sd) { patch = patch || {}; patch.svcPos = (s.svcPos || 0) + 1; }
         if (patch) self.setState(patch);
       }, 5200);
@@ -454,10 +445,6 @@ class Component extends DCLogic {
     clearTimeout(this.__retry);
     clearInterval(this.__auto);
     if (this.__scene) { try { this.__scene.dispose(); } catch (e) {} this.__scene = null; }
-  }
-  __mode() {
-    var s = this.state || {};
-    return s.mode || (this.props.startMode === 'dusk' ? 'dusk' : 'day');
   }
   __mountScene() {
     var self = this, tries = 0;
@@ -472,17 +459,13 @@ class Component extends DCLogic {
       try {
         self.__sceneCanvas = self.__canvas;
         self.__scene = api.mount(self.__canvas, {
-          mode: self.__mode(),
+          mode: 'day',
           onReady: function () { if (self.__alive && !(self.state && self.state.sceneReady)) self.setState({ sceneReady: true }); }
         });
       } catch (err) {
         console.error('[Glozia] 3D scene could not start', err);
       }
     })();
-  }
-  __setMode(m) {
-    this.setState({ mode: m });
-    if (this.__scene) this.__scene.setMode(m);
   }
   __flowRel(i, pos) {
     return ((((i - pos) % 6) + 9) % 6) - 3;
@@ -499,8 +482,6 @@ class Component extends DCLogic {
   renderVals() {
     var self = this;
     var s = this.state || {};
-    var mode = this.__mode();
-    var dusk = mode === 'dusk';
 
     if (!this.__setCanvas) {
       this.__setCanvas = function (el) {
@@ -592,6 +573,48 @@ class Component extends DCLogic {
       goTo(snap);
     };
 
+    // ---- shop: take-home routines (retail ranges + prices from GlowDesk) ----
+    var ROUTINES = [
+      { label: 'After colour', title: 'Keep colour bright', tint: '#D9A08E',
+        desc: 'For colour-treated hair — Vitamino Color shampoo and masque help your shade last between visits.',
+        pairs: ['Global colour', 'Global highlights', 'Root touch-up'],
+        items: [['Vitamino Color', 'Shampoo', 1175, 'shampoo'], ['Vitamino Color', 'Masque', 990, 'masque']] },
+      { label: 'After smoothening', title: 'Care for straightened hair', tint: '#E6D3AF',
+        desc: 'Xtenso Care is made for chemically straightened hair — the routine to follow re-bonding, smoothing or nanoplastia.',
+        pairs: ['Re-bonding & smoothing', 'Nanoplastia'],
+        items: [['Xtenso Care', 'Shampoo', 1175, 'shampoo'], ['Xtenso Care', 'Masque', 850, 'masque']] },
+      { label: 'After keratin', title: 'Stay sleek at home', tint: '#EDE6DC',
+        desc: 'A shampoo, masque and serum trio to keep the smoothness from your keratin going.',
+        pairs: ['Pro-keratin treatment', 'Hair botox'],
+        items: [['Keratin Alpha Sleek', 'Shampoo', 1120, 'shampoo'], ['Keratin Alpha Sleek', 'Masque', 1350, 'masque'], ['Keratin Alpha Sleek', 'Serum', 2000, 'serum']] },
+      { label: 'Frizz control', title: 'Calm the frizz', tint: '#D4BFC7',
+        desc: 'Liss Unlimited is designed for frizzy, unruly hair — shampoo, masque and a finishing serum.',
+        pairs: ['Frizzy control spa', 'Hydrating hair spa'],
+        items: [['Liss Unlimited', 'Shampoo', 1175, 'shampoo'], ['Liss Unlimited', 'Masque', 975, 'masque'], ['Liss Unlimited', 'Serum', 820, 'serum']] },
+      { label: 'Repair & strength', title: 'Repair and strengthen', tint: '#D8B47A',
+        desc: 'Inforcer for weak, breakage-prone hair, finished with Absolut Repair oil for damaged lengths.',
+        pairs: ['Moroccan oil therapy', 'Hydrating hair spa'],
+        items: [['Inforcer', 'Shampoo', 790, 'shampoo'], ['Inforcer', 'Masque', 990, 'masque'], ['Absolut Repair', 'Oil', 1380, 'oil']] },
+      { label: 'Scalp & hair fall', title: 'A healthier scalp', tint: '#B9C1AC',
+        desc: 'Scalp Advanced shampoo and masque for scalp care, plus Density Advanced shampoo for thinning hair.',
+        pairs: ['Dandruff detox spa', 'Hair fall control treatment'],
+        items: [['Scalp Advanced', 'Shampoo', 990, 'shampoo'], ['Scalp Advanced', 'Masque', 1075, 'masque'], ['Density Advanced', 'Shampoo', 790, 'shampoo']] }
+    ];
+    function inr(n) { return '₹' + Number(n).toLocaleString('en-IN'); }
+    var ri2 = s.routine == null ? 0 : s.routine;
+    var RT = ROUTINES[ri2];
+    var routines = ROUTINES.map(function (r, i) {
+      var on = i === ri2;
+      return { label: r.label, on: on ? 'true' : 'false', bg: on ? '#C4914D' : 'transparent', fg: on ? '#1B1512' : '#E9DFD2',
+        pick: function () { self.setState({ routine: i }); } };
+    });
+    var shelf = RT.items.map(function (it, k) {
+      return { name: it[0], type: it[1], price: inr(it[2]), tint: RT.tint, delay: (-k * 1.3).toFixed(1) + 's',
+        isShampoo: it[3] === 'shampoo', isMasque: it[3] === 'masque', isSerum: it[3] === 'serum', isOil: it[3] === 'oil' };
+    });
+    var rtTotal = RT.items.reduce(function (a, it) { return a + it[2]; }, 0);
+    var waText = 'Hi Glozia, I’d like the ' + RT.label.toLowerCase() + ' routine: ' + RT.items.map(function (it) { return it[0] + ' ' + it[1].toLowerCase(); }).join(', ') + '.';
+
     // ---- reviews deck ------------------------------------------------------
     var REV = [
       { q: 'Had a great experience at the salon. Great ambience, warm service, and attention to detail', n: 'Arpitha Bollalli' },
@@ -623,34 +646,18 @@ class Component extends DCLogic {
     ];
     var gallery = GAL.map(function (g, i) { return { img: g[0], alt: g[1], rot: String(i * 36) }; });
 
+    // Team photos: free Pexels stock stand-ins (hands-at-work shots, no faces) until the studio's own portraits exist.
     var team = [
-      { name: 'Sajan', role: 'Hair stylist', initial: 'S' },
-      { name: 'Salman', role: 'Hair & beard', initial: 'S' },
-      { name: 'Arjun', role: 'Hair stylist', initial: 'A' },
-      { name: '[SPA THERAPIST]', role: 'Ladies spa', initial: '' }
-    ].map(function (m) { return { name: m.name, role: m.role, initial: m.initial, hasInitial: !!m.initial, noInitial: !m.initial }; });
+      { name: 'Sajan', role: 'Hair stylist', img: '/_blob/288048992176b83d874b19be3db4a9d8', alt: 'Scissors and a comb cutting long dark hair' },
+      { name: 'Salman', role: 'Hair & beard', img: '/_blob/012ae0b2fc9742e56fe87290580fb0b3', alt: 'A barber’s hands holding clippers and a comb' },
+      { name: 'Arjun', role: 'Hair stylist', img: '/_blob/ac54d72302725a8c1fea61817fda4291', alt: 'A stylist trimming a client’s dark hair' },
+      { name: 'Spa team', role: 'Ladies spa', img: '/_blob/54e21cadecab97629f814bc473541b48', alt: 'A therapist giving a relaxing back massage' }
+    ];
 
-    var flipped = !!s.flipped;
 
     return {
-      ink: dusk ? '#F6F1EA' : '#2A211C',
-      muted: dusk ? '#CDBFAF' : '#4F4238',
-      acc: dusk ? '#D9A962' : '#8A6128',
-      line: dusk ? 'rgba(246,241,234,0.26)' : 'rgba(42,33,28,0.2)',
-      btnBg: dusk ? '#C4914D' : '#2A211C',
-      btnFg: dusk ? '#1B1512' : '#F6F1EA',
-      duskOpacity: dusk ? '1' : '0',
-      lockupSrc: dusk ? '/_blob/05f4e531774dbfe57f0cd5770ed26893' : '/_blob/e9666be69117daefd0452595aa1fd57b',
       fallbackOpacity: s.sceneReady ? '0' : '1',
       setCanvas: this.__setCanvas,
-      isDay: dusk ? 'false' : 'true',
-      isDusk: dusk ? 'true' : 'false',
-      dayBg: dusk ? 'transparent' : '#2A211C',
-      dayFg: dusk ? '#CDBFAF' : '#F6F1EA',
-      duskBg: dusk ? '#C4914D' : 'transparent',
-      duskFg: dusk ? '#1B1512' : '#4F4238',
-      setDay: function () { self.__setMode('day'); },
-      setDusk: function () { self.__setMode('dusk'); },
 
       svcCards: svcCards,
       svcNum: '0' + (front + 1),
@@ -661,10 +668,10 @@ class Component extends DCLogic {
       svcDown: svcDown, svcMove: svcMove, svcUp: svcUp,
 
       tilt: this.__tilt, untilt: this.__untilt,
-      flipDeg: flipped ? '180' : '0',
-      flipLabel: flipped ? 'Show the booking' : 'Show the receipt',
-      flip: function () { self.setState({ flipped: !(self.state && self.state.flipped), flipTouched: true }); },
 
+      routines: routines, shelf: shelf, pairs: RT.pairs.map(function (n) { return { name: n }; }),
+      rtTitle: RT.title, rtDesc: RT.desc, rtTotal: inr(rtTotal),
+      waLink: 'https://wa.me/917337876023?text=' + encodeURIComponent(waText),
       team: team,
       gallery: gallery,
       reviews: reviews,

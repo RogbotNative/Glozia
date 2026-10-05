@@ -17,3 +17,14 @@ bridal.jpg        https://unsplash.com/photos/1487412947147-5cebf100ffc2
 menu-spa.jpg      https://unsplash.com/photos/1600334089648-b0d9d3028eb2
 menu-hero.jpg     https://unsplash.com/photos/1562322140-8baeececf3df   (current services-page photo)
 (Image CDN: https://images.unsplash.com/photo-<id>)
+
+Added 5 Oct 2026: team cards (Pexels License: free to use, no attribution required. https://www.pexels.com/license/)
+Stock stand-ins showing hands at work, not the actual team. Replace with the studio's own portraits before launch.
+
+team-hair-cut.jpg      https://www.pexels.com/photo/3993453/    (Sajan's card)
+team-barber-tools.jpg  https://www.pexels.com/photo/7697217/    (Salman's card)
+team-hair-detail.jpg   https://www.pexels.com/photo/6487882/    (Arjun's card)
+team-spa-massage.jpg   https://www.pexels.com/photo/19641809/   (Spa team card)
+
+Design only, not used in the build: design/assets/map-nagarbhavi.jpg is a styled map made from
+OpenStreetMap tiles, © OpenStreetMap contributors (https://www.openstreetmap.org/copyright).

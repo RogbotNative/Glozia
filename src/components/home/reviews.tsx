@@ -32,7 +32,7 @@ export function Reviews() {
     <Section>
       <Container
         style={[
-          { paddingVertical: isMobile ? 72 : 120, gap: isMobile ? 36 : 64 },
+          { paddingVertical: isMobile ? 72 : 120, gap: isMobile ? 36 : 64, minHeight: isDesktop ? 800 : undefined },
           isDesktop && { flexDirection: 'row', alignItems: 'center', gap: 96 },
         ]}>
         <View style={{ width: isDesktop ? 440 : undefined, gap: isMobile ? 20 : 28 }}>

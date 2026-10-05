@@ -1,7 +1,7 @@
-import { Image } from 'expo-image';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import { Button, MaybeLink, type PressState } from '@/components/buttons';
+import { Image } from '@/components/image';
 import { Container, Grid } from '@/components/layout';
 import { ShimmerText } from '@/components/shimmer-text';
 import { Label, Sans, Serif } from '@/components/typography';
@@ -71,9 +71,13 @@ export function SiteFooter({ bottomInset = 0 }: { bottomInset?: number }) {
 
   return (
     <View style={{ backgroundColor: colors.night }}>
-      <Container style={{ paddingTop: isMobile ? 64 : 96, paddingBottom: (isMobile ? 32 : 40) + bottomInset, gap: isMobile ? 24 : 64 }}>
+      <Container
+        style={[
+          { paddingTop: isMobile ? 64 : 96, paddingBottom: (isMobile ? 32 : 40) + bottomInset, gap: isMobile ? 24 : 64 },
+          isDesktop && { minHeight: 560, justifyContent: 'space-between' },
+        ]}>
         <View style={[styles.top, !isDesktop && styles.topStacked]}>
-          <Serif size={isMobile ? 44 : isDesktop ? 72 : 60} lh={1.02} color={colors.cream} heading={2}>
+          <Serif size={isMobile ? 44 : isDesktop ? 72 : 60} lh={isMobile ? 1.02 : 1} color={colors.cream} heading={2}>
             Your chair is <ShimmerText>waiting.</ShimmerText>
           </Serif>
           <Button label="Book an appointment" href="/book" variant="light" full={isMobile} />

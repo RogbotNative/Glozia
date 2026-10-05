@@ -78,25 +78,14 @@ export const marqueeWords = [
   'Bridal',
 ];
 
-export const experienceSteps = [
-  ['Book in a minute', 'Choose your service, stylist and time online — day or night.'],
-  [
-    'Updates on WhatsApp',
-    'Your confirmation, and the occasional note from the studio, arrive where you already are.',
-  ],
-  [
-    'Receipts that arrive on their own',
-    'Your bill lands on WhatsApp the moment you check out. No paper, no waiting.',
-  ],
-] as const;
+export type TeamMember = { id: string; name: string; role: string; img: number; alt: string };
 
-export type TeamMember = { name: string; role: string; initial?: string };
-
+/** The photos are stock stand-ins of hands at work, so the alt text describes the photo, not the person. */
 export const team: TeamMember[] = [
-  { name: 'Sajan', role: 'Hair stylist', initial: 'S' },
-  { name: 'Salman', role: 'Hair & beard', initial: 'S' },
-  { name: 'Arjun', role: 'Hair stylist', initial: 'A' },
-  { name: 'Spa team', role: 'Ladies spa' },
+  { id: 'sajan', name: 'Sajan', role: 'Hair stylist', img: photos.teamHairCut, alt: 'Scissors and a comb cutting long dark hair' },
+  { id: 'salman', name: 'Salman', role: 'Hair & beard', img: photos.teamBarberTools, alt: 'A barber’s hands holding clippers and a comb' },
+  { id: 'arjun', name: 'Arjun', role: 'Hair stylist', img: photos.teamHairDetail, alt: 'A stylist trimming a client’s dark hair' },
+  { id: 'spa', name: 'Spa team', role: 'Ladies spa', img: photos.teamSpaMassage, alt: 'A therapist giving a relaxing back massage' },
 ];
 
 export const gallery = [
@@ -108,7 +97,7 @@ export const gallery = [
   { img: photos.menuHero, alt: 'A smiling stylist blow-drying a client’s hair' },
   { img: photos.heroDetail, alt: 'Scissors, comb and grooming products on wood' },
   { img: photos.cardHands, alt: 'Manicured nails in soft neutral shades' },
-  { img: photos.dusk, alt: 'A salon chair under warm pendant lights' },
+  { img: photos.chairLights, alt: 'A salon chair under warm pendant lights' },
   { img: photos.menuSpa, alt: 'Warm stones laid along a back during a spa treatment' },
 ];
 

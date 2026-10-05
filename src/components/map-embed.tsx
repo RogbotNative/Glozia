@@ -1,7 +1,7 @@
-import { Image } from 'expo-image';
 import { StyleSheet, View } from 'react-native';
 
 import { Button } from '@/components/buttons';
+import { Image } from '@/components/image';
 import { Sans } from '@/components/typography';
 import { photos } from '@/constants/images';
 import { site } from '@/constants/site';

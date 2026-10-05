@@ -1,4 +1,3 @@
-import { Image } from 'expo-image';
 import { Link, router } from 'expo-router';
 import { useState } from 'react';
 import { Modal, Pressable, StyleSheet, View } from 'react-native';
@@ -6,6 +5,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Button, MaybeLink, type PressState } from '@/components/buttons';
 import { CloseIcon, MenuIcon } from '@/components/icons';
+import { Image } from '@/components/image';
 import { Container, useSectionNav } from '@/components/layout';
 import { Sans, Serif } from '@/components/typography';
 import { brand } from '@/constants/images';
@@ -13,15 +13,10 @@ import { hours, site } from '@/constants/site';
 import { colors, webTransition } from '@/constants/theme';
 import { useLayout } from '@/hooks/use-layout';
 
-export type Tone = 'day' | 'dusk';
-
-const TONES = {
-  day: { ink: colors.ink, acc: colors.bronze, line: 'rgba(42,33,28,0.12)', button: 'dark' as const, logo: brand.lockupBronze },
-  dusk: { ink: colors.cream, acc: colors.goldSoft, line: 'rgba(246,241,234,0.26)', button: 'gold' as const, logo: brand.lockupGold },
-};
-
+/** Home-page sections in nav order (after Services). From other pages they link to /?s=<id>. */
 const SECTIONS = [
   ['Studio', 'studio'],
+  ['Shop', 'shop'],
   ['Team', 'team'],
   ['Visit', 'visit'],
 ] as const;
@@ -44,62 +39,51 @@ function NavItem({ label, onPress, href, color, hover, active }: { label: string
   );
 }
 
-export function SiteHeader({
-  tone = 'day',
-  overlay = false,
-  active,
-}: {
-  tone?: Tone;
-  overlay?: boolean;
-  active?: 'services';
-}) {
+/**
+ * `overlay` is the home-page header that floats over the 3D hero: no bottom divider. Other pages keep
+ * the 1px line.
+ */
+export function SiteHeader({ overlay = false, active }: { overlay?: boolean; active?: 'services' }) {
   const { isDesktop, isMobile } = useLayout();
-  const t = TONES[tone];
   const goTo = useSectionNav();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <View
-      style={[
-        styles.header,
-        { height: isDesktop ? 104 : 72, borderBottomColor: t.line },
-        overlay ? styles.overlay : null,
-        webTransition('border-color', 800),
-      ]}>
+    <View style={[styles.header, { height: isDesktop ? 104 : 72 }, overlay ? styles.overlay : styles.divider]}>
       <Container style={styles.row}>
         {isDesktop ? (
           <>
             <View style={[styles.side, styles.nav]} role="navigation" aria-label="Primary">
-              <NavItem label="Services" href="/services" color={t.ink} hover={t.acc} active={active === 'services'} />
+              <NavItem label="Services" href="/services" color={colors.ink} hover={colors.bronze} active={active === 'services'} />
               {SECTIONS.map(([label, id]) => (
-                <NavItem key={id} label={label} onPress={() => goTo(id)} color={t.ink} hover={t.acc} />
+                <NavItem key={id} label={label} onPress={() => goTo(id)} color={colors.ink} hover={colors.bronze} />
               ))}
             </View>
             <Link href="/" asChild>
               <Pressable accessibilityLabel="Glozia — home" role="link">
-                <Image source={t.logo} style={{ width: 86, height: 60 }} contentFit="contain" alt="Glozia" />
+                <Image source={brand.lockupBronze} style={{ width: 86, height: 60 }} contentFit="contain" alt="Glozia" />
               </Pressable>
             </Link>
             <View style={[styles.side, styles.right]}>
-              <NavItem label={site.phoneDisplay} href={site.phoneHref} color={t.ink} hover={t.acc} />
-              <Button label="Book an appointment" href="/book" variant={t.button} />
+              <NavItem label={site.phoneDisplay} onPress={() => goTo('visit')} color={colors.ink} hover={colors.bronze} />
+              <Button label="Book an appointment" href="/book" />
             </View>
           </>
         ) : (
           <>
             <Link href="/" asChild>
               <Pressable accessibilityLabel="Glozia — home" role="link">
-                <Image source={t.logo} style={{ width: 66, height: 46 }} contentFit="contain" alt="Glozia" />
+                <Image source={brand.lockupBronze} style={{ width: 66, height: 46 }} contentFit="contain" alt="Glozia" />
               </Pressable>
             </Link>
             <View style={styles.compactRight}>
-              {!isMobile ? <Button label="Book" href="/book" variant={t.button} height={44} /> : null}
+              {!isMobile ? <Button label="Book" href="/book" height={44} /> : null}
               <Pressable
                 onPress={() => setMenuOpen(true)}
                 role="button"
                 accessibilityLabel="Open menu"
                 style={styles.iconButton}>
-                <MenuIcon color={t.ink} />
+                <MenuIcon color={colors.ink} />
               </Pressable>
             </View>
           </>
@@ -170,10 +154,10 @@ function MobileMenu({ visible, onClose }: { visible: boolean; onClose: () => voi
 const styles = StyleSheet.create({
   header: {
     width: '100%',
-    borderBottomWidth: 1,
     justifyContent: 'center',
     zIndex: 3,
   },
+  divider: { borderBottomWidth: 1, borderBottomColor: colors.line },
   overlay: {
     position: 'absolute',
     top: 0,

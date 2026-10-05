@@ -1,6 +1,5 @@
-import { Image } from 'expo-image';
 import { useEffect } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, type TextStyle } from 'react-native';
 import Animated, {
   cancelAnimation,
   Easing,
@@ -11,6 +10,7 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
+import { Image } from '@/components/image';
 import { Container, Section } from '@/components/layout';
 import { Em, Eyebrow, Serif } from '@/components/typography';
 import { brand } from '@/constants/images';
@@ -68,7 +68,7 @@ export function Approach() {
             <Eyebrow size={isMobile ? 11 : 12}>Our approach</Eyebrow>
             <View style={[styles.rule, { width: isMobile ? 40 : 56 }]} />
           </View>
-          <Serif size={isMobile ? 28 : isDesktop ? 46 : 36} lh={isMobile ? 1.28 : 1.22}>
+          <Serif size={isMobile ? 28 : isDesktop ? 46 : 36} lh={isMobile ? 1.28 : 1.22} style={{ textWrap: 'pretty' } as TextStyle}>
             Good work starts with listening. Every visit begins with a conversation about your hair, your
             skin and your routine — so you leave with something that suits the way you <Em>actually</Em> live.
           </Serif>
@@ -80,7 +80,7 @@ export function Approach() {
 }
 
 const styles = StyleSheet.create({
-  inner: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 64 },
+  inner: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 96 },
   eyebrowRow: { flexDirection: 'row', alignItems: 'center', gap: 18 },
   rule: { height: 1, backgroundColor: colors.bronze },
   circle: { borderWidth: 1, borderColor: 'rgba(138,97,40,0.35)' },

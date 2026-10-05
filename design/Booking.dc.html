@@ -34,12 +34,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 <div style="width: 1440px; height: 1880px; display: flex; flex-direction: column; background: #F6F1EA; color: #2A211C; overflow: hidden">
 
 <header style="height: 88px; flex-shrink: 0; box-sizing: border-box; padding: 0 96px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(42,33,28,0.12)">
-<a href="Main.dc.html" aria-label="Glozia — home" style="display: flex; align-items: center">
+<a href="Home3D.dc.html" aria-label="Glozia — home" style="display: flex; align-items: center">
 <img src="/_blob/e9666be69117daefd0452595aa1fd57b" alt="Glozia" style="height: 54px; width: 77px; display: block">
 </a>
 <div style="display: flex; align-items: center; gap: 40px">
 <span style="font-size: 14px; color: #6B5B4E">Need help? Call or WhatsApp +91 73378 76023</span>
-<a class="nav" href="Main.dc.html">Back to site</a>
+<a class="nav" href="Home3D.dc.html">Back to site</a>
 </div>
 </header>
 
@@ -86,7 +86,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
 <sc-for list="{{stylists}}" as="st" hint-placeholder-count="4">
 <button class="opt" type="button" aria-pressed="{{st.on}}" onClick="{{st.pick}}" style="height: 150px; padding: 18px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; border: 1px solid {{st.border}}; background: {{st.bg}}">
-<span class="ph" style="width: 56px; height: 56px; border-radius: 50%; display: block"></span>
+<sc-if value="{{st.isAny}}" hint-placeholder-val="{{ false }}">
+<span aria-hidden="true" style="width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #231B17"><img src="/_blob/30d8817c940852821345f06122fd62d1" alt="" style="width: 30px; height: 15px; display: block"></span>
+</sc-if>
+<sc-if value="{{st.hasImg}}" hint-placeholder-val="{{ true }}">
+<img src="{{st.img}}" alt="" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; display: block; background-color: #DDD0C0">
+</sc-if>
 <span class="serif" style="font-size: 20px; line-height: 1.1">{{st.name}}</span>
 <span style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #6B5B4E">{{st.role}}</span>
 </button>
@@ -148,7 +153,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 <p style="margin: 0; max-width: 560px; font-size: 17px; line-height: 1.7; color: #4F4238">We’ve sent the details to your WhatsApp. See you on {{dateLabel}} at {{timeLabel}} — please arrive five minutes early so there’s time for a cup of something warm.</p>
 <div style="display: flex; gap: 16px">
 <button class="btn-line" type="button" onClick="{{reset}}">Book another</button>
-<a class="btn-dark" href="Main.dc.html">Back to home</a>
+<a class="btn-dark" href="Home3D.dc.html">Back to home</a>
 </div>
 </section>
 </sc-if>
@@ -227,17 +232,17 @@ class Component extends DCLogic {
     var total = chosen.reduce(function (a, x) { return a + x.amount; }, 0);
 
     var STYLISTS = [
-      { id: 'any', name: 'Any stylist', role: 'First available' },
-      { id: 'sajan', name: 'Sajan', role: 'Hair stylist' },
-      { id: 'salman', name: 'Salman', role: 'Hair & beard' },
-      { id: 'arjun', name: 'Arjun', role: 'Hair stylist' }
+      { id: 'any', name: 'Any stylist', role: 'First available', img: '' },
+      { id: 'sajan', name: 'Sajan', role: 'Hair stylist', img: '/_blob/288048992176b83d874b19be3db4a9d8' },
+      { id: 'salman', name: 'Salman', role: 'Hair & beard', img: '/_blob/012ae0b2fc9742e56fe87290580fb0b3' },
+      { id: 'arjun', name: 'Arjun', role: 'Hair stylist', img: '/_blob/ac54d72302725a8c1fea61817fda4291' }
     ];
     var stylistLabel = 'Any stylist';
     var stylists = STYLISTS.map(function (x) {
       var on = stylistId === x.id;
       if (on) { stylistLabel = x.name; }
       return {
-        name: x.name, role: x.role, on: on,
+        name: x.name, role: x.role, on: on, img: x.img, hasImg: !!x.img, isAny: !x.img,
         border: on ? INK : LINE, bg: on ? '#FFFFFF' : 'transparent',
         pick: function () { self.setState({ stylist: x.id }); }
       };

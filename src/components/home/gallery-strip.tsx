@@ -1,6 +1,6 @@
-import { Image } from 'expo-image';
 import { ScrollView, View } from 'react-native';
 
+import { Image } from '@/components/image';
 import { gallery } from '@/constants/content';
 import { useLayout } from '@/hooks/use-layout';
 

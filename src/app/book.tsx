@@ -1,4 +1,3 @@
-import { Image } from 'expo-image';
 import { Link } from 'expo-router';
 import Head from 'expo-router/head';
 import { useState } from 'react';
@@ -6,10 +5,11 @@ import { Linking, Pressable, ScrollView, StyleSheet, TextInput, View, type TextI
 
 import { Button, MaybeLink, TextLink, type PressState } from '@/components/buttons';
 import { Chat, Check } from '@/components/icons';
+import { Image } from '@/components/image';
 import { Container, Grid } from '@/components/layout';
 import { Page } from '@/components/page';
 import { Em, Eyebrow, Label, Sans, Serif } from '@/components/typography';
-import { brand } from '@/constants/images';
+import { brand, photos } from '@/constants/images';
 import { formatClock, hours, nowInBengaluru, site, whatsappUrl } from '@/constants/site';
 import { colors, sansFamily, webTransition } from '@/constants/theme';
 import { findService, inr, type Gender } from '@/data/services';
@@ -36,11 +36,12 @@ const POPULAR: { id: string; name: string; group: string; ref: [Gender, string, 
 
 const SERVICES = POPULAR.map((s) => ({ ...s, price: findService(...s.ref)?.price ?? s.fallback }));
 
-const STYLISTS = [
+/** Avatars reuse the team-card photos; "Any stylist" shows the crown. */
+const STYLISTS: { id: string; name: string; role: string; img?: number }[] = [
   { id: 'any', name: 'Any stylist', role: 'First available' },
-  { id: 'sajan', name: 'Sajan', role: 'Hair stylist' },
-  { id: 'salman', name: 'Salman', role: 'Hair & beard' },
-  { id: 'arjun', name: 'Arjun', role: 'Hair stylist' },
+  { id: 'sajan', name: 'Sajan', role: 'Hair stylist', img: photos.teamHairCut },
+  { id: 'salman', name: 'Salman', role: 'Hair & beard', img: photos.teamBarberTools },
+  { id: 'arjun', name: 'Arjun', role: 'Hair stylist', img: photos.teamHairDetail },
 ];
 
 /** Start times in minutes from midnight. */
@@ -154,6 +155,7 @@ export default function Book() {
   const [dayKey, setDayKey] = useState<string | null>(null);
   const [time, setTime] = useState<number | null>(null);
   const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
   const [notes, setNotes] = useState('');
   const [sent, setSent] = useState(false);
 
@@ -181,6 +183,7 @@ export default function Book() {
     [
       'Hi Glozia, I’d like to book an appointment.',
       name.trim() ? `Name: ${name.trim()}` : null,
+      phone.trim() ? `WhatsApp: ${phone.trim()}` : null,
       `Services: ${chosen.map((s) => `${s.name} (${inr(s.price)})`).join(', ')}`,
       `Stylist: ${stylistName}`,
       day && time != null ? `When: ${day.long} at ${formatClock(time)}` : null,
@@ -237,13 +240,6 @@ export default function Book() {
             );
           })}
         </Grid>
-        <Sans size={13} color={colors.muted}>
-          Looking for something else? Pick the closest service and add details in the notes — or{' '}
-          <Link href="/services" style={{ color: colors.bronze, textDecorationLine: 'underline' }}>
-            browse the full menu
-          </Link>
-          .
-        </Sans>
       </View>
 
       <View style={{ gap: 20 }}>
@@ -251,11 +247,13 @@ export default function Book() {
         <Grid columns={isMobile ? 2 : 4} gap={12}>
           {STYLISTS.map((s) => (
             <Option key={s.id} selected={stylist === s.id} onPress={() => setStylist(s.id)} style={styles.stylistOption}>
-              <View style={styles.monogram}>
-                <Serif size={24} lh={1} weight="regular" color={colors.gold}>
-                  {s.id === 'any' ? '·' : s.name[0]}
-                </Serif>
-              </View>
+              {s.img ? (
+                <Image source={s.img} alt="" contentFit="cover" style={styles.avatar} />
+              ) : (
+                <View aria-hidden style={[styles.avatar, styles.avatarAny]}>
+                  <Image source={brand.crownGold} alt="" contentFit="contain" style={{ width: 30, height: 15 }} />
+                </View>
+              )}
               <Serif size={20} lh={1.1} weight="regular" align="center">
                 {s.name}
               </Serif>
@@ -323,14 +321,21 @@ export default function Book() {
             );
           })}
         </Grid>
-        <Sans size={13} color={colors.muted}>
-          Open {hours.rows.map((r) => r.join(' ')).join(' · ')}.
-        </Sans>
       </View>
 
       <View style={{ gap: 20 }}>
         <StepHeading n="04" title="Your details" />
-        <Field label="Name" value={name} onChangeText={setName} placeholder="Your full name" autoComplete="name" />
+        <View style={{ flexDirection: isMobile ? 'column' : 'row', gap: 16 }}>
+          <Field label="Name" value={name} onChangeText={setName} placeholder="Your full name" autoComplete="name" />
+          <Field
+            label="WhatsApp number"
+            value={phone}
+            onChangeText={setPhone}
+            placeholder="+91"
+            autoComplete="tel"
+            keyboardType="phone-pad"
+          />
+        </View>
         <Field
           label="Anything we should know? (optional)"
           value={notes}
@@ -493,18 +498,11 @@ const styles = StyleSheet.create({
   headerRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   stepHead: { flexDirection: 'row', alignItems: 'baseline', gap: 16 },
   option: { borderWidth: 1, borderRadius: 2 },
-  serviceOption: { minHeight: 84, paddingHorizontal: 20, paddingVertical: 14, flexDirection: 'row', alignItems: 'center', gap: 16 },
+  serviceOption: { minHeight: 84, paddingHorizontal: 20, paddingVertical: 8, flexDirection: 'row', alignItems: 'center', gap: 16 },
   tick: { width: 26, height: 26, borderRadius: 13, borderWidth: 1, alignItems: 'center', justifyContent: 'center' },
-  stylistOption: { height: 150, padding: 18, alignItems: 'center', justifyContent: 'center', gap: 8 },
-  monogram: {
-    width: 52,
-    height: 52,
-    borderRadius: 26,
-    backgroundColor: colors.espresso,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 2,
-  },
+  stylistOption: { height: 150, padding: 18, alignItems: 'center', justifyContent: 'center', gap: 10 },
+  avatar: { width: 56, height: 56, borderRadius: 28, backgroundColor: '#DDD0C0' },
+  avatarAny: { backgroundColor: colors.espresso, alignItems: 'center', justifyContent: 'center' },
   dayOption: { height: 88, alignItems: 'center', justifyContent: 'center', gap: 2 },
   timeOption: { height: 48, alignItems: 'center', justifyContent: 'center' },
   field: {

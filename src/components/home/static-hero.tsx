@@ -1,7 +1,7 @@
-import { Image } from 'expo-image';
 import { StyleSheet, View } from 'react-native';
 
 import { Button, TextLink } from '@/components/buttons';
+import { Image } from '@/components/image';
 import { Container, Section } from '@/components/layout';
 import { Em, Eyebrow, Sans, Serif } from '@/components/typography';
 import { photos } from '@/constants/images';

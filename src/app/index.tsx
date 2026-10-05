@@ -3,12 +3,12 @@ import Head from 'expo-router/head';
 import { useEffect } from 'react';
 
 import { Approach } from '@/components/home/approach';
-import { Experience } from '@/components/home/experience';
 import { Gallery } from '@/components/home/gallery';
 import { HomeHero } from '@/components/home/hero';
 import { Marquee } from '@/components/home/marquee';
 import { Reviews } from '@/components/home/reviews';
 import { ServicesShowcase } from '@/components/home/services-showcase';
+import { Shop } from '@/components/home/shop';
 import { Team } from '@/components/home/team';
 import { Visit } from '@/components/home/visit';
 import { BOOK_BAR_HEIGHT, MobileBookBar } from '@/components/mobile-book-bar';
@@ -47,7 +47,7 @@ export default function Home() {
       <Marquee />
       <Approach />
       <ServicesShowcase />
-      <Experience />
+      <Shop />
       <Team />
       <Gallery />
       <Reviews />

@@ -1,0 +1,101 @@
+{
+  "_how": "Every /_blob/<id> in design/*.dc.html is listed here with the file in this repo that holds the same image or script.",
+  "assets": {
+    "/_blob/e9666be69117daefd0452595aa1fd57b": {
+      "file": "brand/glozia-lockup-bronze.svg",
+      "what": "Glozia lockup, bronze (header logo)"
+    },
+    "/_blob/2e4bc8b0c1a1c64cb51bd825878b1a83": {
+      "file": "brand/glozia-logo-gold.svg",
+      "what": "Full logo, gold (footer)"
+    },
+    "/_blob/30d8817c940852821345f06122fd62d1": {
+      "file": "brand/glozia-crown-gold.svg",
+      "what": "Crown mark, gold"
+    },
+    "/_blob/b5fcf14903123a410613e816ca02b867": {
+      "file": "photos/hero.jpg",
+      "what": "Stylist pinning a client’s hair into soft curls"
+    },
+    "/_blob/0c0e62b670c6c6b2428eeb7dcd712e32": {
+      "file": "photos/hero-detail.jpg",
+      "what": "Scissors, comb and grooming products on wood"
+    },
+    "/_blob/e08d7dcf8c765f4bd46c352dd980c49a": {
+      "file": "photos/card-hair.jpg",
+      "what": "Stylist cutting a man’s hair"
+    },
+    "/_blob/2961c35577fd193d0055cd5d2538f7d1": {
+      "file": "photos/card-skin.jpg",
+      "what": "Clay mask being brushed on"
+    },
+    "/_blob/a12d1db780a758e1638e8ffd3620dbeb": {
+      "file": "photos/card-spa.jpg",
+      "what": "Warm oil poured for a back massage"
+    },
+    "/_blob/35ada588ceec977480e2ad14d09cba04": {
+      "file": "photos/card-hands.jpg",
+      "what": "Manicured nails in neutral shades"
+    },
+    "/_blob/f04a2a9fae93bdd011b25d96454ec5a0": {
+      "file": "photos/dusk.jpg",
+      "what": "Salon chair under warm pendant lights"
+    },
+    "/_blob/6d191d7fc3443f850c012dee72bf957e": {
+      "file": "photos/gal-interior.jpg",
+      "what": "Bright salon interior with round mirrors"
+    },
+    "/_blob/66c21aa5a1be61205d16e4c78c7b76fd": {
+      "file": "photos/gal-men.jpg",
+      "what": "Stylist blow-drying a man’s hair"
+    },
+    "/_blob/28920e392f9d66cd065347117cf59da0": {
+      "file": "photos/gal-wash.jpg",
+      "what": "Client at the wash basin"
+    },
+    "/_blob/a55478a91c84af5ebc2ca9525c69f8f9": {
+      "file": "photos/gal-facial.jpg",
+      "what": "Cream mask applied during a facial"
+    },
+    "/_blob/0b030c8a5363e071c4e672b39a5c2e61": {
+      "file": "photos/gal-nails.jpg",
+      "what": "Dark and tortoiseshell nail art"
+    },
+    "/_blob/6b06ef098b52015b53ef3ce98071bb02": {
+      "file": "photos/bridal.jpg",
+      "what": "Bridal make-up being finished"
+    },
+    "/_blob/1aea8aefa01d3eeb130c12f78be41b56": {
+      "file": "photos/menu-spa.jpg",
+      "what": "Warm stones along a back"
+    },
+    "/_blob/6cf2b4fafb1d213beba1c7780273f28e": {
+      "file": "photos/menu-hero.jpg",
+      "what": "Smiling stylist blow-drying a client’s hair (services page header)"
+    },
+    "/_blob/288048992176b83d874b19be3db4a9d8": {
+      "file": "photos/team-hair-cut.jpg",
+      "what": "Team card: Sajan — scissors and comb cutting long dark hair (stock stand-in)"
+    },
+    "/_blob/012ae0b2fc9742e56fe87290580fb0b3": {
+      "file": "photos/team-barber-tools.jpg",
+      "what": "Team card: Salman — barber’s hands with clippers and comb (stock stand-in)"
+    },
+    "/_blob/ac54d72302725a8c1fea61817fda4291": {
+      "file": "photos/team-hair-detail.jpg",
+      "what": "Team card: Arjun — stylist trimming dark hair (stock stand-in)"
+    },
+    "/_blob/54e21cadecab97629f814bc473541b48": {
+      "file": "photos/team-spa-massage.jpg",
+      "what": "Team card: Spa team — relaxing back massage (stock stand-in)"
+    },
+    "/_blob/936bc7ac838dfda16c294548a5f29840": {
+      "file": "design/assets/map-nagarbhavi.jpg",
+      "what": "Styled map of Mallathahalli Lake & Nagarbhavi — design-only stand-in for the live Google Maps embed. © OpenStreetMap contributors"
+    },
+    "/_blob/96d76171d5cad29f4b46dea9b9e79b05": {
+      "file": "3d/dist/glozia-scene.js",
+      "what": "three.js crown scene bundle (built from 3d/src/scene.js)"
+    }
+  }
+}

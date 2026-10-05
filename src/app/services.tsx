@@ -1,9 +1,9 @@
-import { Image } from 'expo-image';
 import { router, useLocalSearchParams } from 'expo-router';
 import Head from 'expo-router/head';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 
 import { Button, type PressState } from '@/components/buttons';
+import { Image } from '@/components/image';
 import { Container, Grid, Section } from '@/components/layout';
 import { Page } from '@/components/page';
 import { SiteFooter } from '@/components/site-footer';
@@ -12,7 +12,6 @@ import { Em, Eyebrow, Sans, Serif } from '@/components/typography';
 import { photos } from '@/constants/images';
 import { colors, webTransition } from '@/constants/theme';
 import {
-  formatDuration,
   genderFromParam,
   genderLabels,
   genderParam,
@@ -117,16 +116,11 @@ function PriceList({ category }: { category: Category }) {
       <Grid columns={columns} gap={48} rowGap={0}>
         {category.items.map((item) => (
           <View key={item.name} style={styles.item}>
-            <View style={{ flexShrink: 1, gap: 2 }}>
-              <Serif size={isMobile ? 19 : 21} lh={1.2} weight="regular">
-                {item.name}
-              </Serif>
-              <Sans size={12} lh={1.4} color={colors.muted}>
-                {formatDuration(item.durationMin)}
-              </Sans>
-            </View>
+            <Serif size={isMobile ? 19 : 21} lh={1.2} weight="regular" style={{ flexShrink: 1 }}>
+              {item.name}
+            </Serif>
             <View aria-hidden style={styles.leader} />
-            <Sans size={15} tracking={0.02} style={{ alignSelf: 'flex-start', marginTop: 2 }}>
+            <Sans size={15} lh={1.4} tracking={0.02} numberOfLines={1}>
               {inr(item.price)}
             </Sans>
           </View>
@@ -190,7 +184,8 @@ export default function Services() {
       </Section>
 
       <Section id="menu" bg={colors.sand}>
-        <Container style={{ paddingTop: isMobile ? 40 : 88, paddingBottom: isMobile ? 56 : 96, gap: isMobile ? 24 : 48 }}>
+        <Container
+          style={{ paddingTop: isMobile ? 40 : 88, paddingBottom: isMobile ? 56 : 96, gap: isMobile ? 24 : 48, minHeight: isDesktop ? 1296 : undefined }}>
           <View style={[styles.menuTop, isMobile && { flexDirection: 'column', alignItems: 'flex-start', gap: 12 }]}>
             <GenderTabs gender={gender} onChange={chooseGender} />
             <Sans size={14} color={colors.muted}>
@@ -203,7 +198,8 @@ export default function Services() {
               <PriceList category={current} />
             </View>
           ) : (
-            <View style={{ flexDirection: 'row', gap: isDesktop ? 72 : 32, alignItems: 'flex-start' }}>
+            // The price panel stretches to the rail (and section) height, as on the board.
+            <View style={{ flex: 1, flexDirection: 'row', gap: isDesktop ? 72 : 32, alignItems: 'stretch' }}>
               <View style={{ width: isDesktop ? 300 : 220 }}>
                 <CategoryRail cats={cats} current={current.name} onChange={chooseCat} />
               </View>
@@ -270,7 +266,7 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   chip: { height: 40, paddingHorizontal: 16, borderRadius: 999, borderWidth: 1, justifyContent: 'center' },
-  panel: { backgroundColor: colors.cream, borderRadius: 2, gap: 32 },
+  panel: { flexGrow: 1, backgroundColor: colors.cream, borderRadius: 2, gap: 32 },
   panelHead: {
     flexDirection: 'row',
     alignItems: 'baseline',
@@ -282,7 +278,7 @@ const styles = StyleSheet.create({
   },
   item: {
     flexDirection: 'row',
-    alignItems: 'flex-start',
+    alignItems: 'baseline',
     gap: 12,
     paddingVertical: 16,
     borderBottomWidth: 1,
@@ -291,7 +287,6 @@ const styles = StyleSheet.create({
   leader: {
     flex: 1,
     minWidth: 16,
-    marginTop: 18,
     borderBottomWidth: 1,
     borderStyle: 'dotted',
     borderBottomColor: 'rgba(42,33,28,0.35)',

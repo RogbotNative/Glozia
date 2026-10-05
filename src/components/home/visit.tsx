@@ -4,7 +4,7 @@ import { Button, MaybeLink, type PressState } from '@/components/buttons';
 import { Container, Section } from '@/components/layout';
 import { MapEmbed } from '@/components/map-embed';
 import { Em, Eyebrow, Label, Sans, Serif } from '@/components/typography';
-import { hours, site, whatsappUrl } from '@/constants/site';
+import { hours, site } from '@/constants/site';
 import { colors } from '@/constants/theme';
 import { useLayout } from '@/hooks/use-layout';
 
@@ -39,7 +39,7 @@ export function Visit() {
         <View style={{ flex: isDesktop ? 1 : undefined, minWidth: 0, justifyContent: 'center', gap: isMobile ? 24 : 36 }}>
           <View style={{ gap: isMobile ? 16 : 20 }}>
             <Eyebrow size={isMobile ? 11 : 12}>Visit</Eyebrow>
-            <Serif size={isMobile ? 40 : 60} lh={1.06} heading={2}>
+            <Serif size={isMobile ? 40 : 60} lh={1.05} heading={2}>
               Come in, <Em>slow down.</Em>
             </Serif>
           </View>
@@ -78,12 +78,11 @@ export function Visit() {
               </Sans>
               <InlineLink label={site.phoneDisplay} href={site.phoneHref} />
             </View>
-            <InlineLink label="Message us on WhatsApp" href={whatsappUrl()} color={colors.muted} />
             <InlineLink label={site.instagramHandle} href={site.instagramUrl} color={colors.muted} />
           </View>
           <View style={[styles.ctas, isMobile && styles.ctasStacked]}>
             <Button label="Book an appointment" href="/book" full={isMobile} />
-            <Button label="Get directions" href={site.mapsUrl} variant="line" full={isMobile} />
+            <Button label="Get directions" href={site.directionsUrl} variant="line" full={isMobile} />
           </View>
         </View>
       </Container>
