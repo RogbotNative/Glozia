@@ -481,7 +481,8 @@ export default function Book() {
           </View>
           {sent ? confirmation : form}
         </View>
-        <View style={isDesktop ? { width: 420 } : null}>{summary}</View>
+        {/* Stretched to the form's height so the sticky summary can follow the visitor down the page. */}
+        <View style={isDesktop ? { width: 420, alignSelf: 'stretch' } : null}>{summary}</View>
       </Container>
     </Page>
   );

@@ -1,4 +1,3 @@
-import { ScrollViewStyleReset } from 'expo-router/html';
 import type { PropsWithChildren } from 'react';
 
 import { site } from '@/constants/site';
@@ -10,10 +9,14 @@ import { site } from '@/constants/site';
  */
 const revealScript = `(function(){try{var w=document.documentElement.clientWidth||window.innerWidth;if(w>=720){var d=document.documentElement;d.classList.add('glz-wait');setTimeout(function(){d.classList.remove('glz-wait')},4000)}}catch(e){}})();`;
 
+/**
+ * The document itself scrolls on the web (pages are plain Views, not a root ScrollView), so this
+ * replaces Expo's ScrollViewStyleReset, which locks body scrolling with `overflow: hidden`.
+ */
 const baseCss = `
-html,body{background-color:#F6F1EA;}
-body{color:#2A211C;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;}
-#root{transition:opacity .35s ease;}
+html,body{margin:0;padding:0;background-color:#F6F1EA;-webkit-text-size-adjust:100%;}
+body{color:#2A211C;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;overflow-y:auto;}
+#root{display:flex;flex-direction:column;min-height:100vh;transition:opacity .35s ease;}
 html.glz-wait #root{opacity:0;}
 `;
 
@@ -58,8 +61,7 @@ export default function Root({ children }: PropsWithChildren) {
         <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <script dangerouslySetInnerHTML={{ __html: revealScript }} />
-        <ScrollViewStyleReset />
-        <style dangerouslySetInnerHTML={{ __html: baseCss }} />
+        <style id="glz-base" dangerouslySetInnerHTML={{ __html: baseCss }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </head>
       <body>{children}</body>
